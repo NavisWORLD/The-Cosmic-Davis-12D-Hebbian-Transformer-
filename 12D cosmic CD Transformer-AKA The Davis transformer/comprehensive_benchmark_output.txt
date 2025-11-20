@@ -1,0 +1,469 @@
+
+🚀 Starting comprehensive real-world-scale benchmark...
+   This will take significant time (~30-60 minutes)
+   Running 3 experiments with multiple model sizes
+
+================================================================================
+COMPREHENSIVE REAL-WORLD-SCALE BENCHMARK
+12D Cosmic Synapse Transformer vs Vanilla Transformer
+================================================================================
+
+[DATA] Generating 1,000,000 tokens (large-scale)...
+Generating tokens:   0%|          | 0/1000000 [00:00<?, ?it/s]Generating tokens:  17%|█▋        | 166700/1000000 [00:00<00:00, 1666675.75it/s]Generating tokens:  34%|███▎      | 336600/1000000 [00:00<00:00, 1685188.43it/s]Generating tokens:  51%|█████     | 505200/1000000 [00:00<00:00, 1680212.19it/s]Generating tokens:  68%|██████▊   | 679200/1000000 [00:00<00:00, 1703644.88it/s]Generating tokens:  85%|████████▌ | 850300/1000000 [00:00<00:00, 1706263.41it/s]Generating tokens: 100%|██████████| 1000000/1000000 [00:00<00:00, 1686056.79it/s]
+Building vocabulary from 1000002 tokens...
+Vocabulary size: 2484
+[DATA] Generated in 0.8s (1266628 tok/s)
+[DATA] Train: 900,001 tokens
+[DATA] Val: 100,001 tokens
+[DATA] Vocab size: 2484
+
+================================================================================
+EXPERIMENT 1: Extended Training (2000 iterations)
+================================================================================
+
+[MODEL] Creating models for extended training...
+[VANILLA] Model initialized with 2.76M parameters
+[12D CST] Model initialized with 2.13M parameters
+[12D CST] φ-optimized dimensions: d_model=196, d_ff=321
+Vanilla: 2,764,416 params
+Cosmic: 2,131,820 params
+
+[TRAIN] Training Vanilla-Extended for 2000 iterations...
+[Vanilla-Extended] Iter    0 | Train Loss: 8.5651 | Val Loss: 8.3211 | Speed: 4365 tok/s
+[Vanilla-Extended] Iter   50 | Train Loss: 4.8482 | Val Loss: 4.8528 | Speed: 7064 tok/s
+[Vanilla-Extended] Iter  100 | Train Loss: 3.3936 | Val Loss: 3.2289 | Speed: 7480 tok/s
+[Vanilla-Extended] Iter  150 | Train Loss: 2.4754 | Val Loss: 2.5600 | Speed: 7159 tok/s
+[Vanilla-Extended] Iter  200 | Train Loss: 2.0618 | Val Loss: 1.9610 | Speed: 8301 tok/s
+[Vanilla-Extended] Iter  250 | Train Loss: 1.8329 | Val Loss: 1.5624 | Speed: 6846 tok/s
+[Vanilla-Extended] Iter  300 | Train Loss: 1.7170 | Val Loss: 1.3484 | Speed: 7639 tok/s
+[Vanilla-Extended] Iter  350 | Train Loss: 1.7238 | Val Loss: 1.7156 | Speed: 7853 tok/s
+[Vanilla-Extended] Iter  400 | Train Loss: 1.5994 | Val Loss: 1.5714 | Speed: 8219 tok/s
+[Vanilla-Extended] Iter  450 | Train Loss: 1.5621 | Val Loss: 1.5216 | Speed: 7667 tok/s
+[Vanilla-Extended] Iter  500 | Train Loss: 1.4955 | Val Loss: 1.3391 | Speed: 7350 tok/s
+[Vanilla-Extended] Iter  550 | Train Loss: 1.3304 | Val Loss: 1.4316 | Speed: 7881 tok/s
+[Vanilla-Extended] Iter  600 | Train Loss: 1.6578 | Val Loss: 1.4876 | Speed: 8130 tok/s
+[Vanilla-Extended] Iter  650 | Train Loss: 1.8641 | Val Loss: 1.6626 | Speed: 7730 tok/s
+[Vanilla-Extended] Iter  700 | Train Loss: 1.7411 | Val Loss: 1.5583 | Speed: 7838 tok/s
+[Vanilla-Extended] Iter  750 | Train Loss: 1.3763 | Val Loss: 1.3704 | Speed: 7464 tok/s
+[Vanilla-Extended] Iter  800 | Train Loss: 1.3186 | Val Loss: 1.3455 | Speed: 7895 tok/s
+[Vanilla-Extended] Iter  850 | Train Loss: 1.4689 | Val Loss: 1.7250 | Speed: 7142 tok/s
+[Vanilla-Extended] Iter  900 | Train Loss: 1.4350 | Val Loss: 1.3497 | Speed: 6198 tok/s
+[Vanilla-Extended] Iter  950 | Train Loss: 1.6956 | Val Loss: 1.5146 | Speed: 7068 tok/s
+[Vanilla-Extended] Iter 1000 | Train Loss: 1.4072 | Val Loss: 1.3832 | Speed: 7292 tok/s
+[Vanilla-Extended] Iter 1050 | Train Loss: 1.3334 | Val Loss: 1.3196 | Speed: 7657 tok/s
+[Vanilla-Extended] Iter 1100 | Train Loss: 1.8154 | Val Loss: 1.3428 | Speed: 8062 tok/s
+[Vanilla-Extended] Iter 1150 | Train Loss: 1.3967 | Val Loss: 1.7581 | Speed: 7317 tok/s
+[Vanilla-Extended] Iter 1200 | Train Loss: 1.5832 | Val Loss: 1.3752 | Speed: 6677 tok/s
+[Vanilla-Extended] Iter 1250 | Train Loss: 1.4165 | Val Loss: 1.3708 | Speed: 8189 tok/s
+[Vanilla-Extended] Iter 1300 | Train Loss: 1.3156 | Val Loss: 1.5509 | Speed: 7582 tok/s
+[Vanilla-Extended] Iter 1350 | Train Loss: 1.5773 | Val Loss: 1.4635 | Speed: 6579 tok/s
+[Vanilla-Extended] Iter 1400 | Train Loss: 1.4340 | Val Loss: 1.2555 | Speed: 6766 tok/s
+[Vanilla-Extended] Iter 1450 | Train Loss: 1.0901 | Val Loss: 1.2377 | Speed: 7428 tok/s
+[Vanilla-Extended] Iter 1500 | Train Loss: 1.6587 | Val Loss: 1.3761 | Speed: 8343 tok/s
+[Vanilla-Extended] Iter 1550 | Train Loss: 1.4361 | Val Loss: 1.2567 | Speed: 8214 tok/s
+[Vanilla-Extended] Iter 1600 | Train Loss: 1.3696 | Val Loss: 1.5224 | Speed: 7301 tok/s
+[Vanilla-Extended] Iter 1650 | Train Loss: 1.3155 | Val Loss: 1.4464 | Speed: 7190 tok/s
+[Vanilla-Extended] Iter 1700 | Train Loss: 1.3570 | Val Loss: 1.2206 | Speed: 7031 tok/s
+[Vanilla-Extended] Iter 1750 | Train Loss: 1.5523 | Val Loss: 1.7007 | Speed: 6878 tok/s
+[Vanilla-Extended] Iter 1800 | Train Loss: 1.4719 | Val Loss: 1.3427 | Speed: 7295 tok/s
+[Vanilla-Extended] Iter 1850 | Train Loss: 1.4912 | Val Loss: 1.4016 | Speed: 7250 tok/s
+[Vanilla-Extended] Iter 1900 | Train Loss: 1.3266 | Val Loss: 1.2929 | Speed: 7463 tok/s
+[Vanilla-Extended] Iter 1950 | Train Loss: 1.4502 | Val Loss: 1.2957 | Speed: 7760 tok/s
+[Vanilla-Extended] Training complete in 281.60s
+
+[TRAIN] Training 12D CST-Extended for 2000 iterations...
+[12D CST-Extended] Iter    0 | Train Loss: 8.5283 | Val Loss: 8.3438 | Speed: 5628 tok/s
+[12D CST-Extended] Iter   50 | Train Loss: 5.1328 | Val Loss: 5.2589 | Speed: 6625 tok/s
+[12D CST-Extended] Iter  100 | Train Loss: 4.4975 | Val Loss: 4.3908 | Speed: 6542 tok/s
+[12D CST-Extended] Iter  150 | Train Loss: 3.4853 | Val Loss: 3.4227 | Speed: 6115 tok/s
+[12D CST-Extended] Iter  200 | Train Loss: 2.7653 | Val Loss: 2.5839 | Speed: 6958 tok/s
+[12D CST-Extended] Iter  250 | Train Loss: 2.0773 | Val Loss: 2.2653 | Speed: 6801 tok/s
+[12D CST-Extended] Iter  300 | Train Loss: 1.9640 | Val Loss: 1.9704 | Speed: 5656 tok/s
+[12D CST-Extended] Iter  350 | Train Loss: 1.9158 | Val Loss: 1.8258 | Speed: 6768 tok/s
+[12D CST-Extended] Iter  400 | Train Loss: 1.4182 | Val Loss: 1.4813 | Speed: 6144 tok/s
+[12D CST-Extended] Iter  450 | Train Loss: 1.5414 | Val Loss: 1.7536 | Speed: 6147 tok/s
+[12D CST-Extended] Iter  500 | Train Loss: 1.6401 | Val Loss: 1.3653 | Speed: 6906 tok/s
+[12D CST-Extended] Iter  550 | Train Loss: 1.3783 | Val Loss: 1.5136 | Speed: 7136 tok/s
+[12D CST-Extended] Iter  600 | Train Loss: 1.5618 | Val Loss: 1.3830 | Speed: 6230 tok/s
+[12D CST-Extended] Iter  650 | Train Loss: 1.6069 | Val Loss: 1.3823 | Speed: 5730 tok/s
+[12D CST-Extended] Iter  700 | Train Loss: 1.7866 | Val Loss: 1.4701 | Speed: 6833 tok/s
+[12D CST-Extended] Iter  750 | Train Loss: 1.3728 | Val Loss: 1.4209 | Speed: 7199 tok/s
+[12D CST-Extended] Iter  800 | Train Loss: 1.3274 | Val Loss: 1.3703 | Speed: 5197 tok/s
+[12D CST-Extended] Iter  850 | Train Loss: 1.3068 | Val Loss: 1.5354 | Speed: 5923 tok/s
+[12D CST-Extended] Iter  900 | Train Loss: 1.8246 | Val Loss: 1.2614 | Speed: 6258 tok/s
+[12D CST-Extended] Iter  950 | Train Loss: 1.4182 | Val Loss: 1.4292 | Speed: 5725 tok/s
+[12D CST-Extended] Iter 1000 | Train Loss: 1.3945 | Val Loss: 1.2224 | Speed: 6650 tok/s
+[12D CST-Extended] Iter 1050 | Train Loss: 1.7933 | Val Loss: 1.5673 | Speed: 6102 tok/s
+[12D CST-Extended] Iter 1100 | Train Loss: 1.2933 | Val Loss: 1.6137 | Speed: 6313 tok/s
+[12D CST-Extended] Iter 1150 | Train Loss: 1.3448 | Val Loss: 1.3418 | Speed: 5787 tok/s
+[12D CST-Extended] Iter 1200 | Train Loss: 1.5209 | Val Loss: 1.6446 | Speed: 7256 tok/s
+[12D CST-Extended] Iter 1250 | Train Loss: 1.6758 | Val Loss: 1.2293 | Speed: 7201 tok/s
+[12D CST-Extended] Iter 1300 | Train Loss: 1.4164 | Val Loss: 1.5671 | Speed: 7932 tok/s
+[12D CST-Extended] Iter 1350 | Train Loss: 1.1081 | Val Loss: 1.4536 | Speed: 6322 tok/s
+[12D CST-Extended] Iter 1400 | Train Loss: 1.5377 | Val Loss: 1.3899 | Speed: 7131 tok/s
+[12D CST-Extended] Iter 1450 | Train Loss: 1.8935 | Val Loss: 1.4331 | Speed: 7714 tok/s
+[12D CST-Extended] Iter 1500 | Train Loss: 1.4248 | Val Loss: 1.5227 | Speed: 7380 tok/s
+[12D CST-Extended] Iter 1550 | Train Loss: 1.3698 | Val Loss: 1.4068 | Speed: 7469 tok/s
+[12D CST-Extended] Iter 1600 | Train Loss: 1.5417 | Val Loss: 1.3455 | Speed: 6058 tok/s
+[12D CST-Extended] Iter 1650 | Train Loss: 1.5621 | Val Loss: 1.5871 | Speed: 6939 tok/s
+[12D CST-Extended] Iter 1700 | Train Loss: 1.2352 | Val Loss: 1.5146 | Speed: 7125 tok/s
+[12D CST-Extended] Iter 1750 | Train Loss: 1.7130 | Val Loss: 1.3232 | Speed: 7326 tok/s
+[12D CST-Extended] Iter 1800 | Train Loss: 1.3555 | Val Loss: 1.5302 | Speed: 7184 tok/s
+[12D CST-Extended] Iter 1850 | Train Loss: 1.4749 | Val Loss: 1.5904 | Speed: 6719 tok/s
+[12D CST-Extended] Iter 1900 | Train Loss: 1.6708 | Val Loss: 1.3017 | Speed: 6257 tok/s
+[12D CST-Extended] Iter 1950 | Train Loss: 1.4485 | Val Loss: 1.1295 | Speed: 6652 tok/s
+[12D CST-Extended] Training complete in 315.69s
+
+================================================================================
+EXPERIMENT 2: Parameter-Matched Comparison
+================================================================================
+
+[MODEL] Creating parameter-matched models...
+[VANILLA] Model initialized with 2.76M parameters
+[12D CST] Model initialized with 4.62M parameters
+[12D CST] φ-optimized dimensions: d_model=320, d_ff=519
+Vanilla: 2,764,416 params
+Cosmic (matched): 4,622,252 params
+Difference: 1,857,836 (67.2%)
+
+[TRAIN] Training Vanilla-Matched for 2000 iterations...
+[Vanilla-Matched] Iter    0 | Train Loss: 8.5797 | Val Loss: 8.3815 | Speed: 6351 tok/s
+[Vanilla-Matched] Iter   50 | Train Loss: 4.7716 | Val Loss: 4.9103 | Speed: 6388 tok/s
+[Vanilla-Matched] Iter  100 | Train Loss: 3.5496 | Val Loss: 3.1628 | Speed: 7673 tok/s
+[Vanilla-Matched] Iter  150 | Train Loss: 2.4626 | Val Loss: 2.2324 | Speed: 7226 tok/s
+[Vanilla-Matched] Iter  200 | Train Loss: 2.1678 | Val Loss: 1.7930 | Speed: 7836 tok/s
+[Vanilla-Matched] Iter  250 | Train Loss: 1.5955 | Val Loss: 1.9650 | Speed: 6786 tok/s
+[Vanilla-Matched] Iter  300 | Train Loss: 1.7742 | Val Loss: 1.7268 | Speed: 8283 tok/s
+[Vanilla-Matched] Iter  350 | Train Loss: 1.4392 | Val Loss: 1.6903 | Speed: 6938 tok/s
+[Vanilla-Matched] Iter  400 | Train Loss: 1.8133 | Val Loss: 1.7734 | Speed: 8051 tok/s
+[Vanilla-Matched] Iter  450 | Train Loss: 1.5535 | Val Loss: 1.5938 | Speed: 8168 tok/s
+[Vanilla-Matched] Iter  500 | Train Loss: 1.4074 | Val Loss: 1.4024 | Speed: 7249 tok/s
+[Vanilla-Matched] Iter  550 | Train Loss: 1.3080 | Val Loss: 1.6421 | Speed: 7800 tok/s
+[Vanilla-Matched] Iter  600 | Train Loss: 1.4299 | Val Loss: 1.3934 | Speed: 7953 tok/s
+[Vanilla-Matched] Iter  650 | Train Loss: 1.7053 | Val Loss: 1.3792 | Speed: 7228 tok/s
+[Vanilla-Matched] Iter  700 | Train Loss: 1.4092 | Val Loss: 1.3790 | Speed: 7487 tok/s
+[Vanilla-Matched] Iter  750 | Train Loss: 1.6581 | Val Loss: 1.4382 | Speed: 7238 tok/s
+[Vanilla-Matched] Iter  800 | Train Loss: 1.6528 | Val Loss: 1.3646 | Speed: 7705 tok/s
+[Vanilla-Matched] Iter  850 | Train Loss: 1.6250 | Val Loss: 1.3991 | Speed: 8372 tok/s
+[Vanilla-Matched] Iter  900 | Train Loss: 1.4416 | Val Loss: 1.4078 | Speed: 8209 tok/s
+[Vanilla-Matched] Iter  950 | Train Loss: 1.5293 | Val Loss: 1.3144 | Speed: 7696 tok/s
+[Vanilla-Matched] Iter 1000 | Train Loss: 1.1819 | Val Loss: 1.3961 | Speed: 6900 tok/s
+[Vanilla-Matched] Iter 1050 | Train Loss: 1.4653 | Val Loss: 1.4965 | Speed: 8012 tok/s
+[Vanilla-Matched] Iter 1100 | Train Loss: 1.2049 | Val Loss: 1.3892 | Speed: 6940 tok/s
+[Vanilla-Matched] Iter 1150 | Train Loss: 1.3916 | Val Loss: 1.4189 | Speed: 7887 tok/s
+[Vanilla-Matched] Iter 1200 | Train Loss: 1.4573 | Val Loss: 1.6031 | Speed: 8505 tok/s
+[Vanilla-Matched] Iter 1250 | Train Loss: 1.3436 | Val Loss: 1.5901 | Speed: 7317 tok/s
+[Vanilla-Matched] Iter 1300 | Train Loss: 1.2258 | Val Loss: 1.4723 | Speed: 8931 tok/s
+[Vanilla-Matched] Iter 1350 | Train Loss: 1.3964 | Val Loss: 1.1251 | Speed: 6929 tok/s
+[Vanilla-Matched] Iter 1400 | Train Loss: 1.5248 | Val Loss: 1.6138 | Speed: 8044 tok/s
+[Vanilla-Matched] Iter 1450 | Train Loss: 1.0074 | Val Loss: 1.3735 | Speed: 6035 tok/s
+[Vanilla-Matched] Iter 1500 | Train Loss: 1.4508 | Val Loss: 1.4585 | Speed: 7693 tok/s
+[Vanilla-Matched] Iter 1550 | Train Loss: 1.2539 | Val Loss: 1.3660 | Speed: 8238 tok/s
+[Vanilla-Matched] Iter 1600 | Train Loss: 1.3496 | Val Loss: 1.0040 | Speed: 8051 tok/s
+[Vanilla-Matched] Iter 1650 | Train Loss: 1.5513 | Val Loss: 1.3490 | Speed: 7732 tok/s
+[Vanilla-Matched] Iter 1700 | Train Loss: 1.5610 | Val Loss: 1.4330 | Speed: 7914 tok/s
+[Vanilla-Matched] Iter 1750 | Train Loss: 1.2862 | Val Loss: 1.1770 | Speed: 8053 tok/s
+[Vanilla-Matched] Iter 1800 | Train Loss: 1.2340 | Val Loss: 1.1241 | Speed: 7654 tok/s
+[Vanilla-Matched] Iter 1850 | Train Loss: 1.4741 | Val Loss: 1.5063 | Speed: 6972 tok/s
+[Vanilla-Matched] Iter 1900 | Train Loss: 1.3816 | Val Loss: 1.5013 | Speed: 7413 tok/s
+[Vanilla-Matched] Iter 1950 | Train Loss: 1.4248 | Val Loss: 1.4603 | Speed: 7086 tok/s
+[Vanilla-Matched] Training complete in 276.35s
+
+[TRAIN] Training 12D CST-Matched for 2000 iterations...
+[12D CST-Matched] Iter    0 | Train Loss: 8.5444 | Val Loss: 8.2699 | Speed: 4961 tok/s
+[12D CST-Matched] Iter   50 | Train Loss: 4.8167 | Val Loss: 4.6221 | Speed: 5276 tok/s
+[12D CST-Matched] Iter  100 | Train Loss: 3.2657 | Val Loss: 3.2712 | Speed: 6043 tok/s
+[12D CST-Matched] Iter  150 | Train Loss: 2.2373 | Val Loss: 2.0681 | Speed: 5301 tok/s
+[12D CST-Matched] Iter  200 | Train Loss: 1.8131 | Val Loss: 1.9669 | Speed: 5325 tok/s
+[12D CST-Matched] Iter  250 | Train Loss: 2.1279 | Val Loss: 1.4649 | Speed: 5716 tok/s
+[12D CST-Matched] Iter  300 | Train Loss: 1.4502 | Val Loss: 1.6959 | Speed: 5527 tok/s
+[12D CST-Matched] Iter  350 | Train Loss: 1.3970 | Val Loss: 1.5271 | Speed: 5643 tok/s
+[12D CST-Matched] Iter  400 | Train Loss: 1.7646 | Val Loss: 1.4229 | Speed: 4875 tok/s
+[12D CST-Matched] Iter  450 | Train Loss: 1.5294 | Val Loss: 1.3176 | Speed: 6429 tok/s
+[12D CST-Matched] Iter  500 | Train Loss: 1.4269 | Val Loss: 1.5378 | Speed: 5890 tok/s
+[12D CST-Matched] Iter  550 | Train Loss: 1.4577 | Val Loss: 1.3646 | Speed: 6231 tok/s
+[12D CST-Matched] Iter  600 | Train Loss: 1.4691 | Val Loss: 1.6569 | Speed: 6358 tok/s
+[12D CST-Matched] Iter  650 | Train Loss: 1.5683 | Val Loss: 1.2955 | Speed: 6308 tok/s
+[12D CST-Matched] Iter  700 | Train Loss: 1.4431 | Val Loss: 1.6785 | Speed: 5350 tok/s
+[12D CST-Matched] Iter  750 | Train Loss: 1.7284 | Val Loss: 1.4044 | Speed: 5732 tok/s
+[12D CST-Matched] Iter  800 | Train Loss: 1.2784 | Val Loss: 1.1377 | Speed: 5806 tok/s
+[12D CST-Matched] Iter  850 | Train Loss: 1.3502 | Val Loss: 1.4674 | Speed: 5526 tok/s
+[12D CST-Matched] Iter  900 | Train Loss: 1.1475 | Val Loss: 1.6199 | Speed: 5372 tok/s
+[12D CST-Matched] Iter  950 | Train Loss: 1.4204 | Val Loss: 1.3624 | Speed: 5964 tok/s
+[12D CST-Matched] Iter 1000 | Train Loss: 1.4516 | Val Loss: 1.3183 | Speed: 6071 tok/s
+[12D CST-Matched] Iter 1050 | Train Loss: 1.8872 | Val Loss: 1.4237 | Speed: 4900 tok/s
+[12D CST-Matched] Iter 1100 | Train Loss: 1.7085 | Val Loss: 1.1348 | Speed: 5738 tok/s
+[12D CST-Matched] Iter 1150 | Train Loss: 1.3627 | Val Loss: 1.4082 | Speed: 5906 tok/s
+[12D CST-Matched] Iter 1200 | Train Loss: 1.3679 | Val Loss: 0.9408 | Speed: 5904 tok/s
+[12D CST-Matched] Iter 1250 | Train Loss: 1.3209 | Val Loss: 1.3201 | Speed: 5952 tok/s
+[12D CST-Matched] Iter 1300 | Train Loss: 1.2883 | Val Loss: 1.4452 | Speed: 6381 tok/s
+[12D CST-Matched] Iter 1350 | Train Loss: 1.2445 | Val Loss: 1.3678 | Speed: 6672 tok/s
+[12D CST-Matched] Iter 1400 | Train Loss: 1.7894 | Val Loss: 1.3316 | Speed: 5936 tok/s
+[12D CST-Matched] Iter 1450 | Train Loss: 1.2427 | Val Loss: 1.6905 | Speed: 5816 tok/s
+[12D CST-Matched] Iter 1500 | Train Loss: 1.4631 | Val Loss: 1.5527 | Speed: 5925 tok/s
+[12D CST-Matched] Iter 1550 | Train Loss: 1.4783 | Val Loss: 1.3731 | Speed: 5122 tok/s
+[12D CST-Matched] Iter 1600 | Train Loss: 1.2883 | Val Loss: 1.3369 | Speed: 5499 tok/s
+[12D CST-Matched] Iter 1650 | Train Loss: 1.6802 | Val Loss: 1.3113 | Speed: 5814 tok/s
+[12D CST-Matched] Iter 1700 | Train Loss: 1.1930 | Val Loss: 1.1181 | Speed: 6371 tok/s
+[12D CST-Matched] Iter 1750 | Train Loss: 1.3037 | Val Loss: 1.3510 | Speed: 6235 tok/s
+[12D CST-Matched] Iter 1800 | Train Loss: 1.6637 | Val Loss: 1.5998 | Speed: 5313 tok/s
+[12D CST-Matched] Iter 1850 | Train Loss: 1.4760 | Val Loss: 1.4592 | Speed: 5792 tok/s
+[12D CST-Matched] Iter 1900 | Train Loss: 1.6787 | Val Loss: 1.1351 | Speed: 5756 tok/s
+[12D CST-Matched] Iter 1950 | Train Loss: 1.5804 | Val Loss: 1.4241 | Speed: 5492 tok/s
+[12D CST-Matched] Training complete in 363.90s
+
+================================================================================
+EXPERIMENT 3: Scaling Analysis (Tiny, Small, Medium)
+================================================================================
+
+[SCALING] Testing tiny size...
+[VANILLA] Model initialized with 1.05M parameters
+[12D CST] Model initialized with 0.84M parameters
+[12D CST] φ-optimized dimensions: d_model=122, d_ff=197
+  Vanilla: 1,053,184 params
+  Cosmic: 843,666 params
+
+[TRAIN] Training Vanilla-tiny for 1000 iterations...
+[Vanilla-tiny] Iter    0 | Train Loss: 8.5401 | Val Loss: 8.4031 | Speed: 14597 tok/s
+[Vanilla-tiny] Iter   50 | Train Loss: 5.6907 | Val Loss: 5.5663 | Speed: 14188 tok/s
+[Vanilla-tiny] Iter  100 | Train Loss: 4.5174 | Val Loss: 4.3216 | Speed: 14800 tok/s
+[Vanilla-tiny] Iter  150 | Train Loss: 3.8533 | Val Loss: 3.4968 | Speed: 13323 tok/s
+[Vanilla-tiny] Iter  200 | Train Loss: 2.8359 | Val Loss: 2.5731 | Speed: 13617 tok/s
+[Vanilla-tiny] Iter  250 | Train Loss: 2.4946 | Val Loss: 2.2413 | Speed: 14514 tok/s
+[Vanilla-tiny] Iter  300 | Train Loss: 2.0202 | Val Loss: 1.8523 | Speed: 13070 tok/s
+[Vanilla-tiny] Iter  350 | Train Loss: 1.8176 | Val Loss: 1.8248 | Speed: 14820 tok/s
+[Vanilla-tiny] Iter  400 | Train Loss: 1.8376 | Val Loss: 1.8329 | Speed: 14602 tok/s
+[Vanilla-tiny] Iter  450 | Train Loss: 1.8158 | Val Loss: 1.7980 | Speed: 13987 tok/s
+[Vanilla-tiny] Iter  500 | Train Loss: 1.8104 | Val Loss: 1.5372 | Speed: 14431 tok/s
+[Vanilla-tiny] Iter  550 | Train Loss: 1.6994 | Val Loss: 1.7251 | Speed: 15119 tok/s
+[Vanilla-tiny] Iter  600 | Train Loss: 1.4903 | Val Loss: 1.5185 | Speed: 13467 tok/s
+[Vanilla-tiny] Iter  650 | Train Loss: 1.6078 | Val Loss: 1.4227 | Speed: 15497 tok/s
+[Vanilla-tiny] Iter  700 | Train Loss: 1.8791 | Val Loss: 1.6084 | Speed: 13600 tok/s
+[Vanilla-tiny] Iter  750 | Train Loss: 1.6033 | Val Loss: 1.6482 | Speed: 16236 tok/s
+[Vanilla-tiny] Iter  800 | Train Loss: 1.6931 | Val Loss: 1.1997 | Speed: 14058 tok/s
+[Vanilla-tiny] Iter  850 | Train Loss: 1.7375 | Val Loss: 1.4919 | Speed: 13975 tok/s
+[Vanilla-tiny] Iter  900 | Train Loss: 1.5273 | Val Loss: 1.4702 | Speed: 14695 tok/s
+[Vanilla-tiny] Iter  950 | Train Loss: 1.2817 | Val Loss: 1.5138 | Speed: 14430 tok/s
+[Vanilla-tiny] Training complete in 72.75s
+
+[TRAIN] Training 12D CST-tiny for 1000 iterations...
+[12D CST-tiny] Iter    0 | Train Loss: 8.5337 | Val Loss: 8.4673 | Speed: 13623 tok/s
+[12D CST-tiny] Iter   50 | Train Loss: 5.9196 | Val Loss: 5.7814 | Speed: 11297 tok/s
+[12D CST-tiny] Iter  100 | Train Loss: 5.1173 | Val Loss: 5.2037 | Speed: 11922 tok/s
+[12D CST-tiny] Iter  150 | Train Loss: 4.5318 | Val Loss: 4.6150 | Speed: 13049 tok/s
+[12D CST-tiny] Iter  200 | Train Loss: 4.1803 | Val Loss: 3.9287 | Speed: 13885 tok/s
+[12D CST-tiny] Iter  250 | Train Loss: 3.4812 | Val Loss: 3.5133 | Speed: 13935 tok/s
+[12D CST-tiny] Iter  300 | Train Loss: 2.9904 | Val Loss: 2.9576 | Speed: 13558 tok/s
+[12D CST-tiny] Iter  350 | Train Loss: 2.7189 | Val Loss: 2.5492 | Speed: 11478 tok/s
+[12D CST-tiny] Iter  400 | Train Loss: 2.3539 | Val Loss: 2.0853 | Speed: 12724 tok/s
+[12D CST-tiny] Iter  450 | Train Loss: 2.0952 | Val Loss: 1.9855 | Speed: 12513 tok/s
+[12D CST-tiny] Iter  500 | Train Loss: 2.0645 | Val Loss: 1.7915 | Speed: 12965 tok/s
+[12D CST-tiny] Iter  550 | Train Loss: 1.9722 | Val Loss: 1.5555 | Speed: 13329 tok/s
+[12D CST-tiny] Iter  600 | Train Loss: 2.0522 | Val Loss: 1.6161 | Speed: 12721 tok/s
+[12D CST-tiny] Iter  650 | Train Loss: 1.5865 | Val Loss: 1.7526 | Speed: 14111 tok/s
+[12D CST-tiny] Iter  700 | Train Loss: 1.7506 | Val Loss: 1.5826 | Speed: 14366 tok/s
+[12D CST-tiny] Iter  750 | Train Loss: 1.5704 | Val Loss: 1.8322 | Speed: 13835 tok/s
+[12D CST-tiny] Iter  800 | Train Loss: 1.7326 | Val Loss: 1.6231 | Speed: 13631 tok/s
+[12D CST-tiny] Iter  850 | Train Loss: 1.8362 | Val Loss: 1.5206 | Speed: 14876 tok/s
+[12D CST-tiny] Iter  900 | Train Loss: 1.6158 | Val Loss: 1.5069 | Speed: 12849 tok/s
+[12D CST-tiny] Iter  950 | Train Loss: 1.8966 | Val Loss: 1.5833 | Speed: 11847 tok/s
+[12D CST-tiny] Training complete in 78.30s
+
+[SCALING] Testing small size...
+[VANILLA] Model initialized with 2.76M parameters
+[12D CST] Model initialized with 2.13M parameters
+[12D CST] φ-optimized dimensions: d_model=196, d_ff=321
+  Vanilla: 2,764,416 params
+  Cosmic: 2,131,820 params
+
+[TRAIN] Training Vanilla-small for 1000 iterations...
+[Vanilla-small] Iter    0 | Train Loss: 8.5483 | Val Loss: 8.3022 | Speed: 7931 tok/s
+[Vanilla-small] Iter   50 | Train Loss: 4.7892 | Val Loss: 4.7968 | Speed: 7018 tok/s
+[Vanilla-small] Iter  100 | Train Loss: 3.4536 | Val Loss: 3.3283 | Speed: 6792 tok/s
+[Vanilla-small] Iter  150 | Train Loss: 2.5312 | Val Loss: 2.3369 | Speed: 7179 tok/s
+[Vanilla-small] Iter  200 | Train Loss: 1.9633 | Val Loss: 2.1638 | Speed: 6747 tok/s
+[Vanilla-small] Iter  250 | Train Loss: 1.8370 | Val Loss: 1.7100 | Speed: 8126 tok/s
+[Vanilla-small] Iter  300 | Train Loss: 1.7000 | Val Loss: 1.6948 | Speed: 7406 tok/s
+[Vanilla-small] Iter  350 | Train Loss: 1.6973 | Val Loss: 1.4342 | Speed: 7956 tok/s
+[Vanilla-small] Iter  400 | Train Loss: 1.5126 | Val Loss: 1.5649 | Speed: 6765 tok/s
+[Vanilla-small] Iter  450 | Train Loss: 1.6041 | Val Loss: 1.3719 | Speed: 7450 tok/s
+[Vanilla-small] Iter  500 | Train Loss: 1.4616 | Val Loss: 1.4391 | Speed: 7841 tok/s
+[Vanilla-small] Iter  550 | Train Loss: 1.4499 | Val Loss: 1.4865 | Speed: 7607 tok/s
+[Vanilla-small] Iter  600 | Train Loss: 1.7711 | Val Loss: 1.5074 | Speed: 7684 tok/s
+[Vanilla-small] Iter  650 | Train Loss: 1.6185 | Val Loss: 1.5151 | Speed: 7495 tok/s
+[Vanilla-small] Iter  700 | Train Loss: 1.5069 | Val Loss: 1.5011 | Speed: 7847 tok/s
+[Vanilla-small] Iter  750 | Train Loss: 1.5726 | Val Loss: 1.6660 | Speed: 7182 tok/s
+[Vanilla-small] Iter  800 | Train Loss: 1.6240 | Val Loss: 1.3854 | Speed: 6621 tok/s
+[Vanilla-small] Iter  850 | Train Loss: 1.6952 | Val Loss: 1.3128 | Speed: 6839 tok/s
+[Vanilla-small] Iter  900 | Train Loss: 1.4345 | Val Loss: 1.3873 | Speed: 7100 tok/s
+[Vanilla-small] Iter  950 | Train Loss: 1.4830 | Val Loss: 1.5522 | Speed: 7248 tok/s
+[Vanilla-small] Training complete in 141.83s
+
+[TRAIN] Training 12D CST-small for 1000 iterations...
+[12D CST-small] Iter    0 | Train Loss: 8.5216 | Val Loss: 8.3430 | Speed: 6625 tok/s
+[12D CST-small] Iter   50 | Train Loss: 5.0722 | Val Loss: 5.1592 | Speed: 7109 tok/s
+[12D CST-small] Iter  100 | Train Loss: 4.4065 | Val Loss: 4.0965 | Speed: 6827 tok/s
+[12D CST-small] Iter  150 | Train Loss: 3.3380 | Val Loss: 3.2298 | Speed: 6025 tok/s
+[12D CST-small] Iter  200 | Train Loss: 2.5368 | Val Loss: 2.3855 | Speed: 7523 tok/s
+[12D CST-small] Iter  250 | Train Loss: 2.1103 | Val Loss: 1.8625 | Speed: 7127 tok/s
+[12D CST-small] Iter  300 | Train Loss: 1.7032 | Val Loss: 1.8003 | Speed: 7497 tok/s
+[12D CST-small] Iter  350 | Train Loss: 1.8348 | Val Loss: 1.5876 | Speed: 6486 tok/s
+[12D CST-small] Iter  400 | Train Loss: 1.8002 | Val Loss: 1.4823 | Speed: 6910 tok/s
+[12D CST-small] Iter  450 | Train Loss: 1.5812 | Val Loss: 1.2828 | Speed: 6814 tok/s
+[12D CST-small] Iter  500 | Train Loss: 1.5834 | Val Loss: 1.5666 | Speed: 5947 tok/s
+[12D CST-small] Iter  550 | Train Loss: 1.4756 | Val Loss: 1.6951 | Speed: 7590 tok/s
+[12D CST-small] Iter  600 | Train Loss: 1.3354 | Val Loss: 1.4123 | Speed: 6983 tok/s
+[12D CST-small] Iter  650 | Train Loss: 1.6333 | Val Loss: 1.4431 | Speed: 7364 tok/s
+[12D CST-small] Iter  700 | Train Loss: 1.6414 | Val Loss: 1.4624 | Speed: 7112 tok/s
+[12D CST-small] Iter  750 | Train Loss: 1.2462 | Val Loss: 1.3357 | Speed: 6155 tok/s
+[12D CST-small] Iter  800 | Train Loss: 1.6490 | Val Loss: 1.6299 | Speed: 7059 tok/s
+[12D CST-small] Iter  850 | Train Loss: 1.4576 | Val Loss: 1.2994 | Speed: 7940 tok/s
+[12D CST-small] Iter  900 | Train Loss: 1.6089 | Val Loss: 1.5344 | Speed: 7660 tok/s
+[12D CST-small] Iter  950 | Train Loss: 1.5416 | Val Loss: 1.1834 | Speed: 6855 tok/s
+[12D CST-small] Training complete in 150.57s
+
+[SCALING] Testing medium size...
+[VANILLA] Model initialized with 6.05M parameters
+[12D CST] Model initialized with 6.11M parameters
+[12D CST] φ-optimized dimensions: d_model=320, d_ff=519
+  Vanilla: 6,051,840 params
+  Cosmic: 6,112,578 params
+
+[TRAIN] Training Vanilla-medium for 1000 iterations...
+[Vanilla-medium] Iter    0 | Train Loss: 8.5639 | Val Loss: 8.2260 | Speed: 4013 tok/s
+[Vanilla-medium] Iter   50 | Train Loss: 4.4730 | Val Loss: 4.1854 | Speed: 4595 tok/s
+[Vanilla-medium] Iter  100 | Train Loss: 2.7472 | Val Loss: 2.4802 | Speed: 4836 tok/s
+[Vanilla-medium] Iter  150 | Train Loss: 1.9009 | Val Loss: 2.0438 | Speed: 4792 tok/s
+[Vanilla-medium] Iter  200 | Train Loss: 1.9536 | Val Loss: 1.7681 | Speed: 4870 tok/s
+[Vanilla-medium] Iter  250 | Train Loss: 1.4836 | Val Loss: 1.2768 | Speed: 4185 tok/s
+[Vanilla-medium] Iter  300 | Train Loss: 1.4807 | Val Loss: 1.4781 | Speed: 4739 tok/s
+[Vanilla-medium] Iter  350 | Train Loss: 1.6414 | Val Loss: 1.7274 | Speed: 3902 tok/s
+[Vanilla-medium] Iter  400 | Train Loss: 1.5775 | Val Loss: 1.3435 | Speed: 4373 tok/s
+[Vanilla-medium] Iter  450 | Train Loss: 1.4634 | Val Loss: 1.2918 | Speed: 4866 tok/s
+[Vanilla-medium] Iter  500 | Train Loss: 1.4050 | Val Loss: 1.7140 | Speed: 4132 tok/s
+[Vanilla-medium] Iter  550 | Train Loss: 1.5811 | Val Loss: 1.4286 | Speed: 4916 tok/s
+[Vanilla-medium] Iter  600 | Train Loss: 1.3665 | Val Loss: 1.3738 | Speed: 4831 tok/s
+[Vanilla-medium] Iter  650 | Train Loss: 1.6669 | Val Loss: 1.4868 | Speed: 5154 tok/s
+[Vanilla-medium] Iter  700 | Train Loss: 1.6174 | Val Loss: 1.5108 | Speed: 4126 tok/s
+[Vanilla-medium] Iter  750 | Train Loss: 1.4559 | Val Loss: 1.7082 | Speed: 5344 tok/s
+[Vanilla-medium] Iter  800 | Train Loss: 1.2635 | Val Loss: 1.3778 | Speed: 5141 tok/s
+[Vanilla-medium] Iter  850 | Train Loss: 1.7845 | Val Loss: 1.4844 | Speed: 4292 tok/s
+[Vanilla-medium] Iter  900 | Train Loss: 1.4769 | Val Loss: 1.7307 | Speed: 4793 tok/s
+[Vanilla-medium] Iter  950 | Train Loss: 1.4746 | Val Loss: 1.2977 | Speed: 4317 tok/s
+[Vanilla-medium] Training complete in 226.57s
+
+[TRAIN] Training 12D CST-medium for 1000 iterations...
+[12D CST-medium] Iter    0 | Train Loss: 8.5362 | Val Loss: 8.3165 | Speed: 4645 tok/s
+[12D CST-medium] Iter   50 | Train Loss: 4.9441 | Val Loss: 4.7615 | Speed: 4343 tok/s
+[12D CST-medium] Iter  100 | Train Loss: 4.4561 | Val Loss: 4.3950 | Speed: 4087 tok/s
+[12D CST-medium] Iter  150 | Train Loss: 4.1708 | Val Loss: 4.1930 | Speed: 3952 tok/s
+[12D CST-medium] Iter  200 | Train Loss: 3.7466 | Val Loss: 3.9522 | Speed: 3943 tok/s
+[12D CST-medium] Iter  250 | Train Loss: 3.7014 | Val Loss: 3.8584 | Speed: 4086 tok/s
+[12D CST-medium] Iter  300 | Train Loss: 3.6595 | Val Loss: 3.7172 | Speed: 4066 tok/s
+[12D CST-medium] Iter  350 | Train Loss: 3.8299 | Val Loss: 3.6042 | Speed: 3850 tok/s
+[12D CST-medium] Iter  400 | Train Loss: 3.5983 | Val Loss: 3.5081 | Speed: 4024 tok/s
+[12D CST-medium] Iter  450 | Train Loss: 3.4265 | Val Loss: 3.4549 | Speed: 3792 tok/s
+[12D CST-medium] Iter  500 | Train Loss: 3.3654 | Val Loss: 3.3088 | Speed: 3948 tok/s
+[12D CST-medium] Iter  550 | Train Loss: 3.2786 | Val Loss: 3.1501 | Speed: 4120 tok/s
+[12D CST-medium] Iter  600 | Train Loss: 3.2900 | Val Loss: 3.2790 | Speed: 4088 tok/s
+[12D CST-medium] Iter  650 | Train Loss: 2.9925 | Val Loss: 2.9982 | Speed: 3958 tok/s
+[12D CST-medium] Iter  700 | Train Loss: 3.0156 | Val Loss: 2.9708 | Speed: 4181 tok/s
+[12D CST-medium] Iter  750 | Train Loss: 3.1285 | Val Loss: 2.9640 | Speed: 4117 tok/s
+[12D CST-medium] Iter  800 | Train Loss: 2.6750 | Val Loss: 2.7706 | Speed: 4351 tok/s
+[12D CST-medium] Iter  850 | Train Loss: 2.7483 | Val Loss: 2.6342 | Speed: 3622 tok/s
+[12D CST-medium] Iter  900 | Train Loss: 2.6694 | Val Loss: 2.6024 | Speed: 2754 tok/s
+[12D CST-medium] Iter  950 | Train Loss: 2.7429 | Val Loss: 2.6144 | Speed: 3940 tok/s
+[12D CST-medium] Training complete in 265.20s
+
+================================================================================
+✅ COMPREHENSIVE BENCHMARK COMPLETE!
+================================================================================
+# 🔬 COMPREHENSIVE REAL-WORLD-SCALE BENCHMARK RESULTS
+
+**Date**: 2025-11-20 04:42:25
+**Dataset**: Large-scale synthetic (1M tokens)
+**Device**: CPU
+**PyTorch**: 2.9.1+cu128
+
+---
+
+## 📊 EXPERIMENT 1: Extended Training (2000 iterations)
+
+**Purpose**: Test convergence over longer training runs
+
+
+| Metric | Vanilla | 12D CST | Winner |
+|--------|---------|---------|--------|
+| **Parameters** | 2,764,416 | 2,131,820 | - |
+| **Final Train Loss** | 1.3991 | 1.5857 | Vanilla |
+| **Final Val Loss** | 1.2957 | 1.1295 | 12D CST |
+| **Perplexity** | 3.65 | 3.09 | 12D CST |
+| **Avg Speed** | 7524 tok/s | 6662 tok/s | - |
+
+**Convergence**:
+- Vanilla: 8.5651 → 1.3991 (Δ 7.1661)
+- 12D CST: 8.5283 → 1.5857 (Δ 6.9425)
+
+---
+
+## 📊 EXPERIMENT 2: Parameter-Matched Comparison
+
+**Purpose**: Fair architectural comparison with equal parameters
+
+
+| Metric | Vanilla | 12D CST | Winner |
+|--------|---------|---------|--------|
+| **Parameters** | 2,764,416 | 4,622,252 | Unmatched |
+| **Final Train Loss** | 1.4008 | 1.3000 | 🏆 12D CST |
+| **Final Val Loss** | 1.4603 | 1.4241 | 🏆 12D CST |
+| **Perplexity** | 4.31 | 4.15 | 🏆 12D CST |
+
+---
+
+## 📊 EXPERIMENT 3: Scaling Analysis
+
+**Purpose**: Test how architectures scale across model sizes
+
+
+### TINY Models
+
+| Metric | Vanilla | 12D CST | Winner |
+|--------|---------|---------|--------|
+| Parameters | 1,053,184 | 843,666 | - |
+| Train Loss | 1.4976 | 1.7503 | Vanilla |
+| Val Loss | 1.5138 | 1.5833 | Vanilla |
+| Perplexity | 4.54 | 4.87 | Vanilla |
+
+
+### SMALL Models
+
+| Metric | Vanilla | 12D CST | Winner |
+|--------|---------|---------|--------|
+| Parameters | 2,764,416 | 2,131,820 | - |
+| Train Loss | 1.3086 | 1.6064 | Vanilla |
+| Val Loss | 1.5522 | 1.1834 | 12D CST |
+| Perplexity | 4.72 | 3.27 | 12D CST |
+
+
+### MEDIUM Models
+
+| Metric | Vanilla | 12D CST | Winner |
+|--------|---------|---------|--------|
+| Parameters | 6,051,840 | 6,112,578 | - |
+| Train Loss | 1.4065 | 2.6623 | Vanilla |
+| Val Loss | 1.2977 | 2.6144 | Vanilla |
+| Perplexity | 3.66 | 13.66 | Vanilla |
+
+
+---
+
+## 🏆 OVERALL CONCLUSIONS
+
+[Analysis will be provided in detailed discussion]
+
+---
+
+Raw data saved to: `comprehensive_benchmark_results.json`
+
+
+Results saved to: benchmark_results/

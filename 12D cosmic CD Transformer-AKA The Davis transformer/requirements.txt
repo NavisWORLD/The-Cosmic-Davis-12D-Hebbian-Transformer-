@@ -1,0 +1,35 @@
+# Core Dependencies for 12D Cosmic Synapse Transformer
+# Install with: pip install -r requirements.txt
+
+# Deep Learning Framework
+torch==2.0.1
+torchvision==0.15.2
+
+# Numerical Computing
+numpy==1.24.3
+scipy==1.10.1
+
+# NLP & Transformers
+transformers==4.30.2
+tokenizers==0.13.3
+
+# Utilities
+tqdm==4.65.0
+pyyaml==6.0.1
+
+# Visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+
+# Data Processing
+pandas==2.0.2
+
+# Optional: API & Monitoring (comment out if not needed)
+flask==2.3.2
+flask-cors==4.0.0
+wandb==0.15.4
+
+# Optional: Jupyter support
+ipython==8.14.0
+jupyter==1.0.0
+notebook==6.5.4

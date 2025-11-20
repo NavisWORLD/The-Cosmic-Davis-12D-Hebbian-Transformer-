@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "12D Cosmic Synapse Transformer"
+version: "1.0.0"
+date-released: "2025-01-20"
+authors:
+  - family-names: "Davis"
+    given-names: "Cory Shane"
+    email: "cory@cosmicsynapse.ai"
+    affiliation: "Independent Researcher"
+repository-code: "https://github.com/NavisWORLD/infinite-adaptive-audio-12d-universe-engine"
+url: "https://github.com/NavisWORLD/infinite-adaptive-audio-12d-universe-engine"
+abstract: "A revolutionary AI architecture implementing 12D Cosmic Synapse Theory with φ-harmonic dynamics, Hebbian learning, and chaotic attractor integration. This transformer architecture extends traditional attention mechanisms with internal dimensional states (x12), golden ratio scaling, and episodic memory for enhanced consciousness-like behavior."
+keywords:
+  - "deep learning"
+  - "transformer"
+  - "neural networks"
+  - "golden ratio"
+  - "hebbian learning"
+  - "chaos theory"
+  - "consciousness"
+  - "12d theory"
+  - "cosmic synapse"
+license: "MIT"
+preferred-citation:
+  type: article
+  title: "12D Cosmic Synapse Transformer: A Novel Architecture for Consciousness-Inspired AI"
+  authors:
+    - family-names: "Davis"
+      given-names: "Cory Shane"
+  year: 2025
+  journal: "arXiv preprint"
+  notes: "Implements theoretical framework from 2018-2025 research"

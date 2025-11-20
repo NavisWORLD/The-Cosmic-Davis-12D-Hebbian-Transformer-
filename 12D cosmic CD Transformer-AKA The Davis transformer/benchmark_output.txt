@@ -1,0 +1,109 @@
+================================================================================
+COMPREHENSIVE BENCHMARK: 12D CST vs Vanilla Transformer
+================================================================================
+
+[DATA] Generating 50,000 tokens...
+Generating tokens:   0%|          | 0/50000 [00:00<?, ?it/s]Generating tokens: 100%|██████████| 50000/50000 [00:00<00:00, 1639539.99it/s]
+Building vocabulary from 50002 tokens...
+Vocabulary size: 783
+[DATA] Train: 45,001 tokens, Val: 5,001 tokens
+[DATA] Vocabulary size: 783
+
+================================================================================
+INITIALIZING MODELS
+================================================================================
+[VANILLA] Model initialized with 2.00M parameters
+[12D CST] Model initialized with 1.35M parameters
+[12D CST] φ-optimized dimensions: d_model=196, d_ff=321
+
+Vanilla params: 1,996,416
+Cosmic params: 1,347,820
+Difference: 648,596
+
+[TRAIN] Training Vanilla for 500 iterations...
+[Vanilla] Iter    0 | Train Loss: 6.9574 | Val Loss: 6.7198 | Speed: 4973 tok/s
+[Vanilla] Iter   50 | Train Loss: 4.1178 | Val Loss: 3.7939 | Speed: 9344 tok/s
+[Vanilla] Iter  100 | Train Loss: 2.6793 | Val Loss: 2.6101 | Speed: 9146 tok/s
+[Vanilla] Iter  150 | Train Loss: 2.1259 | Val Loss: 2.0666 | Speed: 10066 tok/s
+[Vanilla] Iter  200 | Train Loss: 1.7636 | Val Loss: 1.7804 | Speed: 9621 tok/s
+[Vanilla] Iter  250 | Train Loss: 2.0648 | Val Loss: 1.6776 | Speed: 9201 tok/s
+[Vanilla] Iter  300 | Train Loss: 1.4437 | Val Loss: 1.4017 | Speed: 8732 tok/s
+[Vanilla] Iter  350 | Train Loss: 1.3743 | Val Loss: 1.5779 | Speed: 9656 tok/s
+[Vanilla] Iter  400 | Train Loss: 1.4627 | Val Loss: 1.4037 | Speed: 8626 tok/s
+[Vanilla] Iter  450 | Train Loss: 1.2561 | Val Loss: 1.4362 | Speed: 10289 tok/s
+[Vanilla] Training complete in 57.49s
+
+[TRAIN] Training 12D CST for 500 iterations...
+[12D CST] Iter    0 | Train Loss: 6.9262 | Val Loss: 6.7895 | Speed: 7715 tok/s
+[12D CST] Iter   50 | Train Loss: 4.8315 | Val Loss: 4.7332 | Speed: 8645 tok/s
+[12D CST] Iter  100 | Train Loss: 3.7527 | Val Loss: 3.5497 | Speed: 8122 tok/s
+[12D CST] Iter  150 | Train Loss: 2.8084 | Val Loss: 2.6594 | Speed: 8976 tok/s
+[12D CST] Iter  200 | Train Loss: 2.3148 | Val Loss: 2.0639 | Speed: 8189 tok/s
+[12D CST] Iter  250 | Train Loss: 1.8531 | Val Loss: 1.5781 | Speed: 8700 tok/s
+[12D CST] Iter  300 | Train Loss: 1.8921 | Val Loss: 1.6319 | Speed: 8552 tok/s
+[12D CST] Iter  350 | Train Loss: 1.4842 | Val Loss: 1.4009 | Speed: 8834 tok/s
+[12D CST] Iter  400 | Train Loss: 1.5049 | Val Loss: 1.6113 | Speed: 8625 tok/s
+[12D CST] Iter  450 | Train Loss: 1.6435 | Val Loss: 1.4445 | Speed: 8729 tok/s
+[12D CST] Training complete in 61.64s
+
+================================================================================
+BENCHMARK COMPLETE!
+================================================================================
+# 🔬 BENCHMARK RESULTS: 12D Cosmic Synapse Transformer vs Vanilla Transformer
+
+**Date**: 2025-11-20 03:52:46
+**Device**: CPU
+**PyTorch Version**: 2.9.1+cu128
+
+---
+
+## 📊 Model Configurations
+
+| Metric | Vanilla Transformer | 12D CST | Difference |
+|--------|-------------------|---------|------------|
+| **Parameters** | 1,996,416 | 1,347,820 | 648,596 |
+| **d_model** | 192 | 196 | - |
+| **d_ff** | 768 | 321 | φ-harmonic |
+| **Layers** | 4 | 4 | - |
+| **Heads** | 4 | 4 | - |
+
+---
+
+## 🎯 Training Results
+
+### Final Metrics:
+
+| Metric | Vanilla | 12D CST | Winner |
+|--------|---------|---------|--------|
+| **Train Loss** | 1.5041 | 1.6187 | 🏆 Vanilla |
+| **Val Loss** | 1.4362 | 1.4445 | 🏆 Vanilla |
+| **Avg Speed** | 9088 tok/s | 8461 tok/s | 🏆 Vanilla |
+
+### Convergence:
+
+- **Vanilla**: 6.9574 → 1.5041 (Δ 5.4533)
+- **12D CST**: 6.9262 → 1.6187 (Δ 5.3075)
+
+### Perplexity:
+
+- **Vanilla Val**: 4.20
+- **12D CST Val**: 4.24
+
+---
+
+## 🏆 Winner Analysis
+
+✅ **Vanilla** achieves lower training loss
+✅ **Vanilla** achieves lower validation loss
+✅ **Vanilla** is 1.1x faster
+
+**Overall Winner**: 🏆 VANILLA TRANSFORMER
+
+---
+
+## 📈 Raw Data
+
+Benchmark data saved to: `benchmark_results.json`
+
+
+Results saved to: benchmark_results/

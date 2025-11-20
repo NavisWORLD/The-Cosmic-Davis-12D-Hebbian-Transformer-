@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  # Main transformer service
+  cosmic-transformer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: cosmic-transformer
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./checkpoints:/app/checkpoints:ro
+      - ./data:/app/data:ro
+      - ./logs:/app/logs
+    environment:
+      - MODEL_PATH=/app/checkpoints/model.pt
+      - DEVICE=cpu
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    networks:
+      - cosmic-network
+
+  # Development environment
+  cosmic-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: cosmic-dev
+    ports:
+      - "5001:5000"
+      - "8888:8888"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    networks:
+      - cosmic-network
+
+  # Training worker (for distributed training)
+  cosmic-trainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    container_name: cosmic-trainer
+    volumes:
+      - ./data:/app/data
+      - ./checkpoints:/app/checkpoints
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python train_cosmic_transformer.py --config configs/small_model.yaml
+    networks:
+      - cosmic-network
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+networks:
+  cosmic-network:
+    driver: bridge
+
+volumes:
+  checkpoints:
+  data:
+  logs:
