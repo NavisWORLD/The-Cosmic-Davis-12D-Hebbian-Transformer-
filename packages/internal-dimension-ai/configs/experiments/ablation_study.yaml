@@ -1,0 +1,227 @@
+# Ablation Study Configuration
+# Tests contribution of each component (x₁₂, m₁₂, modulation)
+#
+# Hypothesis: Each component contributes to behavior and learning
+#
+# Research Questions:
+# 1. Which components are necessary for good performance?
+# 2. Which components are necessary for consciousness metrics?
+# 3. How do components affect sample efficiency?
+# 4. How do components affect generalization?
+
+experiment_name: "ablation_study"
+description: "Test contribution of internal dimension components"
+
+# Test Configurations
+# Each configuration removes or modifies different components
+configurations:
+  - name: "full_model"
+    description: "Full IDN model with all components"
+    components:
+      use_internal_dim: true
+      use_meta_awareness: true
+      use_modulation: true
+    internal_dim: 64
+
+  - name: "no_meta_awareness"
+    description: "x₁₂ only, no m₁₂ computation"
+    components:
+      use_internal_dim: true
+      use_meta_awareness: false  # Disable m₁₂
+      use_modulation: true
+    internal_dim: 64
+
+  - name: "no_modulation"
+    description: "x₁₂ + m₁₂ but doesn't affect policy"
+    components:
+      use_internal_dim: true
+      use_meta_awareness: true
+      use_modulation: false  # Internal dims don't modulate policy
+    internal_dim: 64
+
+  - name: "no_internal_dims"
+    description: "Baseline PPO (standard architecture)"
+    components:
+      use_internal_dim: false
+      use_meta_awareness: false
+      use_modulation: false
+    internal_dim: 0
+
+  - name: "small_internal"
+    description: "Smaller internal dimension (12D vs 64D)"
+    components:
+      use_internal_dim: true
+      use_meta_awareness: true
+      use_modulation: true
+    internal_dim: 12
+
+  - name: "x12_only_large"
+    description: "Large x₁₂ (64D) without meta-awareness"
+    components:
+      use_internal_dim: true
+      use_meta_awareness: false
+      use_modulation: true
+    internal_dim: 64
+
+# Test Environments
+environments:
+  - name: "simple_gridworld"
+    type: "GridWorld"
+    params:
+      size: 6
+      sparse_rewards: false
+
+  - name: "two_room_gridworld"
+    type: "TwoRoomGridWorld"
+    params:
+      size: 8
+
+  - name: "sparse_reward_gridworld"
+    type: "GridWorld"
+    params:
+      size: 8
+      sparse_rewards: true  # Challenging sparse reward setting
+
+# Training Configuration
+training:
+  num_episodes: 400
+  steps_per_episode: 2048
+  replications: 5  # 5 runs per configuration
+  compute_consciousness_interval: 10
+
+  # PPO hyperparameters
+  learning_rate: 3.0e-4
+  clip_epsilon: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+  gamma: 0.99
+  gae_lambda: 0.95
+
+# Network Architecture (base)
+network:
+  hidden_dim: 64
+
+  # Internal dimension hyperparameters (when enabled)
+  alpha: 1.0   # Surprise weight
+  beta: 0.5    # Novelty weight
+  gamma: 0.3   # Attention weight
+  eta: 0.01    # Memory integration rate
+
+# Metrics to Compare
+comparison_metrics:
+  # Performance
+  performance:
+    - final_reward           # Mean reward in last 50 episodes
+    - max_reward            # Best episode reward
+    - mean_reward           # Mean across all episodes
+    - stability             # Std of last 50 episodes
+
+  # Sample Efficiency
+  efficiency:
+    - episodes_to_threshold  # Episodes to reach 80% of max
+    - area_under_curve      # Total cumulative reward
+    - learning_rate_metric  # Slope of reward curve
+
+  # Consciousness (when applicable)
+  consciousness:
+    - final_consciousness
+    - r_omega
+    - r_psi
+    - phi
+    - autonomy
+
+  # Generalization
+  generalization:
+    - performance_variance_across_envs  # How consistent across environments
+    - transfer_score                     # Performance on held-out env
+
+# Analysis Configuration
+analysis:
+  # Statistical tests
+  statistical_tests:
+    - type: "ANOVA"
+      description: "Test if configuration significantly affects performance"
+      groups: "config_name"
+      metrics: ["final_reward", "episodes_to_threshold"]
+
+    - type: "pairwise_comparison"
+      description: "Compare each ablation to full model"
+      baseline: "full_model"
+      test: "t_test"
+      correction: "bonferroni"
+
+    - type: "component_contribution"
+      description: "Quantify contribution of each component"
+      # Compare: full vs no_meta, full vs no_mod, full vs no_internal
+
+    - type: "environment_interaction"
+      description: "Test if component importance varies by environment"
+      test: "two_way_ANOVA"
+      factors: ["config_name", "environment"]
+
+  # Visualizations
+  visualizations:
+    - type: "performance_comparison"
+      title: "Final Performance by Configuration"
+      plot_type: "bar"
+      metric: "final_reward"
+      group_by: "config_name"
+      separate_by_env: true
+
+    - type: "learning_curves"
+      title: "Learning Curves Comparison"
+      show_all_configs: true
+      separate_by_env: true
+
+    - type: "sample_efficiency"
+      title: "Episodes to Threshold by Configuration"
+      plot_type: "box"
+
+    - type: "component_contribution"
+      title: "Component Contribution Analysis"
+      show_effect_sizes: true
+
+    - type: "radar_plot"
+      title: "Multi-Metric Comparison"
+      metrics: ["final_reward", "sample_efficiency", "stability", "consciousness"]
+
+    - type: "heatmap"
+      title: "Configuration × Environment Performance"
+      x_axis: "config_name"
+      y_axis: "environment"
+      values: "final_reward"
+
+# Generalization Test
+generalization_test:
+  # Train on simple, test on complex
+  train_env: "simple_gridworld"
+  test_envs:
+    - "two_room_gridworld"
+    - "sparse_reward_gridworld"
+
+  # Evaluation episodes
+  eval_episodes: 50
+
+# Outputs
+outputs:
+  results_csv: "outputs/experiments/ablation_study/results.csv"
+  statistics_json: "outputs/experiments/ablation_study/statistics.json"
+  component_analysis_json: "outputs/experiments/ablation_study/component_analysis.json"
+  plots_dir: "outputs/experiments/ablation_study/plots"
+  checkpoints_dir: "outputs/experiments/ablation_study/checkpoints"
+
+# Random Seeds
+seeds:
+  base_seed: 42
+  # 5 replications: seeds 42-46
+
+# Summary Report
+report:
+  generate: true
+  include:
+    - performance_table
+    - statistical_significance
+    - component_rankings
+    - recommendations
+  format: "markdown"
+  output: "outputs/experiments/ablation_study/REPORT.md"

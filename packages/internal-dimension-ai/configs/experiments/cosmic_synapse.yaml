@@ -1,0 +1,53 @@
+experiment:
+  name: "cosmic_synapse_full"
+  description: "12D physics + 95M transformer integration"
+  version: "1.0"
+
+physics:
+  n_particles: 256
+  dt: 0.001
+  G: 1.0
+  lorenz_sigma: 10.0
+  lorenz_rho: 28.0
+  lorenz_beta: 2.666666667
+  hebbian_strength: 0.1
+  seed: 42
+
+transformer:
+  vocab_size: 50257
+  ctx_len: 512
+  d_model: 768
+  n_layer: 8
+  n_head: 12
+  dropout: 0.1
+  physics_conditioning: true
+
+training:
+  total_steps: 2000000
+  physics_steps_per_train: 1
+  learning_rate: 3e-4
+  weight_decay: 0.01
+  batch_size: 4
+  sequence_length: 128
+  gradient_clip: 1.0
+  checkpoint_interval: 200000
+  generation_interval: 200000
+  log_interval: 1000
+
+optimizer:
+  type: "adamw"
+  lr: 3e-4
+  betas: [0.9, 0.999]
+  eps: 1e-8
+  weight_decay: 0.01
+
+generation:
+  max_new_tokens: 100
+  temperature: 0.8
+  top_k: 50
+  top_p: 0.95
+
+paths:
+  checkpoints: "outputs/cosmic_synapse/checkpoints"
+  logs: "outputs/cosmic_synapse/logs"
+  generations: "outputs/cosmic_synapse/generations"

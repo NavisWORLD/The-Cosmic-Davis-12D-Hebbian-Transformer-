@@ -1,0 +1,58 @@
+# Small Model Configuration for 12D Cosmic Synapse Transformer
+# Optimized for single GPU training (can run on Google Colab free tier)
+# Expected training time: ~1-2 hours on T4 GPU
+# Parameters: ~25M
+
+model:
+  vocab_size: 5000
+  max_seq_len: 256
+  d_model: 384
+  n_layers: 6
+  n_heads: 6
+  d_ff: null  # Will be computed as d_model * φ ≈ 621
+  dropout: 0.1
+
+  # 12D Cosmic Synapse Parameters
+  k: 0.1          # Internal state decay rate
+  gamma: 0.05     # Hebbian learning rate
+  sigma: 0.5      # Chaos injection strength
+  beta: 0.2       # Lorenz attractor parameter
+
+  # Memory parameters
+  memory_size: 64
+  memory_dim: 128
+
+training:
+  batch_size: 8
+  gradient_accumulation_steps: 4
+  max_iters: 10000
+  eval_interval: 500
+  eval_iters: 50
+  log_interval: 50
+
+  # Optimization
+  learning_rate: 0.0006
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+
+  # Learning rate schedule
+  warmup_iters: 1000
+  lr_decay_iters: 10000
+  min_lr: 0.00006
+
+  # Device
+  device: 'cuda'
+  dtype: 'bfloat16'
+  compile: false
+
+  # Checkpointing
+  out_dir: 'checkpoints/small_model'
+  always_save_checkpoint: true
+  init_from: 'scratch'
+
+data:
+  data_dir: 'data'
+  train_bin: 'train.bin'
+  val_bin: 'val.bin'

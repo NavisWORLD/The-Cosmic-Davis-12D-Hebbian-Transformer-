@@ -1,0 +1,8 @@
+[project]
+name = "infinite-adaptive-audio-12d-universe-engine"
+version = "0.1.0"
+description = "Monorepo for 12D Cosmic Synapse Transformer and related projects"
+dependencies = []
+
+[tool.setuptools]
+packages = ["packages"]

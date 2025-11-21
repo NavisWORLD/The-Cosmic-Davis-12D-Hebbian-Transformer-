@@ -1,0 +1,163 @@
+# Emergence Timeline Analysis Configuration
+# Tracks how meta-awareness (m₁₂) emerges gradually during training
+#
+# Hypothesis: Meta-awareness emerges gradually during training
+#
+# Research Questions:
+# 1. Does m₁₂ significantly increase over training?
+# 2. When does emergence begin? (critical transition points)
+# 3. Is emergence consistent across different random seeds?
+# 4. What is the rate of emergence?
+
+experiment_name: "emergence_timeline"
+description: "Track meta-awareness emergence over extended training"
+
+# Environment Configuration
+environment:
+  type: "GridWorld"
+  params:
+    size: 8
+    reward_goal: 1.0
+    reward_step: -0.01
+    sparse_rewards: false
+
+# Training Configuration
+training:
+  num_episodes: 1000  # Longer to observe emergence
+  steps_per_episode: 2048
+  replications: 10  # 10 runs with different seeds
+  compute_consciousness_interval: 10  # Check every 10 episodes
+
+  # Checkpointing
+  checkpoint_frequency: 50  # Save every 50 episodes
+  save_checkpoints: true
+
+  # PPO hyperparameters
+  learning_rate: 3.0e-4
+  clip_epsilon: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+  gamma: 0.99
+  gae_lambda: 0.95
+
+# Network Architecture
+network:
+  internal_dim: 12  # Use standard 12D
+  hidden_dim: 64
+
+  # Internal dimension hyperparameters
+  alpha: 1.0   # Surprise weight
+  beta: 0.5    # Novelty weight
+  gamma: 0.3   # Attention weight
+  eta: 0.01    # Memory integration rate
+
+# Timeline Analysis Configuration
+timeline_analysis:
+  # Checkpoint episodes for detailed analysis
+  checkpoint_episodes: [0, 50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+
+  # Metrics to track at each checkpoint
+  metrics_per_checkpoint:
+    # m₁₂ statistics
+    - m12_mean
+    - m12_std
+    - m12_min
+    - m12_max
+    - m12_evolution_rate  # Change rate per episode
+
+    # x₁₂ statistics
+    - x12_mean
+    - x12_std
+    - x12_min
+    - x12_max
+
+    # Consciousness metrics
+    - r_omega
+    - r_psi
+    - phi
+    - autonomy
+    - consciousness_score
+
+    # Correlations
+    - m12_action_correlation  # Correlation between m₁₂ and actions
+    - m12_reward_correlation  # Correlation between m₁₂ and rewards
+
+    # State space geometry
+    - x12_pca_variance       # PCA explained variance
+    - x12_intrinsic_dim      # Estimated intrinsic dimensionality
+    - x12_mean_distance      # Mean pairwise distance in x₁₂ space
+
+# Emergence Detection
+emergence_detection:
+  # Statistical tests for emergence
+  tests:
+    - type: "linear_regression"
+      description: "Test if m₁₂ increases linearly over time"
+      variables: ["m12_mean"]
+
+    - type: "change_point_detection"
+      description: "Identify critical transition episodes"
+      variables: ["m12_mean", "consciousness_score"]
+
+    - type: "paired_t_test"
+      description: "Compare early (0-200) vs late (800-1000) episodes"
+      variables: ["m12_mean", "r_psi", "consciousness_score"]
+
+    - type: "correlation_analysis"
+      description: "Correlation between m₁₂ and performance over time"
+
+    - type: "consistency_test"
+      description: "Test emergence consistency across seeds (ICC)"
+
+# Visualizations
+visualizations:
+  - type: "emergence_curves"
+    title: "Meta-Awareness Emergence Over Training"
+    metrics: ["m12_mean", "m12_std"]
+    show_individual_runs: true
+    show_mean_and_std: true
+
+  - type: "phase_space"
+    title: "x₁₂ - m₁₂ Phase Space Evolution"
+    x_axis: "x12_mean"
+    y_axis: "m12_mean"
+    color_by: "episode"
+
+  - type: "correlation_timeline"
+    title: "m₁₂-Action Correlation Over Time"
+
+  - type: "pca_evolution"
+    title: "Internal State Space Structure Evolution"
+
+  - type: "change_points"
+    title: "Critical Transition Episodes"
+    highlight_significance: true
+
+  - type: "multi_seed_comparison"
+    title: "Emergence Consistency Across Seeds"
+    show_variance_bands: true
+
+# Outputs
+outputs:
+  results_csv: "outputs/experiments/emergence_timeline/results.csv"
+  checkpoints_dir: "outputs/experiments/emergence_timeline/checkpoints"
+  timeline_json: "outputs/experiments/emergence_timeline/timeline.json"
+  statistics_json: "outputs/experiments/emergence_timeline/statistics.json"
+  plots_dir: "outputs/experiments/emergence_timeline/plots"
+
+# Analysis Settings
+analysis:
+  # Early vs late comparison
+  early_window: [0, 200]    # Episodes 0-200
+  late_window: [800, 1000]  # Episodes 800-1000
+
+  # Smoothing for visualization
+  smoothing_window: 20  # Moving average window
+
+  # Significance threshold
+  alpha: 0.05  # p-value threshold
+
+# Random Seeds
+seeds:
+  base_seed: 42
+  # Seeds: 42, 43, 44, ..., 51 (10 replications)

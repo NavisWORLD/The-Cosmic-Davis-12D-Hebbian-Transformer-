@@ -1,0 +1,859 @@
+.....F.................F.........FFFFFFFFFFFFFF..FFFFF.F..F              [100%]
+================================== FAILURES ===================================
+____________________ TestDataConfig.test_path_construction ____________________
+
+self = <tests.test_config.TestDataConfig object at 0x0000026B8C5E9880>
+
+    def test_path_construction(self):
+        """Test path construction methods."""
+        config = DataConfig(
+            data_dir='mydata',
+            train_bin='train.bin',
+            val_bin='val.bin',
+        )
+    
+        train_path = config.get_train_path()
+        val_path = config.get_val_path()
+    
+>       assert str(train_path) == 'mydata/train.bin'
+E       AssertionError: assert 'mydata\\train.bin' == 'mydata/train.bin'
+E         
+E         - mydata/train.bin
+E         ?       ^
+E         + mydata\train.bin
+E         ?       ^
+
+packages\cosmic-synapse-transformer\tests\test_config.py:119: AssertionError
+______________ TestTextGenerators.test_generator_reproducibility ______________
+
+self = <tests.test_data.TestTextGenerators object at 0x0000026BAA43E150>
+
+    def test_generator_reproducibility(self):
+        """Test that generators are reproducible with same seed."""
+        gen1 = MarkovGenerator(seed=42)
+        gen2 = MarkovGenerator(seed=42)
+    
+        tokens1 = gen1.generate(50)
+        tokens2 = gen2.generate(50)
+    
+>       assert tokens1 == tokens2
+E       AssertionError: assert ['appears', '...'Neural', ...] == ['synapse', '...'golden', ...]
+E         
+E         At index 0 diff: 'appears' != 'synapse'
+E         Use -v to get more diff
+
+packages\cosmic-synapse-transformer\tests\test_data.py:93: AssertionError
+______________ TestModelInitialization.test_phi_harmonic_scaling ______________
+
+self = <tests.test_model.TestModelInitialization object at 0x0000026BAA478D10>
+
+    def test_phi_harmonic_scaling(self):
+        """Test that d_ff uses \u03c6-harmonic scaling."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=384,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        phi = 1.618033988749895
+        expected_d_ff = int(384 * phi)  # \u2248 621
+    
+        model = CosmicSynapseTransformer(config)
+    
+        # Check that d_ff is computed correctly
+>       assert abs(config.d_ff - expected_d_ff) <= 1  # Allow for rounding
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 102 <= 1
+E        +  where 102 = abs((519 - 621))
+E        +    where 519 = CosmicConfig(vocab_size=100, max_seq_len=2048, d_model=320, n_layers=2, n_heads=2, k=0.1, gamma=0.05, sigma=0.5, beta=0.2, dt=0.1, lambda_chaos=0.01, p_chaos=0.1, dropout=0.1, use_bias=True, memory_size=100, alpha_memory=0.1).d_ff
+
+packages\cosmic-synapse-transformer\tests\test_model.py:80: AssertionError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 2.18M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=320, d_ff=519
+_______________ TestModelInitialization.test_x12_initialization _______________
+
+self = <tests.test_model.TestModelInitialization object at 0x0000026BAA4793A0>
+
+    def test_x12_initialization(self):
+        """Test that x12 internal states are initialized correctly."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=4,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        # x12 should be initialized to zeros
+>       assert hasattr(model, 'x12')
+E       AssertionError: assert False
+E        +  where False = hasattr(CosmicSynapseTransformer(\n  (token_embedding): Embedding(100, 76)\n  (position_embedding): Embedding(2048, 76)\n  (dropo...ayerNorm((76,), eps=1e-05, elementwise_affine=True)\n  (lm_head): Linear(in_features=76, out_features=100, bias=False)\n), 'x12')
+
+packages\cosmic-synapse-transformer\tests\test_model.py:94: AssertionError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.33M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+_____________________ TestForwardPass.test_forward_shape ______________________
+
+self = <tests.test_model.TestForwardPass object at 0x0000026BAA479670>
+
+    def test_forward_shape(self):
+        """Test that forward pass produces correct output shape."""
+        config = CosmicConfig(
+            vocab_size=100,
+            max_seq_len=64,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+        model.eval()
+    
+        batch_size = 2
+        seq_len = 32
+        inputs = torch.randint(0, 100, (batch_size, seq_len))
+    
+        with torch.no_grad():
+            logits = model(inputs)
+    
+        # Output shape should be [batch, seq_len, vocab_size]
+>       assert logits.shape == (batch_size, seq_len, config.vocab_size)
+               ^^^^^^^^^^^^
+E       AttributeError: 'tuple' object has no attribute 'shape'
+
+packages\cosmic-synapse-transformer\tests\test_model.py:123: AttributeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.10M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+__________________ TestForwardPass.test_forward_with_targets __________________
+
+self = <tests.test_model.TestForwardPass object at 0x0000026BAA43F170>
+
+    def test_forward_with_targets(self):
+        """Test forward pass with targets (computes loss)."""
+        config = CosmicConfig(
+            vocab_size=100,
+            max_seq_len=64,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        batch_size = 2
+        seq_len = 32
+        inputs = torch.randint(0, 100, (batch_size, seq_len))
+        targets = torch.randint(0, 100, (batch_size, seq_len))
+    
+>       logits, loss = model(inputs, targets)
+        ^^^^^^^^^^^^
+E       ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_model.py:142: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.10M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+_____________________ TestForwardPass.test_gradient_flow ______________________
+
+self = <tests.test_model.TestForwardPass object at 0x0000026BAA43DCA0>
+
+    def test_gradient_flow(self):
+        """Test that gradients flow through the model."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        inputs = torch.randint(0, 100, (2, 16))
+        targets = torch.randint(0, 100, (2, 16))
+    
+>       logits, loss = model(inputs, targets)
+        ^^^^^^^^^^^^
+E       ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_model.py:163: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+______________________ TestX12Dynamics.test_x12_updates _______________________
+
+self = <tests.test_model.TestX12Dynamics object at 0x0000026BAA4780B0>
+
+    def test_x12_updates(self):
+        """Test that x12 values update during forward passes."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=4,
+            n_heads=2,
+            k=0.1,  # Decay rate
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        inputs = torch.randint(0, 100, (2, 16))
+    
+        # Initial x12 values
+>       initial_x12 = model.x12.clone()
+                      ^^^^^^^^^
+
+packages\cosmic-synapse-transformer\tests\test_model.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = CosmicSynapseTransformer(
+  (token_embedding): Embedding(100, 76)
+  (position_embedding): Embedding(2048, 76)
+  (dropo...ayerNorm((76,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=76, out_features=100, bias=False)
+)
+name = 'x12'
+
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'CosmicSynapseTransformer' object has no attribute 'x12'
+
+..\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py:1962: AttributeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.33M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+______________________ TestX12Dynamics.test_x12_bounded _______________________
+
+self = <tests.test_model.TestX12Dynamics object at 0x0000026BAA478BC0>
+
+    def test_x12_bounded(self):
+        """Test that x12 values stay bounded in [-1, 1]."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=4,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        # Run multiple forward passes
+        for _ in range(10):
+            inputs = torch.randint(0, 100, (2, 16))
+            _ = model(inputs)
+    
+        # Check that x12 is bounded
+>       assert torch.all(model.x12 >= -1.0)
+                         ^^^^^^^^^
+
+packages\cosmic-synapse-transformer\tests\test_model.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = CosmicSynapseTransformer(
+  (token_embedding): Embedding(100, 76)
+  (position_embedding): Embedding(2048, 76)
+  (dropo...ayerNorm((76,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=76, out_features=100, bias=False)
+)
+name = 'x12'
+
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'CosmicSynapseTransformer' object has no attribute 'x12'
+
+..\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py:1962: AttributeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.33M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+____________________ TestX12Dynamics.test_x12_convergence _____________________
+
+self = <tests.test_model.TestX12Dynamics object at 0x0000026BAA479490>
+
+    def test_x12_convergence(self):
+        """Test that x12 values converge over time."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=4,
+            n_heads=2,
+            k=0.1,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        x12_history = []
+    
+        # Run many forward passes with same input
+        inputs = torch.randint(0, 100, (2, 16))
+        for _ in range(50):
+            _ = model(inputs)
+>           x12_history.append(model.x12.clone())
+                               ^^^^^^^^^
+
+packages\cosmic-synapse-transformer\tests\test_model.py:240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = CosmicSynapseTransformer(
+  (token_embedding): Embedding(100, 76)
+  (position_embedding): Embedding(2048, 76)
+  (dropo...ayerNorm((76,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=76, out_features=100, bias=False)
+)
+name = 'x12'
+
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'CosmicSynapseTransformer' object has no attribute 'x12'
+
+..\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py:1962: AttributeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.33M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+_______________ TestHebbianAttention.test_hebbian_bonus_exists ________________
+
+self = <tests.test_model.TestHebbianAttention object at 0x0000026BAA479A30>
+
+    def test_hebbian_bonus_exists(self):
+        """Test that Hebbian bonus is applied to attention."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+            gamma=0.05,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        # Check that Hebbian connectivity matrix exists
+>       for block in model.blocks:
+                     ^^^^^^^^^^^^
+
+packages\cosmic-synapse-transformer\tests\test_model.py:265: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = CosmicSynapseTransformer(
+  (token_embedding): Embedding(100, 76)
+  (position_embedding): Embedding(2048, 76)
+  (dropo...ayerNorm((76,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=76, out_features=100, bias=False)
+)
+name = 'blocks'
+
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'CosmicSynapseTransformer' object has no attribute 'blocks'
+
+..\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py:1962: AttributeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+__________________ TestHebbianAttention.test_omega_evolution __________________
+
+self = <tests.test_model.TestHebbianAttention object at 0x0000026BAA479E80>
+
+    def test_omega_evolution(self):
+        """Test that \u03a9 connectivity matrix evolves."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+            gamma=0.05,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        inputs = torch.randint(0, 100, (2, 16))
+    
+        # Get initial \u03a9
+>       initial_omega = model.blocks[0].attn.hebbian_bonus.clone()
+                        ^^^^^^^^^^^^
+
+packages\cosmic-synapse-transformer\tests\test_model.py:283: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = CosmicSynapseTransformer(
+  (token_embedding): Embedding(100, 76)
+  (position_embedding): Embedding(2048, 76)
+  (dropo...ayerNorm((76,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=76, out_features=100, bias=False)
+)
+name = 'blocks'
+
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'CosmicSynapseTransformer' object has no attribute 'blocks'
+
+..\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py:1962: AttributeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+__________________ TestChaosInjection.test_lorenz_evolution ___________________
+
+self = <tests.test_model.TestChaosInjection object at 0x0000026BAA479880>
+
+    def test_lorenz_evolution(self):
+        """Test that Lorenz attractor state evolves."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+            sigma=0.5,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        # Initial Lorenz state
+>       initial_lorenz = model.lorenz_state.clone()
+                         ^^^^^^^^^^^^^^^^^^
+
+packages\cosmic-synapse-transformer\tests\test_model.py:310: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = CosmicSynapseTransformer(
+  (token_embedding): Embedding(100, 76)
+  (position_embedding): Embedding(2048, 76)
+  (dropo...ayerNorm((76,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=76, out_features=100, bias=False)
+)
+name = 'lorenz_state'
+
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'CosmicSynapseTransformer' object has no attribute 'lorenz_state'
+
+..\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py:1962: AttributeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+________________ TestChaosInjection.test_chaos_reproducibility ________________
+
+self = <tests.test_model.TestChaosInjection object at 0x0000026BAA479FA0>
+
+    def test_chaos_reproducibility(self):
+        """Test that chaos is reproducible with same seed."""
+        config1 = CosmicConfig(vocab_size=100, d_model=96, n_layers=2, n_heads=2)
+        config2 = CosmicConfig(vocab_size=100, d_model=96, n_layers=2, n_heads=2)
+    
+        torch.manual_seed(42)
+        model1 = CosmicSynapseTransformer(config1)
+    
+        torch.manual_seed(42)
+        model2 = CosmicSynapseTransformer(config2)
+    
+        inputs = torch.randint(0, 100, (2, 16))
+    
+        torch.manual_seed(42)
+        out1 = model1(inputs)
+    
+        torch.manual_seed(42)
+        out2 = model2(inputs)
+    
+>       assert torch.allclose(out1, out2)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: allclose(): argument 'input' (position 1) must be Tensor, not tuple
+
+packages\cosmic-synapse-transformer\tests\test_model.py:337: TypeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122\n[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+_________________ TestMemoryModule.test_memory_initialization _________________
+
+self = <tests.test_model.TestMemoryModule object at 0x0000026BAA478410>
+
+    def test_memory_initialization(self):
+        """Test that memory buffer is initialized."""
+>       config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+            memory_size=32,
+            memory_dim=64,
+        )
+E       TypeError: CosmicConfig.__init__() got an unexpected keyword argument 'memory_dim'
+
+packages\cosmic-synapse-transformer\tests\test_model.py:345: TypeError
+___________________ TestMemoryModule.test_memory_retrieval ____________________
+
+self = <tests.test_model.TestMemoryModule object at 0x0000026BAA4785C0>
+
+    def test_memory_retrieval(self):
+        """Test memory retrieval mechanism."""
+>       config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+            memory_size=32,
+            memory_dim=96,
+        )
+E       TypeError: CosmicConfig.__init__() got an unexpected keyword argument 'memory_dim'
+
+packages\cosmic-synapse-transformer\tests\test_model.py:362: TypeError
+_________________ TestTrainingStep.test_single_training_step __________________
+
+self = <tests.test_training.TestTrainingStep object at 0x0000026BAA47B050>
+
+    def test_single_training_step(self):
+        """Test that a single training step works."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
+    
+        # Create dummy data
+        inputs = torch.randint(0, 100, (2, 16))
+        targets = torch.randint(0, 100, (2, 16))
+    
+        # Training step
+        optimizer.zero_grad()
+>       logits, loss = model(inputs, targets)
+        ^^^^^^^^^^^^
+E       ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_training.py:47: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+________________ TestTrainingStep.test_multiple_training_steps ________________
+
+self = <tests.test_training.TestTrainingStep object at 0x0000026BAA47B200>
+
+    def test_multiple_training_steps(self):
+        """Test multiple training steps reduce loss."""
+        config = CosmicConfig(
+            vocab_size=50,
+            d_model=64,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.01)
+    
+        # Use same simple data to overfit
+        inputs = torch.randint(0, 50, (4, 16))
+        targets = inputs.clone()  # Simple task: predict same sequence
+    
+        losses = []
+        for _ in range(10):
+            optimizer.zero_grad()
+>           logits, loss = model(inputs, targets)
+            ^^^^^^^^^^^^
+E           ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_training.py:73: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.24M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+___________________ TestTrainingStep.test_gradient_clipping ___________________
+
+self = <tests.test_training.TestTrainingStep object at 0x0000026BAA47B3B0>
+
+    def test_gradient_clipping(self):
+        """Test gradient clipping."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
+    
+        inputs = torch.randint(0, 100, (2, 16))
+        targets = torch.randint(0, 100, (2, 16))
+    
+        optimizer.zero_grad()
+>       logits, loss = model(inputs, targets)
+        ^^^^^^^^^^^^
+E       ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_training.py:97: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+_________________ TestGradientFlow.test_gradients_through_x12 _________________
+
+self = <tests.test_training.TestGradientFlow object at 0x0000026BAA47B4A0>
+
+    def test_gradients_through_x12(self):
+        """Test that gradients flow through x12 states."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        inputs = torch.randint(0, 100, (2, 16))
+        targets = torch.randint(0, 100, (2, 16))
+    
+        # Enable gradient tracking for x12
+>       model.x12.requires_grad = True
+        ^^^^^^^^^
+
+packages\cosmic-synapse-transformer\tests\test_training.py:134: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = CosmicSynapseTransformer(
+  (token_embedding): Embedding(100, 76)
+  (position_embedding): Embedding(2048, 76)
+  (dropo...ayerNorm((76,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=76, out_features=100, bias=False)
+)
+name = 'x12'
+
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'CosmicSynapseTransformer' object has no attribute 'x12'
+
+..\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py:1962: AttributeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+________________ TestGradientFlow.test_all_parameters_updated _________________
+
+self = <tests.test_training.TestGradientFlow object at 0x0000026BAA47AF30>
+
+    def test_all_parameters_updated(self):
+        """Test that all parameters get gradients."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        inputs = torch.randint(0, 100, (2, 16))
+        targets = torch.randint(0, 100, (2, 16))
+    
+>       logits, loss = model(inputs, targets)
+        ^^^^^^^^^^^^
+E       ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_training.py:159: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+_______________ TestCheckpointing.test_save_load_with_optimizer _______________
+
+self = <tests.test_training.TestCheckpointing object at 0x0000026BAA4790A0>
+
+    def test_save_load_with_optimizer(self):
+        """Test saving and loading with optimizer state."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
+    
+        # Take a training step to initialize optimizer state
+        inputs = torch.randint(0, 100, (2, 16))
+        targets = torch.randint(0, 100, (2, 16))
+        optimizer.zero_grad()
+>       _, loss = model(inputs, targets)
+        ^^^^^^^
+E       ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_training.py:235: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+________________ TestFullTrainingLoop.test_mini_training_loop _________________
+
+self = <tests.test_training.TestFullTrainingLoop object at 0x0000026BAA47B740>
+
+    def test_mini_training_loop(self):
+        """Test a complete mini training loop."""
+        config = CosmicConfig(
+            vocab_size=50,
+            max_seq_len=32,
+            d_model=64,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
+    
+        # Create simple dataset
+        num_samples = 10
+        dataset = []
+        for _ in range(num_samples):
+            x = torch.randint(0, 50, (32,))
+            dataset.append(x)
+    
+        # Training loop
+        num_epochs = 2
+        batch_size = 2
+    
+        for epoch in range(num_epochs):
+            epoch_loss = 0.0
+            num_batches = 0
+    
+            for i in range(0, len(dataset), batch_size):
+                batch = dataset[i:i + batch_size]
+                if len(batch) < batch_size:
+                    continue
+    
+                # Stack into batch
+                inputs = torch.stack(batch)
+                targets = inputs.clone()
+    
+                # Training step
+                optimizer.zero_grad()
+>               logits, loss = model(inputs, targets)
+                ^^^^^^^^^^^^
+E               ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_training.py:355: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.09M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.12.6-final-0 _______________
+
+Name                                                                                        Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------------------------------
+packages\cosmic-synapse-transformer\cosmic_synapse\__init__.py                                  1      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\config\__init__.py                           0      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\config\config_loader.py                    134     12    91%   204-205, 313-326
+packages\cosmic-synapse-transformer\cosmic_synapse\data\__init__.py                             0      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\data\datasets\__init__.py                    3      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\data\datasets\simple_text_generator.py     139      6    96%   50, 54-56, 60, 110
+packages\cosmic-synapse-transformer\cosmic_synapse\data\generate_synthetic_data.py            129     53    59%   216-324, 328
+packages\cosmic-synapse-transformer\cosmic_synapse\models\__init__.py                           1      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\models\cosmic_synapse_transformer.py       303     48    84%   277, 341, 634-635, 654-668, 672-692, 697-710, 718-752
+packages\cosmic-synapse-transformer\tests\__init__.py                                           1      0   100%
+packages\cosmic-synapse-transformer\tests\test_config.py                                      117      2    98%   120, 287
+packages\cosmic-synapse-transformer\tests\test_data.py                                        125      1    99%   244
+packages\cosmic-synapse-transformer\tests\test_model.py                                       168     36    79%   95-96, 145-147, 164-173, 197-200, 220, 243-246, 266, 286-291, 312-316, 354-358, 371-378, 435
+packages\cosmic-synapse-transformer\tests\test_training.py                                    169     47    72%   48-52, 74-79, 98-113, 136-143, 160-175, 236-256, 347, 356-363, 367
+-------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                        1290    205    84%
+Coverage HTML written to dir htmlcov
+=========================== short test summary info ===========================
+FAILED packages\cosmic-synapse-transformer\tests\test_config.py::TestDataConfig::test_path_construction
+FAILED packages\cosmic-synapse-transformer\tests\test_data.py::TestTextGenerators::test_generator_reproducibility
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestModelInitialization::test_phi_harmonic_scaling
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestModelInitialization::test_x12_initialization
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestForwardPass::test_forward_shape
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestForwardPass::test_forward_with_targets
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestForwardPass::test_gradient_flow
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestX12Dynamics::test_x12_updates
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestX12Dynamics::test_x12_bounded
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestX12Dynamics::test_x12_convergence
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestHebbianAttention::test_hebbian_bonus_exists
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestHebbianAttention::test_omega_evolution
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestChaosInjection::test_lorenz_evolution
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestChaosInjection::test_chaos_reproducibility
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestMemoryModule::test_memory_initialization
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestMemoryModule::test_memory_retrieval
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestTrainingStep::test_single_training_step
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestTrainingStep::test_multiple_training_steps
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestTrainingStep::test_gradient_clipping
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestGradientFlow::test_gradients_through_x12
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestGradientFlow::test_all_parameters_updated
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestCheckpointing::test_save_load_with_optimizer
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestFullTrainingLoop::test_mini_training_loop
+23 failed, 36 passed in 9.18s

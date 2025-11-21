@@ -1,0 +1,58 @@
+# Tiny Model Configuration for 12D Cosmic Synapse Transformer
+# Optimized for CPU testing and quick experimentation
+# Expected training time: ~5 minutes on CPU
+# Parameters: ~500K
+
+model:
+  vocab_size: 1000
+  max_seq_len: 128
+  d_model: 192
+  n_layers: 4
+  n_heads: 4
+  d_ff: null  # Will be computed as d_model * φ ≈ 310
+  dropout: 0.1
+
+  # 12D Cosmic Synapse Parameters
+  k: 0.1          # Internal state decay rate
+  gamma: 0.05     # Hebbian learning rate
+  sigma: 0.5      # Chaos injection strength
+  beta: 0.2       # Lorenz attractor parameter
+
+  # Memory parameters
+  memory_size: 32
+  memory_dim: 64
+
+training:
+  batch_size: 4
+  gradient_accumulation_steps: 1
+  max_iters: 1000
+  eval_interval: 100
+  eval_iters: 10
+  log_interval: 10
+
+  # Optimization
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+
+  # Learning rate schedule
+  warmup_iters: 100
+  lr_decay_iters: 1000
+  min_lr: 0.00003
+
+  # Device
+  device: 'cpu'
+  dtype: 'float32'
+  compile: false
+
+  # Checkpointing
+  out_dir: 'checkpoints/tiny_model'
+  always_save_checkpoint: true
+  init_from: 'scratch'
+
+data:
+  data_dir: 'data'
+  train_bin: 'train.bin'
+  val_bin: 'val.bin'

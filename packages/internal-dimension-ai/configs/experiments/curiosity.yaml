@@ -1,0 +1,153 @@
+# Curiosity-Driven Exploration Experiment
+#
+# This configuration is optimized for testing curiosity-driven exploration
+# using internal dimensions. High intrinsic reward weight encourages the
+# agent to explore novel internal states (x₁₂) even in sparse reward
+# environments.
+#
+# Expected behavior:
+#   - Agent actively explores environment
+#   - High diversity in x₁₂ trajectories
+#   - Better performance in sparse reward settings
+#   - Increased unique state visitation
+#
+# Usage:
+#   python scripts/run_experiment.py --config configs/experiments/curiosity.yaml
+
+experiment:
+  name: "curiosity_driven_exploration"
+  description: "Test curiosity-driven exploration via internal dimensions"
+  seed: 42
+  output_dir: "data/curiosity_exp"
+
+environment:
+  name: "TwoRoomGridWorld"
+  size: 8
+  num_rooms: 2
+  sparse_reward: true
+  sparsity: 0.95  # Very sparse rewards (95% of rewards removed)
+
+agent:
+  # Architecture
+  hidden_size: 128
+  internal_dim: 12
+
+  # Learning rates
+  learning_rate: 3e-4
+
+  # PPO hyperparameters
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_epsilon: 0.2
+  value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+
+  # Intrinsic motivation - HIGH WEIGHT for curiosity
+  intrinsic_reward_weight: 0.4  # Strong intrinsic motivation
+  intrinsic_reward_method: "curiosity"  # Use curiosity-based intrinsic rewards
+
+  # Curiosity-specific parameters
+  curiosity:
+    beta: 0.5  # Weight for novelty vs prediction error
+    eta: 0.2   # Scaling factor for intrinsic reward
+    feature_dim: 64  # Feature dimension for forward model
+    normalize_rewards: true  # Normalize intrinsic rewards
+
+  # Internal dimension regularization (lower to allow more exploration)
+  x12_regularization: 0.0001
+  m12_regularization: 0.0001
+
+training:
+  num_epochs: 300
+  steps_per_epoch: 2048
+  batch_size: 64
+  num_minibatches: 32
+  ppo_epochs: 10
+
+  # Evaluation
+  eval_frequency: 10
+  eval_episodes: 10
+
+  # Logging
+  log_frequency: 1
+  save_frequency: 50
+
+  # Checkpointing
+  checkpoint_dir: "checkpoints/curiosity"
+  save_best: true
+  save_last: true
+
+# Metrics to track
+metrics:
+  - reward
+  - intrinsic_reward
+  - policy_loss
+  - value_loss
+  - entropy
+  - x12_mean
+  - x12_std
+  - m12_mean
+  - m12_std
+  - R_omega  # Internal dimension richness
+  - R_psi    # Phenomenal binding
+  - phi      # Integrated information
+  - unique_states_visited  # Exploration metric
+  - episode_length
+  - curiosity_forward_loss
+  - curiosity_inverse_loss
+
+# Experiment variations (for batch runs)
+variations:
+  - name: "low_curiosity"
+    agent:
+      intrinsic_reward_weight: 0.1
+      curiosity:
+        beta: 0.2
+
+  - name: "medium_curiosity"
+    agent:
+      intrinsic_reward_weight: 0.3
+      curiosity:
+        beta: 0.5
+
+  - name: "high_curiosity"
+    agent:
+      intrinsic_reward_weight: 0.5
+      curiosity:
+        beta: 0.8
+
+  - name: "extreme_sparsity"
+    environment:
+      sparsity: 0.99
+    agent:
+      intrinsic_reward_weight: 0.6
+      curiosity:
+        beta: 0.7
+
+# Hypotheses to test
+hypotheses:
+  H1: "Agents with higher intrinsic_reward_weight will visit more unique states"
+  H2: "Higher beta (novelty weight) leads to more diverse x₁₂ trajectories"
+  H3: "Curiosity-driven agents achieve higher R_ω (richness) values"
+  H4: "In sparse environments, curiosity provides significant performance gain"
+
+# Analysis
+analysis:
+  compare_baselines:
+    - "no_intrinsic"  # intrinsic_reward_weight = 0
+    - "low_intrinsic"  # intrinsic_reward_weight = 0.1
+    - "high_intrinsic"  # intrinsic_reward_weight = 0.5
+
+  plots:
+    - learning_curves
+    - internal_dimensions
+    - consciousness_metrics
+    - exploration
+    - intrinsic_rewards
+
+  statistics:
+    - mean_reward
+    - final_R_omega
+    - unique_states_ratio
+    - exploration_efficiency

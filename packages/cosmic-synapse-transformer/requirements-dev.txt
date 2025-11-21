@@ -1,0 +1,42 @@
+# Development Dependencies for 12D Cosmic Synapse Transformer
+# Install with: pip install -r requirements-dev.txt
+
+# First install core requirements
+-r requirements.txt
+
+# Testing
+pytest==7.3.1
+pytest-cov==4.1.0
+pytest-xdist==3.3.1
+pytest-timeout==2.1.0
+
+# Code Quality
+black==23.3.0
+flake8==6.0.0
+mypy==1.3.0
+pylint==2.17.4
+isort==5.12.0
+
+# Type Stubs
+types-pyyaml==6.0.12.10
+types-tqdm==4.65.0.1
+
+# Documentation
+sphinx==7.0.1
+sphinx-rtd-theme==1.2.2
+myst-parser==2.0.0
+
+# Jupyter & Notebooks
+jupyter==1.0.0
+ipython==8.14.0
+ipykernel==6.23.1
+ipywidgets==8.0.6
+jupyterlab==4.0.2
+
+# Profiling & Debugging
+line-profiler==4.0.3
+memory-profiler==0.61.0
+py-spy==0.3.14
+
+# Pre-commit hooks
+pre-commit==3.3.2

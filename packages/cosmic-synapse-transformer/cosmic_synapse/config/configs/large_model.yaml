@@ -1,0 +1,62 @@
+# Large Model Configuration for 12D Cosmic Synapse Transformer
+# Requires multi-GPU setup (4x A100 80GB recommended)
+# Expected training time: Several days on 4x A100
+# Parameters: ~350M
+
+model:
+  vocab_size: 50257  # GPT-2 tokenizer compatible
+  max_seq_len: 2048
+  d_model: 1024
+  n_layers: 24
+  n_heads: 16
+  d_ff: null  # Will be computed as d_model * φ ≈ 1657
+  dropout: 0.1
+
+  # 12D Cosmic Synapse Parameters
+  k: 0.1          # Internal state decay rate
+  gamma: 0.05     # Hebbian learning rate
+  sigma: 0.5      # Chaos injection strength
+  beta: 0.2       # Lorenz attractor parameter
+
+  # Memory parameters
+  memory_size: 256
+  memory_dim: 512
+
+training:
+  batch_size: 16
+  gradient_accumulation_steps: 16
+  max_iters: 500000
+  eval_interval: 2000
+  eval_iters: 500
+  log_interval: 200
+
+  # Optimization
+  learning_rate: 0.0006
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+
+  # Learning rate schedule
+  warmup_iters: 5000
+  lr_decay_iters: 500000
+  min_lr: 0.00006
+
+  # Device
+  device: 'cuda'
+  dtype: 'bfloat16'
+  compile: true
+
+  # Distributed training
+  ddp: true
+  ddp_backend: 'nccl'
+
+  # Checkpointing
+  out_dir: 'checkpoints/large_model'
+  always_save_checkpoint: true
+  init_from: 'scratch'
+
+data:
+  data_dir: 'data'
+  train_bin: 'train.bin'
+  val_bin: 'val.bin'

@@ -1,0 +1,141 @@
+...........................................F........F.....F              [100%]
+================================== FAILURES ===================================
+__________________ TestChaosInjection.test_lorenz_evolution ___________________
+
+self = <tests.test_model.TestChaosInjection object at 0x000001C3ACC91E20>
+
+    def test_lorenz_evolution(self):
+        """Test that Lorenz attractor state evolves."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+            sigma=0.5,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        # Initial Lorenz state
+        initial_lorenz = model.layers[0].lorenz.state.copy()
+    
+        inputs = torch.randint(0, 100, (2, 16))
+        # Need to be in training mode for chaos
+        model.train()
+        _, _, _ = model(inputs)
+    
+        # Lorenz state should have evolved
+>       assert not np.allclose(model.layers[0].lorenz.state, initial_lorenz)
+E       assert not True
+E        +  where True = <function allclose at 0x000001C3A971F3F0>(array([0.93285621, 0.03456   , 0.36243146]), array([0.93285621, 0.03456   , 0.36243146]))
+E        +    where <function allclose at 0x000001C3A971F3F0> = np.allclose
+E        +    and   array([0.93285621, 0.03456   , 0.36243146]) = <cosmic_synapse.models.cosmic_synapse_transformer.LorenzAttractor object at 0x000001C3ADD1A750>.state
+E        +      where <cosmic_synapse.models.cosmic_synapse_transformer.LorenzAttractor object at 0x000001C3ADD1A750> = CosmicSynapseLayer(\n  (attention): HebbianMultiHeadAttention(\n    (W_Q): Linear(in_features=76, out_features=76, bias=...): LayerNorm((76,), eps=1e-05, elementwise_affine=True)\n  (ln2): LayerNorm((76,), eps=1e-05, elementwise_affine=True)\n).lorenz
+
+packages\cosmic-synapse-transformer\tests\test_model.py:331: AssertionError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+_________________ TestGradientFlow.test_gradients_through_x12 _________________
+
+self = <tests.test_training.TestGradientFlow object at 0x000001C3ACC931A0>
+
+    def test_gradients_through_x12(self):
+        """Test that gradients flow through x12 states."""
+        config = CosmicConfig(
+            vocab_size=100,
+            d_model=96,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+    
+        inputs = torch.randint(0, 100, (2, 16))
+        targets = torch.randint(0, 100, (2, 16))
+    
+        # Enable gradient tracking for x12
+        # x12 is internal, so we check if gradients flow to input
+>       inputs.requires_grad = True
+        ^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: only Tensors of floating point and complex dtype can require gradients
+
+packages\cosmic-synapse-transformer\tests\test_training.py:135: RuntimeError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.25M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+________________ TestFullTrainingLoop.test_mini_training_loop _________________
+
+self = <tests.test_training.TestFullTrainingLoop object at 0x000001C3ACC93410>
+
+    def test_mini_training_loop(self):
+        """Test a complete mini training loop."""
+        config = CosmicConfig(
+            vocab_size=50,
+            max_seq_len=32,
+            d_model=64,
+            n_layers=2,
+            n_heads=2,
+        )
+    
+        model = CosmicSynapseTransformer(config)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
+    
+        # Create simple dataset
+        num_samples = 10
+        dataset = []
+        for _ in range(num_samples):
+            x = torch.randint(0, 50, (32,))
+            dataset.append(x)
+    
+        # Training loop
+        num_epochs = 2
+        batch_size = 2
+    
+        for epoch in range(num_epochs):
+            epoch_loss = 0.0
+            num_batches = 0
+    
+            for i in range(0, len(dataset), batch_size):
+                batch = dataset[i:i + batch_size]
+                if len(batch) < batch_size:
+                    continue
+    
+                # Stack into batch
+                inputs = torch.stack(batch)
+                targets = inputs.clone()
+    
+                # Training step
+                optimizer.zero_grad()
+>               logits, loss = model(inputs, targets)
+                ^^^^^^^^^^^^
+E               ValueError: too many values to unpack (expected 2)
+
+packages\cosmic-synapse-transformer\tests\test_training.py:356: ValueError
+---------------------------- Captured stdout call -----------------------------
+[12D CST] Model initialized with 0.09M parameters\n[12D CST] \u03c6-optimized dimensions: d_model=76, d_ff=122
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.12.6-final-0 _______________
+
+Name                                                                                        Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------------------------------
+packages\cosmic-synapse-transformer\cosmic_synapse\__init__.py                                  1      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\config\__init__.py                           0      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\config\config_loader.py                    134     12    91%   204-205, 313-326
+packages\cosmic-synapse-transformer\cosmic_synapse\data\__init__.py                             0      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\data\datasets\__init__.py                    3      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\data\datasets\simple_text_generator.py     139      6    96%   50, 54-56, 60, 110
+packages\cosmic-synapse-transformer\cosmic_synapse\data\generate_synthetic_data.py            129     53    59%   216-324, 328
+packages\cosmic-synapse-transformer\cosmic_synapse\models\__init__.py                           1      0   100%
+packages\cosmic-synapse-transformer\cosmic_synapse\models\cosmic_synapse_transformer.py       303     48    84%   277, 341, 634-635, 654-668, 672-692, 697-710, 718-752
+packages\cosmic-synapse-transformer\tests\__init__.py                                           1      0   100%
+packages\cosmic-synapse-transformer\tests\test_config.py                                      117      1    99%   287
+packages\cosmic-synapse-transformer\tests\test_data.py                                        125      1    99%   248
+packages\cosmic-synapse-transformer\tests\test_model.py                                       170      1    99%   450
+packages\cosmic-synapse-transformer\tests\test_training.py                                    169     12    93%   137-144, 172, 348, 357-364, 368
+-------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                        1292    134    90%
+Coverage HTML written to dir htmlcov
+=========================== short test summary info ===========================
+FAILED packages\cosmic-synapse-transformer\tests\test_model.py::TestChaosInjection::test_lorenz_evolution
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestGradientFlow::test_gradients_through_x12
+FAILED packages\cosmic-synapse-transformer\tests\test_training.py::TestFullTrainingLoop::test_mini_training_loop
+3 failed, 56 passed in 9.91s

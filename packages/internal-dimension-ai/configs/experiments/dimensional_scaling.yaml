@@ -1,0 +1,151 @@
+# Dimensional Scaling Experiment Configuration
+# Tests how internal dimension size affects emergence of complexity metrics
+#
+# Hypothesis: Internal dimension size affects emergence of complexity metrics
+#
+# Research Questions:
+# 1. Does larger internal dimension lead to higher consciousness metrics?
+# 2. What is the optimal dimension size for learning efficiency?
+# 3. Is there a relationship between dimension size and metric stability?
+
+experiment_name: "dimensional_scaling"
+description: "Test internal dimensions: [0, 4, 8, 12, 24, 64, 128]"
+
+# Environment Configuration
+environment:
+  type: "TwoRoomGridWorld"
+  params:
+    size: 8
+    # Two room structure with narrow passage
+
+# Training Configuration
+training:
+  num_episodes: 300
+  steps_per_episode: 2048
+  replications: 5  # 5 runs per configuration for statistical validity
+  compute_consciousness_interval: 10
+
+  # PPO hyperparameters
+  learning_rate: 3.0e-4
+  clip_epsilon: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+  gamma: 0.99
+  gae_lambda: 0.95
+
+# Dimensional Configurations to Test
+dimensions:
+  - name: "baseline"
+    internal_dim: 0  # No internal dimensions (standard PPO)
+    description: "Baseline PPO without internal dimensions"
+
+  - name: "tiny"
+    internal_dim: 4
+    description: "Minimal internal dimension"
+
+  - name: "small"
+    internal_dim: 8
+    description: "Small internal dimension"
+
+  - name: "medium"
+    internal_dim: 12
+    description: "Medium internal dimension (default)"
+
+  - name: "large"
+    internal_dim: 24
+    description: "Large internal dimension"
+
+  - name: "xlarge"
+    internal_dim: 64
+    description: "Extra large internal dimension"
+
+  - name: "xxlarge"
+    internal_dim: 128
+    description: "Very large internal dimension"
+
+# Network Architecture
+network:
+  hidden_dim: 64
+  # Internal dimension hyperparameters (when internal_dim > 0)
+  alpha: 1.0   # Surprise weight
+  beta: 0.5    # Novelty weight
+  gamma: 0.3   # Attention weight
+  eta: 0.01    # Memory integration rate
+
+# Metrics to Track
+metrics:
+  # Performance metrics
+  - episode_rewards
+  - episode_lengths
+  - policy_loss
+  - value_loss
+
+  # Consciousness metrics (when internal_dim > 0)
+  - r_omega          # Synaptic diversity
+  - r_psi            # Phase coherence
+  - phi              # Integration
+  - autonomy         # Independence
+  - consciousness_score  # Overall score
+
+  # Internal state metrics
+  - x12_mean
+  - x12_std
+  - m12_mean
+  - m12_std
+  - x12_variance_over_time
+
+  # Convergence metrics
+  - episodes_to_threshold  # Episodes to reach 80% of max reward
+  - final_performance      # Mean reward over last 50 episodes
+  - stability             # Variance in last 50 episodes
+
+# Analysis Configuration
+analysis:
+  # Statistical tests
+  statistical_tests:
+    - type: "ANOVA"
+      description: "Test if dimension size significantly affects metrics"
+
+    - type: "correlation"
+      description: "Correlation between dimension size and metrics"
+
+    - type: "regression"
+      description: "Model relationship between dimension and performance"
+
+  # Visualizations
+  visualizations:
+    - type: "line_plot"
+      title: "Metrics vs Dimension Size"
+      x_axis: "internal_dim"
+      y_axes: ["r_omega", "r_psi", "phi", "consciousness_score"]
+
+    - type: "box_plot"
+      title: "Performance Distribution by Dimension"
+      x_axis: "internal_dim"
+      y_axis: "final_performance"
+
+    - type: "learning_curves"
+      title: "Learning Curves Comparison"
+      separate_by: "internal_dim"
+
+    - type: "heatmap"
+      title: "Correlation Matrix: Dimensions vs Metrics"
+
+  # Output files
+  outputs:
+    results_csv: "outputs/experiments/dimensional_scaling/results.csv"
+    statistics_json: "outputs/experiments/dimensional_scaling/statistics.json"
+    plots_dir: "outputs/experiments/dimensional_scaling/plots"
+    checkpoints_dir: "outputs/experiments/dimensional_scaling/checkpoints"
+
+# Computational Resources
+resources:
+  device: "auto"  # auto-detect cuda/cpu
+  parallel_replications: false  # Run replications sequentially
+  save_checkpoints: true
+  checkpoint_frequency: 50  # Save every 50 episodes
+
+# Random Seeds (for reproducibility)
+seeds:
+  base_seed: 42
+  # Each replication uses: base_seed + replication_index
