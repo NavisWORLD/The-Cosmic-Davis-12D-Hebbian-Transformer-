@@ -1,0 +1,43 @@
+# Internal Dimension AI - Dependencies
+# Python 3.8+
+
+# Core Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0,<2.0.0
+scipy>=1.10.0
+
+# Reinforcement Learning
+gym>=0.26.0
+gymnasium>=0.28.0
+
+# Data Processing & Analysis
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# Metrics & Logging
+tensorboard>=2.13.0
+wandb>=0.15.0
+tqdm>=4.65.0
+
+# Testing
+pytest>=7.3.0
+pytest-cov>=4.1.0
+
+# Utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Optional: For advanced visualizations
+jupyter>=1.0.0
+notebook>=6.5.0
+ipywidgets>=8.0.0
+
+# Optional: For parallel processing
+joblib>=1.2.0
+
+# Optional: For statistical analysis
+statsmodels>=0.14.0
+scikit-learn>=1.2.0

@@ -1,0 +1,68 @@
+# Default Configuration for Internal Dimension AI
+
+experiment: default
+
+# Model Configuration
+model:
+  type: idn  # 'idn' or 'baseline'
+  input_dim: 2
+  hidden_dim: 128
+  output_dim: 4
+  internal_dim: 64
+  use_lstm: false
+
+  # Internal Dimension Hyperparameters
+  alpha: 1.0    # Surprise weight in x₁₂
+  beta: 0.5     # Novelty weight in x₁₂
+  gamma: 0.3    # Attention weight in x₁₂
+  eta: 0.01     # Memory integration rate for m₁₂
+  delta: 0.1    # x₁₂ decay rate
+  zeta: 0.001   # m₁₂ homeostatic regulation
+
+# Environment Configuration
+environment:
+  env_type: gridworld
+  size: 10
+  reward_goal: 1.0
+  reward_step: -0.01
+  reward_trap: -0.5
+  sparse_rewards: false
+  random_obstacles: false
+  obstacle_density: 0.1
+
+# Training Configuration
+training:
+  num_episodes: 200
+  steps_per_episode: 200
+  learning_rate: 0.0003
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_epsilon: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  ppo_epochs: 4
+  batch_size: 64
+
+  # Internal Dimension Settings
+  intrinsic_reward_weight: 0.1
+  intrinsic_reward_method: curiosity  # 'curiosity', 'wisdom', or 'balanced'
+
+  # Suffering Detection
+  suffering_threshold: -0.7
+  suffering_patience: 100
+
+  # Logging
+  use_tensorboard: true
+  use_wandb: false
+  log_interval: 10
+  save_interval: 100
+  checkpoint_dir: checkpoints/default
+  compute_consciousness_interval: 20
+
+# Evaluation Configuration
+evaluation:
+  curiosity_tests: true
+  wisdom_tests: true
+  consciousness_tests: true
+  behavioral_tests: true

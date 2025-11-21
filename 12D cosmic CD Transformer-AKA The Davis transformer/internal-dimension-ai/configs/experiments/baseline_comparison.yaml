@@ -1,0 +1,29 @@
+# Baseline Comparison Experiment
+
+experiment: baseline_comparison
+
+# Model Configuration (will train both IDN and Baseline)
+model:
+  input_dim: 2
+  hidden_dim: 64
+  output_dim: 4
+  internal_dim: 32
+
+# Environment
+environment:
+  env_type: gridworld
+  size: 8
+  reward_goal: 1.0
+  reward_step: -0.01
+  sparse_rewards: false
+
+# Training
+training:
+  num_episodes: 200
+  steps_per_episode: 200
+  learning_rate: 0.0003
+  intrinsic_reward_weight: 0.1
+  use_tensorboard: false
+  use_wandb: false
+  log_interval: 20
+  checkpoint_dir: checkpoints/baseline_comparison
