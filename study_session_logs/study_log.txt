@@ -71,3 +71,59 @@
 --- SESSION 1: SCIENCE ---
 [2025-11-21 16:06:22] Source: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
 [2025-11-21 16:06:24] Content loaded (967317 chars). Studying...
+[2025-11-21 16:39:04] 12D Loss: 3.0055
+[2025-11-21 16:39:04] 42D Loss: 3.0965
+[2025-11-21 16:39:04] Winner: 12D (Advantage: 0.0911)
+[2025-11-21 16:39:04] Checkpoints saved.
+[2025-11-21 16:39:06] 
+--- SESSION 2: HISTORY ---
+[2025-11-21 16:39:06] Source: https://www.gutenberg.org/cache/epub/1080/pg1080.txt
+[2025-11-21 16:39:08] Content loaded (39336 chars). Studying...
+[2025-11-21 16:40:23] 12D Loss: 2.5893
+[2025-11-21 16:40:23] 42D Loss: 2.6211
+[2025-11-21 16:40:23] Winner: 12D (Advantage: 0.0319)
+[2025-11-21 16:40:24] Checkpoints saved.
+[2025-11-21 16:40:26] 
+--- SESSION 3: TECHNOLOGY ---
+[2025-11-21 16:40:26] Source: https://raw.githubusercontent.com/torvalds/linux/master/README
+[2025-11-21 16:40:27] Content loaded (725 chars). Studying...
+[2025-11-21 16:40:27] 12D Loss: 3.5454
+[2025-11-21 16:40:27] 42D Loss: 3.9829
+[2025-11-21 16:40:27] Winner: 12D (Advantage: 0.4375)
+[2025-11-21 16:40:27] Checkpoints saved.
+[2025-11-21 16:40:29] 
+--- SESSION 4: SCIENCE ---
+[2025-11-21 16:40:29] Source: https://www.gutenberg.org/cache/epub/30155/pg30155.txt
+[2025-11-21 16:40:31] Content loaded (208044 chars). Studying...
+[2025-11-21 16:47:31] 12D Loss: 2.4664
+[2025-11-21 16:47:31] 42D Loss: 2.5012
+[2025-11-21 16:47:31] Winner: 12D (Advantage: 0.0349)
+[2025-11-21 16:47:32] Checkpoints saved.
+[2025-11-21 16:47:34] 
+--- SESSION 5: HISTORY ---
+[2025-11-21 16:47:34] Source: https://www.gutenberg.org/cache/epub/5/pg5.txt
+[2025-11-21 16:47:35] Content loaded (47922 chars). Studying...
+[2025-11-21 16:49:19] 12D Loss: 2.4853
+[2025-11-21 16:49:19] 42D Loss: 2.5253
+[2025-11-21 16:49:19] Winner: 12D (Advantage: 0.0399)
+[2025-11-21 16:49:19] Checkpoints saved.
+[2025-11-21 16:49:21] 
+--- SESSION 6: HISTORY ---
+[2025-11-21 16:49:21] Source: https://www.gutenberg.org/cache/epub/5/pg5.txt
+[2025-11-21 16:49:22] Content loaded (47922 chars). Studying...
+[2025-11-21 16:50:59] 12D Loss: 2.4046
+[2025-11-21 16:50:59] 42D Loss: 2.4490
+[2025-11-21 16:50:59] Winner: 12D (Advantage: 0.0443)
+[2025-11-21 16:50:59] Checkpoints saved.
+[2025-11-21 16:51:01] 
+--- SESSION 7: LITERATURE ---
+[2025-11-21 16:51:01] Source: https://www.gutenberg.org/files/11/11-0.txt
+[2025-11-21 16:51:02] Content loaded (144625 chars). Studying...
+[2025-11-21 16:55:48] 12D Loss: 2.4780
+[2025-11-21 16:55:48] 42D Loss: 2.5311
+[2025-11-21 16:55:48] Winner: 12D (Advantage: 0.0531)
+[2025-11-21 16:55:49] Checkpoints saved.
+[2025-11-21 16:55:51] 
+--- SESSION 8: SCIENCE ---
+[2025-11-21 16:55:51] Source: https://www.gutenberg.org/cache/epub/30155/pg30155.txt
+[2025-11-21 16:55:51] Content loaded (208044 chars). Studying...

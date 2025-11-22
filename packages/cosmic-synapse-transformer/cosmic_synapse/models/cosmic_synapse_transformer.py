@@ -598,7 +598,7 @@ class CosmicSynapseTransformer(nn.Module):
         # Metrics
         metrics = {
             'x12_final': x12.mean().item(),
-            'x12_std': x12.std().item(),
+            'x12_std': x12.std().item() if x12.numel() > 1 else 0.0,
             'x12_history': x12_history
         }
         
