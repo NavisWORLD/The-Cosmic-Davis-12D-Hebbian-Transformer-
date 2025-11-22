@@ -1,0 +1,73 @@
+[2025-11-21 14:49:10] ============================================================
+[2025-11-21 14:49:10] STARTING AUTONOMOUS STUDY SESSION
+[2025-11-21 14:49:10] Curriculum: Literature, Philosophy, Science, History
+[2025-11-21 14:49:10] ============================================================
+[2025-11-21 14:49:10] BUILDING FULL VOCABULARY (Pre-scanning books)...
+[2025-11-21 14:49:10] Scanning for vocab: https://www.gutenberg.org/files/11/11-0.txt
+[2025-11-21 14:49:11] Scanning for vocab: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
+[2025-11-21 14:49:12] Scanning for vocab: https://www.gutenberg.org/cache/epub/1497/pg1497.txt
+[2025-11-21 14:49:14] Scanning for vocab: https://www.gutenberg.org/cache/epub/5/pg5.txt
+[2025-11-21 14:49:15] FULL VOCABULARY INITIALIZED: 30000 tokens
+[2025-11-21 14:49:15] Vocabulary saved to study_session_logs\vocab.txt
+[2025-11-21 14:49:18] Models initialized (256 dim, 6 layers, 8 heads)
+[2025-11-21 14:49:18] 
+--- SESSION 1: SCIENCE ---
+[2025-11-21 14:49:18] Source: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
+[2025-11-21 14:49:21] Content loaded (967317 chars). Studying...
+[2025-11-21 15:16:33] 12D Loss: 3.0270
+[2025-11-21 15:16:33] 42D Loss: 3.0912
+[2025-11-21 15:16:33] Winner: 12D (Advantage: 0.0642)
+[2025-11-21 15:16:33] Checkpoints saved.
+[2025-11-21 15:16:35] 
+--- SESSION 2: HISTORY ---
+[2025-11-21 15:16:35] Source: https://www.gutenberg.org/cache/epub/1080/pg1080.txt
+[2025-11-21 15:16:36] Content loaded (39336 chars). Studying...
+[2025-11-21 15:17:42] 12D Loss: 2.5898
+[2025-11-21 15:17:42] 42D Loss: 2.6111
+[2025-11-21 15:17:42] Winner: 12D (Advantage: 0.0214)
+[2025-11-21 15:17:42] Checkpoints saved.
+[2025-11-21 15:17:44] 
+--- SESSION 3: SCIENCE ---
+[2025-11-21 15:17:44] Source: https://www.gutenberg.org/cache/epub/30155/pg30155.txt
+[2025-11-21 15:17:45] Content loaded (208044 chars). Studying...
+[2025-11-21 15:23:34] 12D Loss: 2.4647
+[2025-11-21 15:23:34] 42D Loss: 2.4983
+[2025-11-21 15:23:34] Winner: 12D (Advantage: 0.0336)
+[2025-11-21 15:23:34] Checkpoints saved.
+[2025-11-21 15:23:36] 
+--- SESSION 4: HISTORY ---
+[2025-11-21 15:23:36] Source: https://www.gutenberg.org/cache/epub/1080/pg1080.txt
+[2025-11-21 15:23:37] Content loaded (39336 chars). Studying...
+[2025-11-21 15:24:43] 12D Loss: 2.4458
+[2025-11-21 15:24:43] 42D Loss: 2.5075
+[2025-11-21 15:24:43] Winner: 12D (Advantage: 0.0617)
+[2025-11-21 15:24:43] Checkpoints saved.
+[2025-11-21 15:24:45] 
+--- SESSION 5: LITERATURE ---
+[2025-11-21 15:24:45] Source: https://www.gutenberg.org/files/2701/2701-0.txt
+[2025-11-21 15:24:55] Content loaded (1237740 chars). Studying...
+[2025-11-21 15:59:50] 12D Loss: 2.2531
+[2025-11-21 15:59:50] 42D Loss: 2.2950
+[2025-11-21 15:59:50] Winner: 12D (Advantage: 0.0420)
+[2025-11-21 15:59:51] Checkpoints saved.
+[2025-11-21 15:59:53] 
+--- SESSION 6: LITERATURE ---
+[2025-11-21 15:59:53] Source: https://www.gutenberg.org/files/11/11-0.txt
+[2025-11-21 15:59:53] Content loaded (144625 chars). Studying...
+[2025-11-21 16:06:14] ============================================================
+[2025-11-21 16:06:14] STARTING AUTONOMOUS STUDY SESSION
+[2025-11-21 16:06:14] Curriculum: Literature, Philosophy, Science, History
+[2025-11-21 16:06:14] ============================================================
+[2025-11-21 16:06:14] Loading existing vocabulary...
+[2025-11-21 16:06:14] BUILDING FULL VOCABULARY (Pre-scanning books)...
+[2025-11-21 16:06:14] Scanning for vocab: https://www.gutenberg.org/files/11/11-0.txt
+[2025-11-21 16:06:14] Scanning for vocab: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
+[2025-11-21 16:06:16] Scanning for vocab: https://www.gutenberg.org/cache/epub/1497/pg1497.txt
+[2025-11-21 16:06:19] Scanning for vocab: https://www.gutenberg.org/cache/epub/5/pg5.txt
+[2025-11-21 16:06:20] FULL VOCABULARY INITIALIZED: 30000 tokens
+[2025-11-21 16:06:20] Vocabulary saved to study_session_logs\vocab.txt
+[2025-11-21 16:06:22] Models initialized (256 dim, 6 layers, 8 heads)
+[2025-11-21 16:06:22] 
+--- SESSION 1: SCIENCE ---
+[2025-11-21 16:06:22] Source: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
+[2025-11-21 16:06:24] Content loaded (967317 chars). Studying...

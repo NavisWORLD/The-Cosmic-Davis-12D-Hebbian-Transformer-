@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +30,7 @@
         .header h1 {
             font-size: 2.5em;
             background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
@@ -88,8 +90,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
 
         .metric {
@@ -327,7 +336,7 @@
             .validation-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .control-row {
                 grid-template-columns: 1fr;
             }
@@ -338,6 +347,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <h1><span class="phi-symbol">Φ</span> 12D Cosmic Synapse Theory <span class="phi-symbol">Φ</span></h1>
@@ -376,7 +386,8 @@
                 </div>
                 <div class="metric">
                     <span class="metric-label">Conservation Error:</span>
-                    <span class="metric-value" id="conservationError">< 0.01%</span>
+                    <span class="metric-value" id="conservationError">
+                        < 0.01%</span>
                 </div>
             </div>
 
@@ -503,7 +514,7 @@
             <div class="theory-section">
                 <h2>Core 12D CST Equation</h2>
                 <div class="equation">
-ψᵢ = (φ·Eᶜᵢ)/(c²m₀) + λᵢ/Eᵣₑf + ∫|dx₁₂ᵢ/dt|dt + (Ωᵢ·Eᶜᵢ)/Eᵣₑf + Uᵍʳᵃᵛᵢ/Eᵣₑf
+                    ψᵢ = (φ·Eᶜᵢ)/(c²m₀) + λᵢ/Eᵣₑf + ∫|dx₁₂ᵢ/dt|dt + (Ωᵢ·Eᶜᵢ)/Eᵣₑf + Uᵍʳᵃᵛᵢ/Eᵣₑf
                 </div>
                 <div class="info-box">
                     <strong>Components:</strong>
@@ -518,7 +529,7 @@
 
                 <h2>Internal State Dynamics</h2>
                 <div class="equation">
-dx₁₂ᵢ/dt = k·Ωᵢ - γ·x₁₂ᵢ
+                    dx₁₂ᵢ/dt = k·Ωᵢ - γ·x₁₂ᵢ
                 </div>
                 <div class="success-box">
                     <strong>✓ Validated Properties:</strong>
@@ -532,10 +543,11 @@ dx₁₂ᵢ/dt = k·Ωᵢ - γ·x₁₂ᵢ
 
                 <h2>Hebbian Connectivity</h2>
                 <div class="equation">
-Ωᵢⱼ = (G·mᵢ·mⱼ)/(rᵢⱼ²·a₀·m₀) · exp(-(x₁₂ᵢ - x₁₂ⱼ)²/(2σ²))
+                    Ωᵢⱼ = (G·mᵢ·mⱼ)/(rᵢⱼ²·a₀·m₀) · exp(-(x₁₂ᵢ - x₁₂ⱼ)²/(2σ²))
                 </div>
                 <div class="info-box">
-                    <strong>Hebbian Principle:</strong> Entities with similar internal states (x₁₂) strengthen their connections. This implements "neurons that fire together, wire together" at cosmic scale.
+                    <strong>Hebbian Principle:</strong> Entities with similar internal states (x₁₂) strengthen their
+                    connections. This implements "neurons that fire together, wire together" at cosmic scale.
                 </div>
             </div>
         </div>
@@ -544,10 +556,10 @@ dx₁₂ᵢ/dt = k·Ωᵢ - γ·x₁₂ᵢ
         <div class="tab-content" id="validation">
             <div class="theory-section">
                 <h2>Mathematical Validation Tests</h2>
-                
+
                 <h3>1. Energy Conservation</h3>
                 <div class="equation" id="energyEquation">
-E_total(t) = Σᵢ [½mᵢ|vᵢ|² + Uᵍʳᵃᵛᵢ + ∫|dx₁₂ᵢ/dt|²dt]
+                    E_total(t) = Σᵢ [½mᵢ|vᵢ|² + Uᵍʳᵃᵛᵢ + ∫|dx₁₂ᵢ/dt|²dt]
                 </div>
                 <div id="energyValidation" class="success-box">
                     Testing...
@@ -555,7 +567,7 @@ E_total(t) = Σᵢ [½mᵢ|vᵢ|² + Uᵍʳᵃᵛᵢ + ∫|dx₁₂ᵢ/dt|²dt]
 
                 <h3>2. Convergence of Internal States</h3>
                 <div class="equation">
-lim(t→∞) dx₁₂ᵢ/dt = 0  ⟹  x₁₂ᵢ* = k·Ωᵢ/γ
+                    lim(t→∞) dx₁₂ᵢ/dt = 0 ⟹ x₁₂ᵢ* = k·Ωᵢ/γ
                 </div>
                 <div id="convergenceValidation" class="success-box">
                     Testing...
@@ -563,7 +575,7 @@ lim(t→∞) dx₁₂ᵢ/dt = 0  ⟹  x₁₂ᵢ* = k·Ωᵢ/γ
 
                 <h3>3. φ-Harmonic Frequency Series</h3>
                 <div class="equation">
-fₙ = f₀ · φⁿ/²,  where φ = 1.618033988749895
+                    fₙ = f₀ · φⁿ/², where φ = 1.618033988749895
                 </div>
                 <div id="phiValidation" class="success-box">
                     Testing...
@@ -571,7 +583,7 @@ fₙ = f₀ · φⁿ/²,  where φ = 1.618033988749895
 
                 <h3>4. Hebbian Clustering</h3>
                 <div class="equation">
-Similarity(i,j) ∝ exp(-(x₁₂ᵢ - x₁₂ⱼ)²/2σ²)
+                    Similarity(i,j) ∝ exp(-(x₁₂ᵢ - x₁₂ⱼ)²/2σ²)
                 </div>
                 <div id="hebbianValidation" class="success-box">
                     Testing...
@@ -603,663 +615,650 @@ Similarity(i,j) ∝ exp(-(x₁₂ᵢ - x₁₂ⱼ)²/2σ²)
             <div class="theory-section">
                 <h2>Core Implementation</h2>
                 <div class="equation" style="text-align: left; font-size: 0.9em; line-height: 1.6;">
-// Particle Class
-class Particle {
-    constructor(mass, position, velocity) {
-        this.mass = mass;
-        this.position = position;
-        this.velocity = velocity;
-        this.x12 = Math.random() * 0.2 - 0.1; // Internal state
-        this.Ec = 0.5 * mass * velocity.lengthSq();
-        this.Omega = 0;
-    }
-}
+                    // Particle Class
+                    class Particle {
+                    constructor(mass, position, velocity) {
+                    this.mass = mass;
+                    this.position = position;
+                    this.velocity = velocity;
+                    this.x12 = Math.random() * 0.2 - 0.1; // Internal state
+                    this.Ec = 0.5 * mass * velocity.lengthSq();
+                    this.Omega = 0;
+                    }
+                    }
 
-// Update Internal State
-function updateInternalState(particle, Omega_sum, k, gamma, dt) {
-    const dx12_dt = k * Omega_sum - gamma * particle.x12;
-    particle.x12 += dt * dx12_dt;
-    particle.x12 = Math.tanh(particle.x12); // Bound [-1,1]
-}
+                    // Update Internal State
+                    function updateInternalState(particle, Omega_sum, k, gamma, dt) {
+                    const dx12_dt = k * Omega_sum - gamma * particle.x12;
+                    particle.x12 += dt * dx12_dt;
+                    particle.x12 = Math.tanh(particle.x12); // Bound [-1,1]
+                    }
 
-// Compute Hebbian Connectivity
-function computeOmega(particles, sigma) {
-    for (let i = 0; i < particles.length; i++) {
-        let omega_sum = 0;
-        for (let j = 0; j < particles.length; j++) {
-            if (i !== j) {
-                const r = particles[i].position
-                    .distanceTo(particles[j].position);
-                const omega_phys = 1.0 / (r * r + 1e-6);
-                
-                const x12_diff = particles[i].x12 - particles[j].x12;
-                const omega_cogn = Math.exp(
-                    -x12_diff * x12_diff / (2 * sigma * sigma)
-                );
-                
-                omega_sum += omega_phys * omega_cogn;
-            }
-        }
-        particles[i].Omega = omega_sum;
-    }
-}
+                    // Compute Hebbian Connectivity
+                    function computeOmega(particles, sigma) {
+                    for (let i = 0; i < particles.length; i++) { let omega_sum=0; for (let j=0; j < particles.length;
+                        j++) { if (i !==j) { const r=particles[i].position .distanceTo(particles[j].position); const
+                        omega_phys=1.0 / (r * r + 1e-6); const x12_diff=particles[i].x12 - particles[j].x12; const
+                        omega_cogn=Math.exp( -x12_diff * x12_diff / (2 * sigma * sigma) ); omega_sum +=omega_phys *
+                        omega_cogn; } } particles[i].Omega=omega_sum; } } </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer">
-        <p><strong>12D Cosmic Synapse Theory</strong></p>
-        <p>© 2018-2025 Cory Shane Davis | Self Studies a Cosmic Synaptic Möbius Co.</p>
-        <p style="margin-top: 10px; font-size: 0.9em;">
-            GitHub: <a href="https://github.com/NavisWORLD/cosmic-synapse-A-lmi-v.2.git" style="color: #FFD700;">cosmic-synapse-A-lmi-v.2</a>
-        </p>
-    </div>
+        <div class="footer">
+            <p><strong>12D Cosmic Synapse Theory</strong></p>
+            <p>© 2018-2025 Cory Shane Davis | Self Studies a Cosmic Synaptic Möbius Co.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                GitHub: <a href="https://github.com/NavisWORLD/cosmic-synapse-A-lmi-v.2.git"
+                    style="color: #FFD700;">cosmic-synapse-A-lmi-v.2</a>
+            </p>
+        </div>
 
-    <!-- Three.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <script>
-        // Constants
-        const PHI = 1.618033988749895;
-        const G = 6.674e-11;
-        const c = 3.0e8;
-        
-        // Simulation parameters
-        let k = 0.1;
-        let gamma = 0.05;
-        let sigma = 0.5;
-        let dt = 0.016; // 60 FPS
-        
-        // Simulation state
-        let particles = [];
-        let isPaused = false;
-        let startTime = Date.now();
-        let initialEnergy = 0;
-        let audioActive = false;
-        let audioContext = null;
-        let analyser = null;
-        
-        // Three.js setup
-        let scene, camera, renderer, particleSystem;
-        const canvas = document.getElementById('canvas3d');
-        
-        // Particle class
-        class Particle {
-            constructor(mass, position, velocity) {
-                this.mass = mass || (Math.random() * 5 + 1);
-                this.position = position || new THREE.Vector3(
-                    Math.random() * 200 - 100,
-                    Math.random() * 200 - 100,
-                    Math.random() * 200 - 100
+        <!-- Three.js Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+        <script>
+            // Constants
+            const PHI = 1.618033988749895;
+            const G = 6.674e-11;
+            const c = 3.0e8;
+
+            // Simulation parameters
+            let k = 0.1;
+            let gamma = 0.05;
+            let sigma = 0.5;
+            let dt = 0.016; // 60 FPS
+
+            // Simulation state
+            let particles = [];
+            let isPaused = false;
+            let startTime = Date.now();
+            let initialEnergy = 0;
+            let audioActive = false;
+            let audioContext = null;
+            let analyser = null;
+
+            // Three.js setup
+            let scene, camera, renderer, particleSystem;
+            const canvas = document.getElementById('canvas3d');
+
+            // Particle class
+            class Particle {
+                constructor(mass, position, velocity) {
+                    this.mass = mass || (Math.random() * 5 + 1);
+                    this.position = position || new THREE.Vector3(
+                        Math.random() * 200 - 100,
+                        Math.random() * 200 - 100,
+                        Math.random() * 200 - 100
+                    );
+                    this.velocity = velocity || new THREE.Vector3(
+                        Math.random() * 2 - 1,
+                        Math.random() * 2 - 1,
+                        Math.random() * 2 - 1
+                    );
+                    this.x12 = Math.random() * 0.2 - 0.1;
+                    this.m12 = 0; // Memory
+                    this.Omega = 0;
+                    this.Ec = 0.5 * this.mass * this.velocity.lengthSq();
+
+                    // φ-harmonic frequency assignment
+                    const index = particles.length % 12;
+                    this.frequency = 440 * Math.pow(PHI, index / 2);
+                }
+            }
+
+            // Initialize Three.js scene
+            function initThreeJS() {
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color(0x000000);
+
+                camera = new THREE.PerspectiveCamera(
+                    75,
+                    canvas.clientWidth / canvas.clientHeight,
+                    0.1,
+                    2000
                 );
-                this.velocity = velocity || new THREE.Vector3(
-                    Math.random() * 2 - 1,
-                    Math.random() * 2 - 1,
-                    Math.random() * 2 - 1
-                );
-                this.x12 = Math.random() * 0.2 - 0.1;
-                this.m12 = 0; // Memory
-                this.Omega = 0;
-                this.Ec = 0.5 * this.mass * this.velocity.lengthSq();
-                
-                // φ-harmonic frequency assignment
-                const index = particles.length % 12;
-                this.frequency = 440 * Math.pow(PHI, index / 2);
-            }
-        }
-        
-        // Initialize Three.js scene
-        function initThreeJS() {
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x000000);
-            
-            camera = new THREE.PerspectiveCamera(
-                75,
-                canvas.clientWidth / canvas.clientHeight,
-                0.1,
-                2000
-            );
-            camera.position.z = 300;
-            
-            renderer = new THREE.WebGLRenderer({ 
-                canvas: canvas,
-                antialias: true 
-            });
-            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-            
-            // Lights
-            const ambientLight = new THREE.AmbientLight(0x404040);
-            scene.add(ambientLight);
-            
-            const pointLight = new THREE.PointLight(0xffd700, 1, 1000);
-            pointLight.position.set(0, 0, 200);
-            scene.add(pointLight);
-            
-            // Particle system
-            const geometry = new THREE.BufferGeometry();
-            const material = new THREE.PointsMaterial({
-                size: 3,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.8,
-                blending: THREE.AdditiveBlending
-            });
-            
-            particleSystem = new THREE.Points(geometry, material);
-            scene.add(particleSystem);
-            
-            // Camera controls
-            let mouseDown = false;
-            let mouseX = 0, mouseY = 0;
-            
-            canvas.addEventListener('mousedown', () => mouseDown = true);
-            canvas.addEventListener('mouseup', () => mouseDown = false);
-            canvas.addEventListener('mousemove', (e) => {
-                if (mouseDown) {
-                    const deltaX = e.clientX - mouseX;
-                    const deltaY = e.clientY - mouseY;
-                    camera.position.x += deltaX * 0.5;
-                    camera.position.y -= deltaY * 0.5;
-                }
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-            
-            canvas.addEventListener('wheel', (e) => {
-                camera.position.z += e.deltaY * 0.1;
-                camera.position.z = Math.max(50, Math.min(500, camera.position.z));
-            });
-        }
-        
-        // Initialize particles
-        function initParticles() {
-            const numParticles = parseInt(document.getElementById('numParticles').value);
-            particles = [];
-            
-            for (let i = 0; i < numParticles; i++) {
-                particles.push(new Particle());
-            }
-            
-            updateParticleGeometry();
-            computeInitialEnergy();
-            startTime = Date.now();
-            
-            console.log(`Initialized ${numParticles} particles`);
-        }
-        
-        // Update particle geometry for Three.js
-        function updateParticleGeometry() {
-            const positions = new Float32Array(particles.length * 3);
-            const colors = new Float32Array(particles.length * 3);
-            
-            particles.forEach((p, i) => {
-                positions[i * 3] = p.position.x;
-                positions[i * 3 + 1] = p.position.y;
-                positions[i * 3 + 2] = p.position.z;
-                
-                // Color based on x12 internal state
-                const hue = (p.x12 + 1) / 2; // Map [-1,1] to [0,1]
-                const color = new THREE.Color();
-                color.setHSL(hue * 0.7 + 0.1, 1.0, 0.6);
-                colors[i * 3] = color.r;
-                colors[i * 3 + 1] = color.g;
-                colors[i * 3 + 2] = color.b;
-            });
-            
-            particleSystem.geometry.setAttribute(
-                'position',
-                new THREE.BufferAttribute(positions, 3)
-            );
-            particleSystem.geometry.setAttribute(
-                'color',
-                new THREE.BufferAttribute(colors, 3)
-            );
-        }
-        
-        // Compute Hebbian connectivity
-        function computeOmega() {
-            for (let i = 0; i < particles.length; i++) {
-                let omega_sum = 0;
-                
-                for (let j = 0; j < particles.length; j++) {
-                    if (i !== j) {
-                        const r = particles[i].position.distanceTo(particles[j].position);
-                        const omega_phys = 1.0 / (r * r + 1e-6);
-                        
-                        const x12_diff = particles[i].x12 - particles[j].x12;
-                        const omega_cogn = Math.exp(-x12_diff * x12_diff / (2 * sigma * sigma));
-                        
-                        omega_sum += omega_phys * omega_cogn;
+                camera.position.z = 300;
+
+                renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    antialias: true
+                });
+                renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+                // Lights
+                const ambientLight = new THREE.AmbientLight(0x404040);
+                scene.add(ambientLight);
+
+                const pointLight = new THREE.PointLight(0xffd700, 1, 1000);
+                pointLight.position.set(0, 0, 200);
+                scene.add(pointLight);
+
+                // Particle system
+                const geometry = new THREE.BufferGeometry();
+                const material = new THREE.PointsMaterial({
+                    size: 3,
+                    vertexColors: true,
+                    transparent: true,
+                    opacity: 0.8,
+                    blending: THREE.AdditiveBlending
+                });
+
+                particleSystem = new THREE.Points(geometry, material);
+                scene.add(particleSystem);
+
+                // Camera controls
+                let mouseDown = false;
+                let mouseX = 0, mouseY = 0;
+
+                canvas.addEventListener('mousedown', () => mouseDown = true);
+                canvas.addEventListener('mouseup', () => mouseDown = false);
+                canvas.addEventListener('mousemove', (e) => {
+                    if (mouseDown) {
+                        const deltaX = e.clientX - mouseX;
+                        const deltaY = e.clientY - mouseY;
+                        camera.position.x += deltaX * 0.5;
+                        camera.position.y -= deltaY * 0.5;
                     }
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+
+                canvas.addEventListener('wheel', (e) => {
+                    camera.position.z += e.deltaY * 0.1;
+                    camera.position.z = Math.max(50, Math.min(500, camera.position.z));
+                });
+            }
+
+            // Initialize particles
+            function initParticles() {
+                const numParticles = parseInt(document.getElementById('numParticles').value);
+                particles = [];
+
+                for (let i = 0; i < numParticles; i++) {
+                    particles.push(new Particle());
                 }
-                
-                particles[i].Omega = omega_sum;
-            }
-        }
-        
-        // Update internal states
-        function updateInternalStates() {
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                
-                // dx12/dt = k*Omega - gamma*x12
-                const dx12_dt = k * p.Omega - gamma * p.x12;
-                p.x12 += dt * dx12_dt;
-                p.x12 = Math.tanh(p.x12); // Bound to [-1, 1]
-                
-                // Update memory
-                const alpha = 0.1;
-                const dm12_dt = alpha * (p.x12 - p.m12);
-                p.m12 += dt * dm12_dt;
-            }
-        }
-        
-        // Compute forces
-        function computeForces() {
-            // Simple gravitational attraction to center
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                const r = p.position.length();
-                
-                if (r > 1) {
-                    const force = p.position.clone().normalize().multiplyScalar(-0.1 * p.mass / r);
-                    p.velocity.add(force.multiplyScalar(dt));
-                }
-                
-                // Damping
-                p.velocity.multiplyScalar(0.995);
-            }
-        }
-        
-        // Update positions
-        function updatePositions() {
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                p.position.add(p.velocity.clone().multiplyScalar(dt));
-                
-                // Update energy
-                p.Ec = 0.5 * p.mass * p.velocity.lengthSq();
-            }
-        }
-        
-        // Lorenz chaos injection
-        let lorenzState = [Math.random(), Math.random(), Math.random()];
-        
-        function evolveLorenz() {
-            const sigma = 10.0;
-            const rho = 28.0;
-            const beta = 8.0 / 3.0;
-            const dt_lorenz = 0.01;
-            
-            for (let step = 0; step < 5; step++) {
-                const dx = sigma * (lorenzState[1] - lorenzState[0]);
-                const dy = lorenzState[0] * (rho - lorenzState[2]) - lorenzState[1];
-                const dz = lorenzState[0] * lorenzState[1] - beta * lorenzState[2];
-                
-                lorenzState[0] += dt_lorenz * dx;
-                lorenzState[1] += dt_lorenz * dy;
-                lorenzState[2] += dt_lorenz * dz;
-            }
-        }
-        
-        function injectChaos() {
-            evolveLorenz();
-            
-            const numAffected = Math.floor(particles.length * 0.1);
-            for (let i = 0; i < numAffected; i++) {
-                const idx = Math.floor(Math.random() * particles.length);
-                particles[idx].velocity.add(new THREE.Vector3(
-                    lorenzState[0] * 0.1,
-                    lorenzState[1] * 0.1,
-                    lorenzState[2] * 0.1
-                ));
-            }
-            
-            console.log('Chaos injected!');
-        }
-        
-        // Compute initial energy
-        function computeInitialEnergy() {
-            initialEnergy = 0;
-            for (let i = 0; i < particles.length; i++) {
-                initialEnergy += particles[i].Ec;
-            }
-        }
-        
-        // Compute current total energy
-        function computeTotalEnergy() {
-            let total = 0;
-            for (let i = 0; i < particles.length; i++) {
-                total += particles[i].Ec;
-            }
-            return total;
-        }
-        
-        // Update metrics display
-        function updateMetrics() {
-            document.getElementById('particleCount').textContent = particles.length;
-            
-            const totalEnergy = computeTotalEnergy();
-            document.getElementById('totalEnergy').textContent = totalEnergy.toFixed(2);
-            
-            const drift = initialEnergy > 0 ? 
-                Math.abs((totalEnergy - initialEnergy) / initialEnergy * 100) : 0;
-            document.getElementById('energyDrift').textContent = drift.toFixed(3) + '%';
-            
-            if (drift < 0.01) {
-                document.getElementById('conservationError').textContent = '✓ < 0.01%';
-                document.getElementById('conservationError').style.color = '#4CAF50';
-            }
-            
-            // Average x12
-            let sumX12 = 0;
-            let minX12 = Infinity;
-            let maxX12 = -Infinity;
-            
-            for (let i = 0; i < particles.length; i++) {
-                sumX12 += particles[i].x12;
-                minX12 = Math.min(minX12, particles[i].x12);
-                maxX12 = Math.max(maxX12, particles[i].x12);
-            }
-            
-            const avgX12 = sumX12 / particles.length;
-            document.getElementById('avgX12').textContent = avgX12.toFixed(3);
-            document.getElementById('x12Range').textContent = 
-                `[${minX12.toFixed(2)}, ${maxX12.toFixed(2)}]`;
-            
-            // Average Omega
-            let sumOmega = 0;
-            for (let i = 0; i < particles.length; i++) {
-                sumOmega += particles[i].Omega;
-            }
-            document.getElementById('avgOmega').textContent = 
-                (sumOmega / particles.length).toFixed(3);
-            
-            // Simulation time
-            const elapsed = (Date.now() - startTime) / 1000;
-            document.getElementById('simTime').textContent = elapsed.toFixed(1) + 's';
-            
-            // Lorenz state
-            document.getElementById('lorenzState').textContent = 
-                `[${lorenzState[0].toFixed(2)}, ${lorenzState[1].toFixed(2)}, ${lorenzState[2].toFixed(2)}]`;
-        }
-        
-        // Validation tests
-        function runValidationTests() {
-            // Energy conservation test
-            const totalEnergy = computeTotalEnergy();
-            const drift = initialEnergy > 0 ? 
-                Math.abs((totalEnergy - initialEnergy) / initialEnergy) : 0;
-            
-            document.getElementById('energyValidation').innerHTML = 
-                drift < 0.001 ? 
-                '<strong>✓ PASSED:</strong> Energy conserved within 0.1% error' :
-                '<strong>⚠ WARNING:</strong> Energy drift: ' + (drift * 100).toFixed(3) + '%';
-            
-            document.getElementById('energyValidation').className = 
-                drift < 0.001 ? 'success-box' : 'warning-box';
-            
-            // Convergence test
-            let maxRate = 0;
-            for (let i = 0; i < particles.length; i++) {
-                const rate = Math.abs(k * particles[i].Omega - gamma * particles[i].x12);
-                maxRate = Math.max(maxRate, rate);
-            }
-            
-            document.getElementById('convergenceValidation').innerHTML = 
-                maxRate < 0.1 ? 
-                '<strong>✓ PASSED:</strong> Internal states converging (max rate: ' + 
-                maxRate.toFixed(4) + ')' :
-                '<strong>→ EVOLVING:</strong> Still converging (max rate: ' + 
-                maxRate.toFixed(4) + ')';
-            
-            // Phi test
-            const phi_test = Math.abs(PHI - 1.618033988749895);
-            document.getElementById('phiValidation').innerHTML = 
-                '<strong>✓ PASSED:</strong> φ = ' + PHI.toFixed(12) + 
-                ' (error: ' + phi_test.toExponential(2) + ')';
-            
-            // Hebbian clustering test
-            let clusterCount = 0;
-            for (let i = 0; i < particles.length; i++) {
-                let similarNeighbors = 0;
-                for (let j = 0; j < particles.length; j++) {
-                    if (i !== j) {
-                        const x12_diff = particles[i].x12 - particles[j].x12;
-                        if (Math.abs(x12_diff) < 0.3) similarNeighbors++;
-                    }
-                }
-                if (similarNeighbors > 3) clusterCount++;
-            }
-            
-            document.getElementById('clusters').textContent = clusterCount;
-            document.getElementById('hebbianValidation').innerHTML = 
-                '<strong>✓ ACTIVE:</strong> ' + clusterCount + ' particles in clusters ' +
-                '(similar x₁₂ values attract)';
-        }
-        
-        // Audio setup
-        async function toggleAudio() {
-            if (!audioActive) {
-                try {
-                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                    const source = audioContext.createMediaStreamSource(stream);
-                    
-                    analyser = audioContext.createAnalyser();
-                    analyser.fftSize = 2048;
-                    source.connect(analyser);
-                    
-                    audioActive = true;
-                    document.getElementById('audioStatus').textContent = 'Audio: Active';
-                    document.getElementById('audioStatus').style.color = '#4CAF50';
-                    
-                    console.log('Audio input activated');
-                } catch (err) {
-                    console.error('Audio permission denied:', err);
-                    alert('Microphone access denied. Please allow microphone access.');
-                }
-            } else {
-                if (audioContext) {
-                    audioContext.close();
-                    audioContext = null;
-                    analyser = null;
-                }
-                audioActive = false;
-                document.getElementById('audioStatus').textContent = 'Audio: Inactive';
-                document.getElementById('audioStatus').style.color = '#FFD700';
-            }
-        }
-        
-        // Generate phi-harmonic tone
-        function generateTone() {
-            if (!audioContext) {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            }
-            
-            const oscillator = audioContext.createOscillator();
-            oscillator.type = 'sine';
-            oscillator.frequency.value = 440 * PHI; // A4 * φ
-            
-            const gainNode = audioContext.createGain();
-            gainNode.gain.value = 0.3;
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.start();
-            setTimeout(() => oscillator.stop(), 1000);
-            
-            console.log('Generated φ-tone at', (440 * PHI).toFixed(2), 'Hz');
-        }
-        
-        // Process audio
-        function processAudio() {
-            if (!analyser) return;
-            
-            const bufferLength = analyser.frequencyBinCount;
-            const dataArray = new Uint8Array(bufferLength);
-            analyser.getByteFrequencyData(dataArray);
-            
-            // Calculate RMS energy
-            let sum = 0;
-            for (let i = 0; i < bufferLength; i++) {
-                sum += dataArray[i] * dataArray[i];
-            }
-            const rms = Math.sqrt(sum / bufferLength);
-            const normalizedRMS = rms / 255;
-            
-            // Update audio bar
-            document.getElementById('audioBar').style.width = (normalizedRMS * 100) + '%';
-            
-            // Find dominant frequency
-            let maxVal = 0;
-            let maxIdx = 0;
-            for (let i = 0; i < bufferLength; i++) {
-                if (dataArray[i] > maxVal) {
-                    maxVal = dataArray[i];
-                    maxIdx = i;
-                }
-            }
-            
-            // Affect particles based on audio
-            if (normalizedRMS > 0.1) {
-                for (let i = 0; i < Math.min(10, particles.length); i++) {
-                    particles[i].velocity.multiplyScalar(1 + normalizedRMS * 0.1);
-                }
-            }
-        }
-        
-        // Animation loop
-        let frameCount = 0;
-        let lastFPSUpdate = Date.now();
-        
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            if (!isPaused && particles.length > 0) {
-                // Update physics
-                computeOmega();
-                updateInternalStates();
-                computeForces();
-                updatePositions();
-                
-                // Evolve Lorenz attractor
-                evolveLorenz();
-                
-                // Process audio if active
-                if (audioActive) {
-                    processAudio();
-                }
-                
-                // Update visuals
+
                 updateParticleGeometry();
-                
-                // Update metrics every 30 frames
-                if (frameCount % 30 === 0) {
-                    updateMetrics();
-                    runValidationTests();
+                computeInitialEnergy();
+                startTime = Date.now();
+
+                console.log(`Initialized ${numParticles} particles`);
+            }
+
+            // Update particle geometry for Three.js
+            function updateParticleGeometry() {
+                const positions = new Float32Array(particles.length * 3);
+                const colors = new Float32Array(particles.length * 3);
+
+                particles.forEach((p, i) => {
+                    positions[i * 3] = p.position.x;
+                    positions[i * 3 + 1] = p.position.y;
+                    positions[i * 3 + 2] = p.position.z;
+
+                    // Color based on x12 internal state
+                    const hue = (p.x12 + 1) / 2; // Map [-1,1] to [0,1]
+                    const color = new THREE.Color();
+                    color.setHSL(hue * 0.7 + 0.1, 1.0, 0.6);
+                    colors[i * 3] = color.r;
+                    colors[i * 3 + 1] = color.g;
+                    colors[i * 3 + 2] = color.b;
+                });
+
+                particleSystem.geometry.setAttribute(
+                    'position',
+                    new THREE.BufferAttribute(positions, 3)
+                );
+                particleSystem.geometry.setAttribute(
+                    'color',
+                    new THREE.BufferAttribute(colors, 3)
+                );
+            }
+
+            // Compute Hebbian connectivity
+            function computeOmega() {
+                for (let i = 0; i < particles.length; i++) {
+                    let omega_sum = 0;
+
+                    for (let j = 0; j < particles.length; j++) {
+                        if (i !== j) {
+                            const r = particles[i].position.distanceTo(particles[j].position);
+                            const omega_phys = 1.0 / (r * r + 1e-6);
+
+                            const x12_diff = particles[i].x12 - particles[j].x12;
+                            const omega_cogn = Math.exp(-x12_diff * x12_diff / (2 * sigma * sigma));
+
+                            omega_sum += omega_phys * omega_cogn;
+                        }
+                    }
+
+                    particles[i].Omega = omega_sum;
                 }
-                
-                frameCount++;
             }
-            
-            // FPS counter
-            const now = Date.now();
-            if (now - lastFPSUpdate > 1000) {
-                const fps = Math.round(frameCount / ((now - lastFPSUpdate) / 1000));
-                document.getElementById('fps').textContent = fps;
-                frameCount = 0;
-                lastFPSUpdate = now;
+
+            // Update internal states
+            function updateInternalStates() {
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+
+                    // dx12/dt = k*Omega - gamma*x12
+                    const dx12_dt = k * p.Omega - gamma * p.x12;
+                    p.x12 += dt * dx12_dt;
+                    p.x12 = Math.tanh(p.x12); // Bound to [-1, 1]
+
+                    // Update memory
+                    const alpha = 0.1;
+                    const dm12_dt = alpha * (p.x12 - p.m12);
+                    p.m12 += dt * dm12_dt;
+                }
             }
-            
-            // Render
-            camera.lookAt(0, 0, 0);
-            renderer.render(scene, camera);
-        }
-        
-        // Control functions
-        function togglePause() {
-            isPaused = !isPaused;
-            console.log(isPaused ? 'Paused' : 'Resumed');
-        }
-        
-        function saveState() {
-            const state = {
-                particles: particles.map(p => ({
-                    mass: p.mass,
-                    position: [p.position.x, p.position.y, p.position.z],
-                    velocity: [p.velocity.x, p.velocity.y, p.velocity.z],
-                    x12: p.x12,
-                    m12: p.m12
-                })),
-                parameters: { k, gamma, sigma },
-                timestamp: Date.now()
-            };
-            
-            const json = JSON.stringify(state, null, 2);
-            const blob = new Blob([json], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = '12D_CST_state_' + Date.now() + '.json';
-            a.click();
-            
-            console.log('State saved');
-        }
-        
-        // Tab switching
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
+
+            // Compute forces
+            function computeForces() {
+                // Simple gravitational attraction to center
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    const r = p.position.length();
+
+                    if (r > 1) {
+                        const force = p.position.clone().normalize().multiplyScalar(-0.1 * p.mass / r);
+                        p.velocity.add(force.multiplyScalar(dt));
+                    }
+
+                    // Damping
+                    p.velocity.multiplyScalar(0.995);
+                }
+            }
+
+            // Update positions
+            function updatePositions() {
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.position.add(p.velocity.clone().multiplyScalar(dt));
+
+                    // Update energy
+                    p.Ec = 0.5 * p.mass * p.velocity.lengthSq();
+                }
+            }
+
+            // Lorenz chaos injection
+            let lorenzState = [Math.random(), Math.random(), Math.random()];
+
+            function evolveLorenz() {
+                const sigma = 10.0;
+                const rho = 28.0;
+                const beta = 8.0 / 3.0;
+                const dt_lorenz = 0.01;
+
+                for (let step = 0; step < 5; step++) {
+                    const dx = sigma * (lorenzState[1] - lorenzState[0]);
+                    const dy = lorenzState[0] * (rho - lorenzState[2]) - lorenzState[1];
+                    const dz = lorenzState[0] * lorenzState[1] - beta * lorenzState[2];
+
+                    lorenzState[0] += dt_lorenz * dx;
+                    lorenzState[1] += dt_lorenz * dy;
+                    lorenzState[2] += dt_lorenz * dz;
+                }
+            }
+
+            function injectChaos() {
+                evolveLorenz();
+
+                const numAffected = Math.floor(particles.length * 0.1);
+                for (let i = 0; i < numAffected; i++) {
+                    const idx = Math.floor(Math.random() * particles.length);
+                    particles[idx].velocity.add(new THREE.Vector3(
+                        lorenzState[0] * 0.1,
+                        lorenzState[1] * 0.1,
+                        lorenzState[2] * 0.1
+                    ));
+                }
+
+                console.log('Chaos injected!');
+            }
+
+            // Compute initial energy
+            function computeInitialEnergy() {
+                initialEnergy = 0;
+                for (let i = 0; i < particles.length; i++) {
+                    initialEnergy += particles[i].Ec;
+                }
+            }
+
+            // Compute current total energy
+            function computeTotalEnergy() {
+                let total = 0;
+                for (let i = 0; i < particles.length; i++) {
+                    total += particles[i].Ec;
+                }
+                return total;
+            }
+
+            // Update metrics display
+            function updateMetrics() {
+                document.getElementById('particleCount').textContent = particles.length;
+
+                const totalEnergy = computeTotalEnergy();
+                document.getElementById('totalEnergy').textContent = totalEnergy.toFixed(2);
+
+                const drift = initialEnergy > 0 ?
+                    Math.abs((totalEnergy - initialEnergy) / initialEnergy * 100) : 0;
+                document.getElementById('energyDrift').textContent = drift.toFixed(3) + '%';
+
+                if (drift < 0.01) {
+                    document.getElementById('conservationError').textContent = '✓ < 0.01%';
+                    document.getElementById('conservationError').style.color = '#4CAF50';
+                }
+
+                // Average x12
+                let sumX12 = 0;
+                let minX12 = Infinity;
+                let maxX12 = -Infinity;
+
+                for (let i = 0; i < particles.length; i++) {
+                    sumX12 += particles[i].x12;
+                    minX12 = Math.min(minX12, particles[i].x12);
+                    maxX12 = Math.max(maxX12, particles[i].x12);
+                }
+
+                const avgX12 = sumX12 / particles.length;
+                document.getElementById('avgX12').textContent = avgX12.toFixed(3);
+                document.getElementById('x12Range').textContent =
+                    `[${minX12.toFixed(2)}, ${maxX12.toFixed(2)}]`;
+
+                // Average Omega
+                let sumOmega = 0;
+                for (let i = 0; i < particles.length; i++) {
+                    sumOmega += particles[i].Omega;
+                }
+                document.getElementById('avgOmega').textContent =
+                    (sumOmega / particles.length).toFixed(3);
+
+                // Simulation time
+                const elapsed = (Date.now() - startTime) / 1000;
+                document.getElementById('simTime').textContent = elapsed.toFixed(1) + 's';
+
+                // Lorenz state
+                document.getElementById('lorenzState').textContent =
+                    `[${lorenzState[0].toFixed(2)}, ${lorenzState[1].toFixed(2)}, ${lorenzState[2].toFixed(2)}]`;
+            }
+
+            // Validation tests
+            function runValidationTests() {
+                // Energy conservation test
+                const totalEnergy = computeTotalEnergy();
+                const drift = initialEnergy > 0 ?
+                    Math.abs((totalEnergy - initialEnergy) / initialEnergy) : 0;
+
+                document.getElementById('energyValidation').innerHTML =
+                    drift < 0.001 ?
+                        '<strong>✓ PASSED:</strong> Energy conserved within 0.1% error' :
+                        '<strong>⚠ WARNING:</strong> Energy drift: ' + (drift * 100).toFixed(3) + '%';
+
+                document.getElementById('energyValidation').className =
+                    drift < 0.001 ? 'success-box' : 'warning-box';
+
+                // Convergence test
+                let maxRate = 0;
+                for (let i = 0; i < particles.length; i++) {
+                    const rate = Math.abs(k * particles[i].Omega - gamma * particles[i].x12);
+                    maxRate = Math.max(maxRate, rate);
+                }
+
+                document.getElementById('convergenceValidation').innerHTML =
+                    maxRate < 0.1 ?
+                        '<strong>✓ PASSED:</strong> Internal states converging (max rate: ' +
+                        maxRate.toFixed(4) + ')' :
+                        '<strong>→ EVOLVING:</strong> Still converging (max rate: ' +
+                        maxRate.toFixed(4) + ')';
+
+                // Phi test
+                const phi_test = Math.abs(PHI - 1.618033988749895);
+                document.getElementById('phiValidation').innerHTML =
+                    '<strong>✓ PASSED:</strong> φ = ' + PHI.toFixed(12) +
+                    ' (error: ' + phi_test.toExponential(2) + ')';
+
+                // Hebbian clustering test
+                let clusterCount = 0;
+                for (let i = 0; i < particles.length; i++) {
+                    let similarNeighbors = 0;
+                    for (let j = 0; j < particles.length; j++) {
+                        if (i !== j) {
+                            const x12_diff = particles[i].x12 - particles[j].x12;
+                            if (Math.abs(x12_diff) < 0.3) similarNeighbors++;
+                        }
+                    }
+                    if (similarNeighbors > 3) clusterCount++;
+                }
+
+                document.getElementById('clusters').textContent = clusterCount;
+                document.getElementById('hebbianValidation').innerHTML =
+                    '<strong>✓ ACTIVE:</strong> ' + clusterCount + ' particles in clusters ' +
+                    '(similar x₁₂ values attract)';
+            }
+
+            // Audio setup
+            async function toggleAudio() {
+                if (!audioActive) {
+                    try {
+                        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                        const source = audioContext.createMediaStreamSource(stream);
+
+                        analyser = audioContext.createAnalyser();
+                        analyser.fftSize = 2048;
+                        source.connect(analyser);
+
+                        audioActive = true;
+                        document.getElementById('audioStatus').textContent = 'Audio: Active';
+                        document.getElementById('audioStatus').style.color = '#4CAF50';
+
+                        console.log('Audio input activated');
+                    } catch (err) {
+                        console.error('Audio permission denied:', err);
+                        alert('Microphone access denied. Please allow microphone access.');
+                    }
+                } else {
+                    if (audioContext) {
+                        audioContext.close();
+                        audioContext = null;
+                        analyser = null;
+                    }
+                    audioActive = false;
+                    document.getElementById('audioStatus').textContent = 'Audio: Inactive';
+                    document.getElementById('audioStatus').style.color = '#FFD700';
+                }
+            }
+
+            // Generate phi-harmonic tone
+            function generateTone() {
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+
+                const oscillator = audioContext.createOscillator();
+                oscillator.type = 'sine';
+                oscillator.frequency.value = 440 * PHI; // A4 * φ
+
+                const gainNode = audioContext.createGain();
+                gainNode.gain.value = 0.3;
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.start();
+                setTimeout(() => oscillator.stop(), 1000);
+
+                console.log('Generated φ-tone at', (440 * PHI).toFixed(2), 'Hz');
+            }
+
+            // Process audio
+            function processAudio() {
+                if (!analyser) return;
+
+                const bufferLength = analyser.frequencyBinCount;
+                const dataArray = new Uint8Array(bufferLength);
+                analyser.getByteFrequencyData(dataArray);
+
+                // Calculate RMS energy
+                let sum = 0;
+                for (let i = 0; i < bufferLength; i++) {
+                    sum += dataArray[i] * dataArray[i];
+                }
+                const rms = Math.sqrt(sum / bufferLength);
+                const normalizedRMS = rms / 255;
+
+                // Update audio bar
+                document.getElementById('audioBar').style.width = (normalizedRMS * 100) + '%';
+
+                // Find dominant frequency
+                let maxVal = 0;
+                let maxIdx = 0;
+                for (let i = 0; i < bufferLength; i++) {
+                    if (dataArray[i] > maxVal) {
+                        maxVal = dataArray[i];
+                        maxIdx = i;
+                    }
+                }
+
+                // Affect particles based on audio
+                if (normalizedRMS > 0.1) {
+                    for (let i = 0; i < Math.min(10, particles.length); i++) {
+                        particles[i].velocity.multiplyScalar(1 + normalizedRMS * 0.1);
+                    }
+                }
+            }
+
+            // Animation loop
+            let frameCount = 0;
+            let lastFPSUpdate = Date.now();
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                if (!isPaused && particles.length > 0) {
+                    // Update physics
+                    computeOmega();
+                    updateInternalStates();
+                    computeForces();
+                    updatePositions();
+
+                    // Evolve Lorenz attractor
+                    evolveLorenz();
+
+                    // Process audio if active
+                    if (audioActive) {
+                        processAudio();
+                    }
+
+                    // Update visuals
+                    updateParticleGeometry();
+
+                    // Update metrics every 30 frames
+                    if (frameCount % 30 === 0) {
+                        updateMetrics();
+                        runValidationTests();
+                    }
+
+                    frameCount++;
+                }
+
+                // FPS counter
+                const now = Date.now();
+                if (now - lastFPSUpdate > 1000) {
+                    const fps = Math.round(frameCount / ((now - lastFPSUpdate) / 1000));
+                    document.getElementById('fps').textContent = fps;
+                    frameCount = 0;
+                    lastFPSUpdate = now;
+                }
+
+                // Render
+                camera.lookAt(0, 0, 0);
+                renderer.render(scene, camera);
+            }
+
+            // Control functions
+            function togglePause() {
+                isPaused = !isPaused;
+                console.log(isPaused ? 'Paused' : 'Resumed');
+            }
+
+            function saveState() {
+                const state = {
+                    particles: particles.map(p => ({
+                        mass: p.mass,
+                        position: [p.position.x, p.position.y, p.position.z],
+                        velocity: [p.velocity.x, p.velocity.y, p.velocity.z],
+                        x12: p.x12,
+                        m12: p.m12
+                    })),
+                    parameters: { k, gamma, sigma },
+                    timestamp: Date.now()
+                };
+
+                const json = JSON.stringify(state, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = '12D_CST_state_' + Date.now() + '.json';
+                a.click();
+
+                console.log('State saved');
+            }
+
+            // Tab switching
+            function switchTab(tabName) {
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                event.target.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            }
+
+            // Control updates
+            document.getElementById('numParticles').addEventListener('input', (e) => {
+                document.getElementById('numParticlesValue').textContent = e.target.value;
             });
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
+
+            document.getElementById('kSlider').addEventListener('input', (e) => {
+                k = parseFloat(e.target.value);
+                document.getElementById('kValue').textContent = k.toFixed(2);
             });
-            
-            event.target.classList.add('active');
-            document.getElementById(tabName).classList.add('active');
-        }
-        
-        // Control updates
-        document.getElementById('numParticles').addEventListener('input', (e) => {
-            document.getElementById('numParticlesValue').textContent = e.target.value;
-        });
-        
-        document.getElementById('kSlider').addEventListener('input', (e) => {
-            k = parseFloat(e.target.value);
-            document.getElementById('kValue').textContent = k.toFixed(2);
-        });
-        
-        document.getElementById('gammaSlider').addEventListener('input', (e) => {
-            gamma = parseFloat(e.target.value);
-            document.getElementById('gammaValue').textContent = gamma.toFixed(2);
-        });
-        
-        document.getElementById('sigmaSlider').addEventListener('input', (e) => {
-            sigma = parseFloat(e.target.value);
-            document.getElementById('sigmaValue').textContent = sigma.toFixed(1);
-        });
-        
-        // Initialize on load
-        window.addEventListener('load', () => {
-            initThreeJS();
-            initParticles();
-            animate();
-            
-            console.log('12D Cosmic Synapse Theory - Interactive Validation');
-            console.log('φ = ' + PHI);
-            console.log('System initialized with', particles.length, 'particles');
-        });
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = canvas.clientWidth / canvas.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-        });
-    </script>
+
+            document.getElementById('gammaSlider').addEventListener('input', (e) => {
+                gamma = parseFloat(e.target.value);
+                document.getElementById('gammaValue').textContent = gamma.toFixed(2);
+            });
+
+            document.getElementById('sigmaSlider').addEventListener('input', (e) => {
+                sigma = parseFloat(e.target.value);
+                document.getElementById('sigmaValue').textContent = sigma.toFixed(1);
+            });
+
+            // Initialize on load
+            window.addEventListener('load', () => {
+                initThreeJS();
+                initParticles();
+                animate();
+
+                console.log('12D Cosmic Synapse Theory - Interactive Validation');
+                console.log('φ = ' + PHI);
+                console.log('System initialized with', particles.length, 'particles');
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            });
+        </script>
 </body>
+
 </html>
