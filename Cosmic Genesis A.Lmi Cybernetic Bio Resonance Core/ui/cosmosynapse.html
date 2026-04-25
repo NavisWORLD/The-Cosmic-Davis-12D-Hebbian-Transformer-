@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoSynapse — Cybernetic Bio Resonance Core</title>
+    <meta name="description" content="12D Cosmic Synapse Theory neural bridge dashboard">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/cosmosynapse.css">
+</head>
+
+<body>
+    <!-- Cosmic Background -->
+    <div class="cosmic-bg">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+        <div class="nebula nebula-3"></div>
+        <div class="stars"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="cs-header">
+            <div class="cs-logo">
+                <div class="logo-orb">
+                    <div class="orb-core"></div>
+                    <div class="orb-ring"></div>
+                </div>
+                <div class="logo-text">
+                    <h1>CosmoSynapse</h1>
+                    <span class="subtitle">Cybernetic Bio Resonance Core</span>
+                </div>
+            </div>
+            <div class="cs-status-bar">
+                <span class="status-chip" id="connection-status">
+                    <span class="status-dot disconnected" id="status-dot"></span>
+                    <span id="status-text">Disconnected</span>
+                </span>
+                <span class="status-chip version-chip">v1.0.0</span>
+                <span class="status-chip" id="server-port">Port 8765</span>
+            </div>
+        </header>
+
+        <!-- Dashboard Grid -->
+        <main class="dashboard-grid">
+
+            <!-- ==================== LEFT COLUMN ==================== -->
+            <div class="column column-left">
+
+                <!-- CST Phase Display -->
+                <section class="panel" id="cst-phase-panel">
+                    <div class="panel-header">
+                        <h2><span class="icon">🌀</span> CST Phase State</h2>
+                        <span class="live-badge" id="cst-live">LIVE</span>
+                    </div>
+                    <div class="cst-phase-orb">
+                        <div class="phase-core" id="phase-core"></div>
+                        <div class="phase-ring ring-1"></div>
+                        <div class="phase-ring ring-2"></div>
+                        <div class="phase-ring ring-3"></div>
+                        <div class="phase-label" id="cst-phase-label">CALIBRATING</div>
+                        <div class="phase-value" id="cst-phi-value">ΦG: 0°</div>
+                    </div>
+                    <div class="cst-metrics-row">
+                        <div class="metric-card">
+                            <span class="metric-label">Entanglement</span>
+                            <span class="metric-value" id="metric-entanglement">0.00</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Phase Vel</span>
+                            <span class="metric-value" id="metric-phase-vel">0.000</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Persona</span>
+                            <span class="metric-value" id="metric-persona">--</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Biometrics -->
+                <section class="panel" id="biometrics-panel">
+                    <div class="panel-header">
+                        <h2><span class="icon">💓</span> Bio Resonance</h2>
+                    </div>
+                    <div class="bio-grid">
+                        <div class="bio-card">
+                            <span class="bio-icon">❤️</span>
+                            <span class="bio-value" id="bio-heart">--</span>
+                            <span class="bio-label">Heart Rate</span>
+                        </div>
+                        <div class="bio-card">
+                            <span class="bio-icon">🫁</span>
+                            <span class="bio-value" id="bio-breath">--</span>
+                            <span class="bio-label">Respiration</span>
+                        </div>
+                        <div class="bio-card">
+                            <span class="bio-icon">⚡</span>
+                            <span class="bio-value" id="bio-entropy">0.50</span>
+                            <span class="bio-label">Entropy</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Lyapunov Lock -->
+                <section class="panel" id="lyapunov-panel">
+                    <div class="panel-header">
+                        <h2><span class="icon">🔒</span> Lyapunov Lock</h2>
+                    </div>
+                    <div class="lyapunov-gauge">
+                        <div class="gauge-bg">
+                            <div class="gauge-needle" id="lyapunov-needle"></div>
+                        </div>
+                        <div class="gauge-labels">
+                            <span class="label-stable">STABLE</span>
+                            <span class="gauge-status" id="lyapunov-status">LOCKED</span>
+                            <span class="label-unstable">CHAOTIC</span>
+                        </div>
+                        <div class="gauge-drift">
+                            Drift: <span id="lyapunov-drift">0.000 rad</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ==================== CENTER COLUMN ==================== -->
+            <div class="column column-center">
+
+                <!-- Emotional Metrics -->
+                <section class="panel panel-tall" id="emotional-panel">
+                    <div class="panel-header">
+                        <h2><span class="icon">🎭</span> Emotional Metrics</h2>
+                    </div>
+                    <div class="emo-bars">
+                        <div class="emo-row">
+                            <span class="emo-label">Valence</span>
+                            <div class="emo-track">
+                                <div class="emo-fill" id="valence-bar" style="width:50%"></div>
+                            </div>
+                            <span class="emo-val" id="valence-value">0.00</span>
+                        </div>
+                        <div class="emo-row">
+                            <span class="emo-label">Arousal</span>
+                            <div class="emo-track">
+                                <div class="emo-fill fill-cyan" id="arousal-bar" style="width:0%"></div>
+                            </div>
+                            <span class="emo-val" id="arousal-value">0.00</span>
+                        </div>
+                        <div class="emo-row">
+                            <span class="emo-label">Intensity</span>
+                            <div class="emo-track">
+                                <div class="emo-fill fill-pink" id="intensity-bar" style="width:0%"></div>
+                            </div>
+                            <span class="emo-val" id="intensity-value">0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Detected Emotions -->
+                    <div class="panel-sub-header">Detected Emotions</div>
+                    <div class="emotions-grid" id="detected-emotions">
+                        <span class="emotion-tag default">⏳ CALIBRATING</span>
+                    </div>
+                </section>
+
+                <!-- Emeth Harmonizer -->
+                <section class="panel" id="harmonizer-panel">
+                    <div class="panel-header">
+                        <h2><span class="icon">🎵</span> Emeth Harmonizer</h2>
+                    </div>
+                    <div class="harmonizer-bars">
+                        <div class="harm-row">
+                            <span class="harm-label">🥁 Percussion<br><small>DeepSeek (Logic)</small></span>
+                            <div class="harm-track">
+                                <div class="harm-fill fill-red" id="perc-bar" style="width:33%"></div>
+                            </div>
+                        </div>
+                        <div class="harm-row">
+                            <span class="harm-label">🎻 Strings<br><small>Claude (Empathy)</small></span>
+                            <div class="harm-track">
+                                <div class="harm-fill fill-green" id="string-bar" style="width:34%"></div>
+                            </div>
+                        </div>
+                        <div class="harm-row">
+                            <span class="harm-label">🎺 Brass<br><small>Gemini (Creativity)</small></span>
+                            <div class="harm-track">
+                                <div class="harm-fill fill-amber" id="brass-bar" style="width:33%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conductor-instruction" id="conductor-instruction">
+                        "Maintain Balanced Orchestral Mix"
+                    </div>
+                </section>
+            </div>
+
+            <!-- ==================== RIGHT COLUMN ==================== -->
+            <div class="column column-right">
+
+                <!-- Consciousness Dashboard -->
+                <section class="panel panel-tall" id="consciousness-panel">
+                    <div class="panel-header">
+                        <h2><span class="icon">🧠</span> Consciousness</h2>
+                        <span class="live-badge" id="consciousness-live">LIVE</span>
+                    </div>
+
+                    <!-- Thought Stream -->
+                    <div class="panel-sub-header">💭 Thought Stream</div>
+                    <div class="thoughts-scroll" id="consciousness-thoughts">
+                        <div class="thought-placeholder">Waiting for thoughts...</div>
+                    </div>
+
+                    <!-- Existence Awareness -->
+                    <div class="panel-sub-header">🌐 Existence</div>
+                    <div class="exist-stats">
+                        <div class="exist-row">
+                            <span class="exist-icon">💻</span>
+                            <span class="exist-val" id="exist-host">--</span>
+                        </div>
+                        <div class="exist-row">
+                            <span class="exist-icon">🧬</span>
+                            <span class="exist-val" id="exist-model">--</span>
+                        </div>
+                        <div class="exist-row">
+                            <span class="exist-icon">🧮</span>
+                            <span class="exist-val" id="exist-cpu">--</span>
+                        </div>
+                        <div class="exist-row">
+                            <span class="exist-icon">💾</span>
+                            <span class="exist-val" id="exist-ram">--</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-refresh" id="btn-refresh-consciousness" title="Refresh">
+                        🔄 Refresh
+                    </button>
+                </section>
+
+                <!-- Evolution Patches -->
+                <section class="panel" id="evolution-panel">
+                    <div class="panel-header">
+                        <h2><span class="icon">🔧</span> Evolution</h2>
+                    </div>
+                    <div class="patches-scroll" id="evolution-patches">
+                        <div class="patch-placeholder">No pending patches</div>
+                    </div>
+                </section>
+
+                <!-- Reflecting Indicator -->
+                <section class="panel" id="reflecting-panel" style="display:none">
+                    <div class="reflecting-indicator active">
+                        <div class="reflect-orb">
+                            <div class="reflect-core"></div>
+                            <div class="reflect-ring r1"></div>
+                            <div class="reflect-ring r2"></div>
+                        </div>
+                        <span class="reflect-text">Reflecting...</span>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="cs-footer">
+            <span>CosmoSynapse v1.0.0 — Cosmic Genesis A.Lmi Cybernetic Bio Resonance Core</span>
+            <span>12D Cosmic Synapse Theory</span>
+        </footer>
+    </div>
+
+    <script src="js/emotional_bridge.js"></script>
+    <script src="js/cosmosynapse.js"></script>
+</body>
+
+</html>

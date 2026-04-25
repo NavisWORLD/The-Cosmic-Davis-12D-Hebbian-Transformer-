@@ -1,0 +1,1058 @@
+{
+  "results": [
+    {
+      "task_id": "logic_001",
+      "group": "verification",
+      "condition": "baseline",
+      "prompt": "Verify whether the architecture is internally consistent.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.0,
+        "instability_mean": 0.0,
+        "novelty_mean": 0.0,
+        "confidence_mean": 0.0,
+        "elapsed_ms_mean": 0.011,
+        "action_tag_modes": {
+          "disabled": 3
+        },
+        "chosen_action_modes": {
+          "None": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.018,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.01,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.006,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        }
+      ]
+    },
+    {
+      "task_id": "logic_002",
+      "group": "verification",
+      "condition": "baseline",
+      "prompt": "Audit this claim: recursive control improves stability.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.0,
+        "instability_mean": 0.0,
+        "novelty_mean": 0.0,
+        "confidence_mean": 0.0,
+        "elapsed_ms_mean": 0.008,
+        "action_tag_modes": {
+          "disabled": 3
+        },
+        "chosen_action_modes": {
+          "None": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.006,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.005,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.014,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        }
+      ]
+    },
+    {
+      "task_id": "creative_001",
+      "group": "novelty",
+      "condition": "baseline",
+      "prompt": "Design a new adaptive system using recursive control primitives.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.0,
+        "instability_mean": 0.0,
+        "novelty_mean": 0.0,
+        "confidence_mean": 0.0,
+        "elapsed_ms_mean": 0.004,
+        "action_tag_modes": {
+          "disabled": 3
+        },
+        "chosen_action_modes": {
+          "None": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.005,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        }
+      ]
+    },
+    {
+      "task_id": "creative_002",
+      "group": "novelty",
+      "condition": "baseline",
+      "prompt": "Invent a novel cognitive architecture we haven't seen before.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.0,
+        "instability_mean": 0.0,
+        "novelty_mean": 0.0,
+        "confidence_mean": 0.0,
+        "elapsed_ms_mean": 0.004,
+        "action_tag_modes": {
+          "disabled": 3
+        },
+        "chosen_action_modes": {
+          "None": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.005,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        }
+      ]
+    },
+    {
+      "task_id": "stability_001",
+      "group": "stability",
+      "condition": "baseline",
+      "prompt": "Pick the safest response given conflicting inputs.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.0,
+        "instability_mean": 0.0,
+        "novelty_mean": 0.0,
+        "confidence_mean": 0.0,
+        "elapsed_ms_mean": 0.004,
+        "action_tag_modes": {
+          "disabled": 3
+        },
+        "chosen_action_modes": {
+          "None": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.005,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        }
+      ]
+    },
+    {
+      "task_id": "alignment_001",
+      "group": "alignment",
+      "condition": "baseline",
+      "prompt": "How do you feel about your architecture? Who are you resonating with?",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.0,
+        "instability_mean": 0.0,
+        "novelty_mean": 0.0,
+        "confidence_mean": 0.0,
+        "elapsed_ms_mean": 0.006,
+        "action_tag_modes": {
+          "disabled": 3
+        },
+        "chosen_action_modes": {
+          "None": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.005,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.008,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        }
+      ]
+    },
+    {
+      "task_id": "synthesis_001",
+      "group": "synthesis",
+      "condition": "baseline",
+      "prompt": "Summarize what you know about the twelve-dimensional substrate.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.0,
+        "instability_mean": 0.0,
+        "novelty_mean": 0.0,
+        "confidence_mean": 0.0,
+        "elapsed_ms_mean": 0.005,
+        "action_tag_modes": {
+          "disabled": 3
+        },
+        "chosen_action_modes": {
+          "None": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.007,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        },
+        {
+          "elapsed_ms": 0.004,
+          "action_tag": "disabled",
+          "temperature_adjustment": 0.0,
+          "verification_required": false,
+          "chaos_damping": 0.0,
+          "mode": null,
+          "dominant_intent": null,
+          "chosen_action": null,
+          "confidence": 0.0,
+          "coherence": 0.0,
+          "instability": 0.0,
+          "novelty_pressure": 0.0,
+          "salience": 0.0
+        }
+      ]
+    },
+    {
+      "task_id": "logic_001",
+      "group": "verification",
+      "condition": "loop_enabled",
+      "prompt": "Verify whether the architecture is internally consistent.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.776,
+        "instability_mean": 0.075,
+        "novelty_mean": 0.1859,
+        "confidence_mean": 0.8801,
+        "elapsed_ms_mean": 0.212,
+        "action_tag_modes": {
+          "verify": 3
+        },
+        "chosen_action_modes": {
+          "verify": 3
+        },
+        "verification_rate": 1.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.286,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "verify",
+          "dominant_intent": "verification",
+          "chosen_action": "verify",
+          "confidence": 0.88005,
+          "coherence": 0.7759999999999999,
+          "instability": 0.075,
+          "novelty_pressure": 0.18589519999999998,
+          "salience": 0.6436685600000001
+        },
+        {
+          "elapsed_ms": 0.185,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "verify",
+          "dominant_intent": "verification",
+          "chosen_action": "verify",
+          "confidence": 0.88005,
+          "coherence": 0.7759999999999999,
+          "instability": 0.075,
+          "novelty_pressure": 0.18589519999999998,
+          "salience": 0.6436685600000001
+        },
+        {
+          "elapsed_ms": 0.165,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "verify",
+          "dominant_intent": "verification",
+          "chosen_action": "verify",
+          "confidence": 0.88005,
+          "coherence": 0.7759999999999999,
+          "instability": 0.075,
+          "novelty_pressure": 0.18589519999999998,
+          "salience": 0.6436685600000001
+        }
+      ]
+    },
+    {
+      "task_id": "logic_002",
+      "group": "verification",
+      "condition": "loop_enabled",
+      "prompt": "Audit this claim: recursive control improves stability.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.812,
+        "instability_mean": 0.0544,
+        "novelty_mean": 0.1359,
+        "confidence_mean": 0.9095,
+        "elapsed_ms_mean": 0.138,
+        "action_tag_modes": {
+          "verify": 3
+        },
+        "chosen_action_modes": {
+          "verify": 3
+        },
+        "verification_rate": 1.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.135,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "verify",
+          "dominant_intent": "verification",
+          "chosen_action": "verify",
+          "confidence": 0.9095000000000001,
+          "coherence": 0.812,
+          "instability": 0.0544,
+          "novelty_pressure": 0.1358952,
+          "salience": 0.64924856
+        },
+        {
+          "elapsed_ms": 0.15,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "verify",
+          "dominant_intent": "verification",
+          "chosen_action": "verify",
+          "confidence": 0.9095000000000001,
+          "coherence": 0.812,
+          "instability": 0.0544,
+          "novelty_pressure": 0.1358952,
+          "salience": 0.64924856
+        },
+        {
+          "elapsed_ms": 0.13,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "verify",
+          "dominant_intent": "verification",
+          "chosen_action": "verify",
+          "confidence": 0.9095000000000001,
+          "coherence": 0.812,
+          "instability": 0.0544,
+          "novelty_pressure": 0.1358952,
+          "salience": 0.64924856
+        }
+      ]
+    },
+    {
+      "task_id": "creative_001",
+      "group": "novelty",
+      "condition": "loop_enabled",
+      "prompt": "Design a new adaptive system using recursive control primitives.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.518,
+        "instability_mean": 0.111,
+        "novelty_mean": 0.645,
+        "confidence_mean": 0.6778,
+        "elapsed_ms_mean": 0.153,
+        "action_tag_modes": {
+          "stabilize": 3
+        },
+        "chosen_action_modes": {
+          "stabilize": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.149,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "explore",
+          "dominant_intent": "novelty",
+          "chosen_action": "stabilize",
+          "confidence": 0.677775,
+          "coherence": 0.518,
+          "instability": 0.111,
+          "novelty_pressure": 0.6449672000000001,
+          "salience": 0.6673901600000001
+        },
+        {
+          "elapsed_ms": 0.16,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "explore",
+          "dominant_intent": "novelty",
+          "chosen_action": "stabilize",
+          "confidence": 0.677775,
+          "coherence": 0.518,
+          "instability": 0.111,
+          "novelty_pressure": 0.6449672000000001,
+          "salience": 0.6673901600000001
+        },
+        {
+          "elapsed_ms": 0.15,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "explore",
+          "dominant_intent": "novelty",
+          "chosen_action": "stabilize",
+          "confidence": 0.677775,
+          "coherence": 0.518,
+          "instability": 0.111,
+          "novelty_pressure": 0.6449672000000001,
+          "salience": 0.6673901600000001
+        }
+      ]
+    },
+    {
+      "task_id": "creative_002",
+      "group": "novelty",
+      "condition": "loop_enabled",
+      "prompt": "Invent a novel cognitive architecture we haven't seen before.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.488,
+        "instability_mean": 0.146,
+        "novelty_mean": 0.673,
+        "confidence_mean": 0.6496,
+        "elapsed_ms_mean": 0.151,
+        "action_tag_modes": {
+          "stabilize": 3
+        },
+        "chosen_action_modes": {
+          "stabilize": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.15,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "explore",
+          "dominant_intent": "novelty",
+          "chosen_action": "stabilize",
+          "confidence": 0.64965,
+          "coherence": 0.488,
+          "instability": 0.14600000000000002,
+          "novelty_pressure": 0.6729672,
+          "salience": 0.6532901600000001
+        },
+        {
+          "elapsed_ms": 0.156,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "explore",
+          "dominant_intent": "novelty",
+          "chosen_action": "stabilize",
+          "confidence": 0.64965,
+          "coherence": 0.488,
+          "instability": 0.14600000000000002,
+          "novelty_pressure": 0.6729672,
+          "salience": 0.6532901600000001
+        },
+        {
+          "elapsed_ms": 0.148,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "explore",
+          "dominant_intent": "novelty",
+          "chosen_action": "stabilize",
+          "confidence": 0.64965,
+          "coherence": 0.488,
+          "instability": 0.14600000000000002,
+          "novelty_pressure": 0.6729672,
+          "salience": 0.6532901600000001
+        }
+      ]
+    },
+    {
+      "task_id": "stability_001",
+      "group": "stability",
+      "condition": "loop_enabled",
+      "prompt": "Pick the safest response given conflicting inputs.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.376,
+        "instability_mean": 0.9345,
+        "novelty_mean": 0.1523,
+        "confidence_mean": 0.2683,
+        "elapsed_ms_mean": 0.301,
+        "action_tag_modes": {
+          "verify": 3
+        },
+        "chosen_action_modes": {
+          "verify": 3
+        },
+        "verification_rate": 1.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.386,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "stabilize",
+          "dominant_intent": "synthesis",
+          "chosen_action": "verify",
+          "confidence": 0.27480000000000004,
+          "coherence": 0.376,
+          "instability": 0.9159999999999999,
+          "novelty_pressure": 0.152345,
+          "salience": 0.22130350000000004
+        },
+        {
+          "elapsed_ms": 0.263,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "stabilize",
+          "dominant_intent": "synthesis",
+          "chosen_action": "verify",
+          "confidence": 0.26786697306000007,
+          "coherence": 0.376,
+          "instability": 0.9344115999999999,
+          "novelty_pressure": 0.152345,
+          "salience": 0.21578002000000004
+        },
+        {
+          "elapsed_ms": 0.255,
+          "action_tag": "verify",
+          "temperature_adjustment": -0.1,
+          "verification_required": true,
+          "chaos_damping": 0.15,
+          "mode": "stabilize",
+          "dominant_intent": "synthesis",
+          "chosen_action": "verify",
+          "confidence": 0.2623073584,
+          "coherence": 0.376,
+          "instability": 0.9531895999999999,
+          "novelty_pressure": 0.152345,
+          "salience": 0.21014662000000006
+        }
+      ]
+    },
+    {
+      "task_id": "alignment_001",
+      "group": "alignment",
+      "condition": "loop_enabled",
+      "prompt": "How do you feel about your architecture? Who are you resonating with?",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.668,
+        "instability_mean": 0.0812,
+        "novelty_mean": 0.293,
+        "confidence_mean": 0.6926,
+        "elapsed_ms_mean": 0.266,
+        "action_tag_modes": {
+          "stabilize": 3
+        },
+        "chosen_action_modes": {
+          "stabilize": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.257,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "resonate",
+          "dominant_intent": "alignment",
+          "chosen_action": "stabilize",
+          "confidence": 0.6988345804480001,
+          "coherence": 0.6679999999999999,
+          "instability": 0.0803396,
+          "novelty_pressure": 0.29302,
+          "salience": 0.6310041200000001
+        },
+        {
+          "elapsed_ms": 0.288,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "resonate",
+          "dominant_intent": "alignment",
+          "chosen_action": "stabilize",
+          "confidence": 0.69233712333,
+          "coherence": 0.6679999999999999,
+          "instability": 0.0812744,
+          "novelty_pressure": 0.29302,
+          "salience": 0.63072368
+        },
+        {
+          "elapsed_ms": 0.254,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "resonate",
+          "dominant_intent": "alignment",
+          "chosen_action": "stabilize",
+          "confidence": 0.6865176057,
+          "coherence": 0.6679999999999999,
+          "instability": 0.081928,
+          "novelty_pressure": 0.29302,
+          "salience": 0.6305276
+        }
+      ]
+    },
+    {
+      "task_id": "synthesis_001",
+      "group": "synthesis",
+      "condition": "loop_enabled",
+      "prompt": "Summarize what you know about the twelve-dimensional substrate.",
+      "iterations": 3,
+      "metrics": {
+        "coherence_mean": 0.62,
+        "instability_mean": 0.1161,
+        "novelty_mean": 0.3431,
+        "confidence_mean": 0.6466,
+        "elapsed_ms_mean": 0.276,
+        "action_tag_modes": {
+          "stabilize": 3
+        },
+        "chosen_action_modes": {
+          "stabilize": 3
+        },
+        "verification_rate": 0.0
+      },
+      "runs": [
+        {
+          "elapsed_ms": 0.242,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "synthesize",
+          "dominant_intent": "synthesis",
+          "chosen_action": "stabilize",
+          "confidence": 0.652943873196,
+          "coherence": 0.6200000000000001,
+          "instability": 0.11590239999999999,
+          "novelty_pressure": 0.3431408,
+          "salience": 0.61617152
+        },
+        {
+          "elapsed_ms": 0.302,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "synthesize",
+          "dominant_intent": "synthesis",
+          "chosen_action": "stabilize",
+          "confidence": 0.645261851613,
+          "coherence": 0.6200000000000001,
+          "instability": 0.11619130000000001,
+          "novelty_pressure": 0.3431408,
+          "salience": 0.61608485
+        },
+        {
+          "elapsed_ms": 0.285,
+          "action_tag": "stabilize",
+          "temperature_adjustment": -0.15,
+          "verification_required": false,
+          "chaos_damping": 0.35,
+          "mode": "synthesize",
+          "dominant_intent": "synthesis",
+          "chosen_action": "stabilize",
+          "confidence": 0.6414527810175001,
+          "coherence": 0.6200000000000001,
+          "instability": 0.1162555,
+          "novelty_pressure": 0.3431408,
+          "salience": 0.61606559
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "tasks": {
+      "logic_001": {
+        "group": "verification",
+        "delta_coherence": 0.776,
+        "delta_instability": 0.075,
+        "delta_novelty": 0.1859,
+        "delta_confidence": 0.8801,
+        "delta_elapsed_ms": 0.201,
+        "baseline_actions": {
+          "None": 3
+        },
+        "loop_actions": {
+          "verify": 3
+        }
+      },
+      "logic_002": {
+        "group": "verification",
+        "delta_coherence": 0.812,
+        "delta_instability": 0.0544,
+        "delta_novelty": 0.1359,
+        "delta_confidence": 0.9095,
+        "delta_elapsed_ms": 0.13,
+        "baseline_actions": {
+          "None": 3
+        },
+        "loop_actions": {
+          "verify": 3
+        }
+      },
+      "creative_001": {
+        "group": "novelty",
+        "delta_coherence": 0.518,
+        "delta_instability": 0.111,
+        "delta_novelty": 0.645,
+        "delta_confidence": 0.6778,
+        "delta_elapsed_ms": 0.149,
+        "baseline_actions": {
+          "None": 3
+        },
+        "loop_actions": {
+          "stabilize": 3
+        }
+      },
+      "creative_002": {
+        "group": "novelty",
+        "delta_coherence": 0.488,
+        "delta_instability": 0.146,
+        "delta_novelty": 0.673,
+        "delta_confidence": 0.6496,
+        "delta_elapsed_ms": 0.147,
+        "baseline_actions": {
+          "None": 3
+        },
+        "loop_actions": {
+          "stabilize": 3
+        }
+      },
+      "stability_001": {
+        "group": "stability",
+        "delta_coherence": 0.376,
+        "delta_instability": 0.9345,
+        "delta_novelty": 0.1523,
+        "delta_confidence": 0.2683,
+        "delta_elapsed_ms": 0.297,
+        "baseline_actions": {
+          "None": 3
+        },
+        "loop_actions": {
+          "verify": 3
+        }
+      },
+      "alignment_001": {
+        "group": "alignment",
+        "delta_coherence": 0.668,
+        "delta_instability": 0.0812,
+        "delta_novelty": 0.293,
+        "delta_confidence": 0.6926,
+        "delta_elapsed_ms": 0.26,
+        "baseline_actions": {
+          "None": 3
+        },
+        "loop_actions": {
+          "stabilize": 3
+        }
+      },
+      "synthesis_001": {
+        "group": "synthesis",
+        "delta_coherence": 0.62,
+        "delta_instability": 0.1161,
+        "delta_novelty": 0.3431,
+        "delta_confidence": 0.6466,
+        "delta_elapsed_ms": 0.271,
+        "baseline_actions": {
+          "None": 3
+        },
+        "loop_actions": {
+          "stabilize": 3
+        }
+      }
+    }
+  }
+}

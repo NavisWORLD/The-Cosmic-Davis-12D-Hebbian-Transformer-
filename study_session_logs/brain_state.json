@@ -1,0 +1,1 @@
+{"iteration": 999, "topic": "TEST_MODE", "loss_12d": 0.5, "loss_42d": 0.4, "emotion": "Curiosity", "valence": 0.8, "arousal": 0.6, "current_thought": "Verifying visual cortex...", "last_tokens": ["hello", "world", "<freq_5>"], "audio_token_count": 12, "winner": "42D"}

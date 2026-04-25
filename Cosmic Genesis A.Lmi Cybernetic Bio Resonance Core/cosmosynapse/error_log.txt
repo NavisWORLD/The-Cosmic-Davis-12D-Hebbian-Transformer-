@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+
+≡ƒº¬ DRY RUN MODE (30 ticks)
+
+DEBUG: nexus.py: Loading module...
+DEBUG: nexus.py: Creating Nexus instance...
+DEBUG: nexus.py: Nexus instance created
+DEBUG: neuro_engine.py: Importing nexus...
+DEBUG: neuro_engine.py: nexus imported
+DEBUG: neuro_engine.py: Instantiating NeuromorphicEngine...
+DEBUG: neuro_engine.py: NeuromorphicEngine instantiated
+[QUANTUM] No token provided. Running in simulation mode.
+  File "C:\Users\corys\The-Cosmic-Davis-12D-Hebbian-Transformer--1\Cosmic Genesis A.Lmi Cybernetic Bio Resonance Core\cosmosynapse\start_cns.py", line 90, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Users\corys\The-Cosmic-Davis-12D-Hebbian-Transformer--1\Cosmic Genesis A.Lmi Cybernetic Bio Resonance Core\cosmosynapse\start_cns.py", line 58, in main
+    stats = cns.start_life(dry_run=True, dry_run_ticks=args.ticks)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\corys\The-Cosmic-Davis-12D-Hebbian-Transformer--1\Cosmic Genesis A.Lmi Cybernetic Bio Resonance Core\cosmosynapse\engine\cns_core.py", line 119, in start_life
+    self.initialize_organs()
+  File "C:\Users\corys\The-Cosmic-Davis-12D-Hebbian-Transformer--1\Cosmic Genesis A.Lmi Cybernetic Bio Resonance Core\cosmosynapse\engine\cns_core.py", line 95, in initialize_organs
+    from .emeth_harmonizer import EmethHarmonizer
+ImportError: attempted relative import with no known parent package

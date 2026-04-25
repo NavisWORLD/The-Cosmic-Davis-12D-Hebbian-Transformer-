@@ -45,8 +45,11 @@ def load_model(checkpoint_path, vocab_size):
         model = CosmicSynapseTransformer(config)
         
         # Load weights
-        state_dict = torch.load(checkpoint_path, map_location='cpu')
-        model.load_state_dict(state_dict)
+        checkpoint = torch.load(checkpoint_path, map_location='cpu')
+        if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+            model.load_state_dict(checkpoint['model_state_dict'])
+        else:
+            model.load_state_dict(checkpoint)
         model.eval()
         return model
     except Exception as e:
@@ -62,7 +65,23 @@ def chat_loop():
     # In production, we might look in saved_models, but for now we link to the live study logs
     # to allow monitoring the ongoing training.
     vocab_path = ROOT_DIR / "study_session_logs" / "vocab.txt"
-    checkpoint_path = ROOT_DIR / "study_session_logs" / "model_12d_latest.pt"
+    vocab_path = ROOT_DIR / "study_session_logs" / "vocab.txt"
+    
+    # Find the latest checkpoint
+    checkpoint_dir = ROOT_DIR / "study_session_logs" / "checkpoints"
+    checkpoint_path = None
+    
+    if checkpoint_dir.exists():
+        checkpoints = list(checkpoint_dir.glob("model_12d_iter_*.pt"))
+        if checkpoints:
+            # Sort by iteration number
+            checkpoints.sort(key=lambda p: int(p.stem.split('_')[-1]))
+            checkpoint_path = checkpoints[-1]
+            print(f"[SYSTEM] Found latest checkpoint: {checkpoint_path.name}")
+    
+    if not checkpoint_path:
+        # Fallback to legacy path if no iteration checkpoints found
+        checkpoint_path = ROOT_DIR / "study_session_logs" / "model_12d_latest.pt"
     
     gen = load_vocab(vocab_path)
     if not gen: return

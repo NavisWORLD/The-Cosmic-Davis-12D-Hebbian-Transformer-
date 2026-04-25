@@ -43,11 +43,16 @@ class UnifiedCosmicTrainer:
         
         print(f"[UNIFIED TRAINER] Initialized for {model_type} model on {device}")
 
-    def train_on_text(self, text: str, tokenizer, seq_len: int = 64, batch_size: int = 32) -> Dict[str, float]:
+    def train_on_text(self, text: str, tokenizer, seq_len: int = 64, batch_size: int = 32, learning_rate: Optional[float] = None) -> Dict[str, float]:
         """
         Train the model on a specific text block (e.g., a web page).
         """
         self.model.train()
+        
+        # Update learning rate if provided (Dynamic Emotional Modulation)
+        if learning_rate is not None:
+            for param_group in self.optimizer.param_groups:
+                param_group['lr'] = learning_rate
         
         # Tokenize
         # Simple character-level fallback if no tokenizer provided, 

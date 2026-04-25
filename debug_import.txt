@@ -1,0 +1,4 @@
+  File "<string>", line 1
+    import sys, os; sys.path.insert(0, os.path.join(os.getcwd(), 'packages/cosmic-synapse-transformer')); sys.path.insert(0, os.getcwd()); import research_42d.experiments.singularity_42d.autonomous_dual_mind
+                                                                                                                                                                            ^
+SyntaxError: invalid decimal literal

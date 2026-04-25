@@ -1,0 +1,37 @@
+============================================================
+VERIFYING LEARNING & MEMORY (12D vs 42D)
+============================================================
+
+[GOAL] Teach the models this fact: 'The secret password is Omega.'
+Building vocabulary from 8 tokens...
+Vocabulary size: 12
+[DATA] Corpus length: 100 words
+
+[INIT] Initializing Neural Engines...
+[12D CST] Model initialized with 0.24M parameters
+[12D CST] phi-optimized dimensions: d_model=76, d_ff=122
+[UNIFIED TRAINER] Initialized for 12D model on cpu
+[42D HYPER-CST] Initialized with 0.20M params
+[42D HYPER-CST] Internal State Dimension: 42
+[UNIFIED TRAINER] Initialized for 42D model on cpu
+
+[TRAINING] Running rapid learning cycle (50 steps)...
+  Step 1  | 12D Loss: 2.4456 | 42D Loss: 2.4583
+  Step 10 | 12D Loss: 1.7164 | 42D Loss: 1.4643
+  Step 20 | 12D Loss: 1.2678 | 42D Loss: 1.0374
+  Step 30 | 12D Loss: 0.9177 | 42D Loss: 0.7679
+  Step 40 | 12D Loss: 0.6422 | 42D Loss: 0.5503
+  Step 50 | 12D Loss: 0.4270 | 42D Loss: 0.3777
+
+[RESULTS] Learning Efficiency:
+  12D Model: Loss dropped by 2.0186
+  [OK] 12D has successfully memorized the pattern.
+  42D Model: Loss dropped by 2.0806
+  [OK] 42D has successfully memorized the pattern.
+
+[TEST] Text Generation (Recall):
+  Prompt: 'The secret password'
+  12D Says: 'The secret password is Omega. The'
+  42D Says: 'The secret password is Omega. The'
+
+SUCCESS: Both models learned and remembered the secret fact!

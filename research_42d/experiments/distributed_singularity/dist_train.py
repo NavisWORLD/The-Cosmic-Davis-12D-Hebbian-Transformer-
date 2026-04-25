@@ -33,7 +33,7 @@ sys.path.append(str(ROOT_DIR / "packages" / "cosmic-synapse-transformer"))
 from cosmic_synapse.models.cosmic_synapse_transformer import CosmicSynapseTransformer, CosmicConfig
 from cosmic_synapse.data.generate_synthetic_data import SyntheticDataGenerator
 # Import 42D model from research folder (need to add path)
-sys.path.append(str(ROOT_DIR / "research_42d" / "experiments" / "42d_singularity"))
+sys.path.append(str(ROOT_DIR / "research_42d" / "experiments" / "singularity_42d"))
 from hyper_cosmic_model import HyperCosmicTransformer, HyperConfig
 
 def setup():

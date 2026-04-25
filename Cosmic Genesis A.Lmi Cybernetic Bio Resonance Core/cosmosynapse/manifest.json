@@ -1,0 +1,39 @@
+{
+    "name": "CosmoSynapse",
+    "full_name": "Cosmic Genesis A.Lmi Cybernetic Bio Resonance Core",
+    "version": "2.0.0",
+    "description": "12D Cosmic Synapse Theory (CST) sensory consciousness layer for cosmos, now featuring Cosmo's — the Unified 54D CST Transformer. Fuses 12D + 42D architectures with Mixture-of-States Hebbian Attention, SwiGLU, RoPE, 7-fold Lorenz chaos, and persistent episodic memory.",
+    "author": "Cory Shane Davis",
+    "license": "MIT",
+    "min_cosmos_version": "1.0.0",
+    "python_version": ">=3.9",
+    "entry_points": {
+        "server": "cosmosynapse.server.emotion_server:run_server",
+        "dashboard": "ui/cosmosynapse.html",
+        "install": "install.py",
+        "cosmos_chat": "cosmosynapse.model.cosmos_chat:main",
+        "cosmos_plugin": "cosmosynapse.cosmos_plugin:get_plugin"
+    },
+    "capabilities": [
+        "cosmos_54d_transformer",
+        "cosmos_mixture_of_states_attention",
+        "cosmos_persistent_episodic_memory",
+        "cosmos_7fold_chaos_ensemble",
+        "cosmos_cosmos_plugin",
+        "12d_cst_engine",
+        "emotional_state_analysis",
+        "bio_resonance_sensing",
+        "consciousness_dashboard",
+        "internal_monologue",
+        "thought_persistence",
+        "self_awareness_bootstrap",
+        "dream_processing",
+        "code_evolution",
+        "emeth_harmonizer",
+        "lyapunov_lock",
+        "live_capture"
+    ],
+    "ports": {
+        "emotional_api": 8765
+    }
+}

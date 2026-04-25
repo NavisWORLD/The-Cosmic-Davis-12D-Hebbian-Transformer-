@@ -181,6 +181,25 @@ class SyntheticDataGenerator:
         ids = [self.vocab.get(token, self.vocab['<UNK>']) for token in tokens]
         return np.array(ids, dtype=np.uint16)
 
+    def encode(self, text: str) -> List[int]:
+        """
+        Encode a raw string into a list of token IDs (word-level).
+        Compatible with UnifiedCosmicTrainer.
+        """
+        # Simple whitespace tokenization to match build_vocabulary
+        tokens = text.split()
+        return [self.vocab.get(token, self.vocab.get('<UNK>', 1)) for token in tokens]
+
+    def decode(self, ids: List[int]) -> str:
+        """
+        Decode a list of IDs back to a string.
+        """
+        # Create reverse vocab on demand (or cache it if perf matters)
+        id_to_word = {v: k for k, v in self.vocab.items()}
+        tokens = [id_to_word.get(idx, '<UNK>') for idx in ids]
+        return ' '.join(tokens)
+
+
     def save_binary(self, ids: np.ndarray, output_path: str) -> None:
         """
         Save token IDs in binary format.

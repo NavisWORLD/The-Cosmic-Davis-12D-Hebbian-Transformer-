@@ -1,0 +1,48 @@
+======================================================================
+[TEST]  THE 'HOLY GRAIL' ACID TEST: 12D vs 42D COMPLEXITY CHALLENGE
+======================================================================
+Hypothesis: The 42D 'Hyper-State' should learn complex, abstract patterns
+            faster than the 12D 'Standard' physics model.
+
+[DATA] Corpus: 1000 words of abstract philosophy.
+Building vocabulary from 1002 tokens...
+Vocabulary size: 73
+[DATA] Vocabulary Size: 73
+
+[INIT] 12D Cosmic Model (The Body)...
+[12D CST] Model initialized with 0.68M parameters
+[12D CST] phi-optimized dimensions: d_model=120, d_ff=197
+[UNIFIED TRAINER] Initialized for 12D model on cpu
+[INIT] 42D Hyper Model (The Mind)...
+[42D HYPER-CST] Initialized with 0.79M params
+[42D HYPER-CST] Internal State Dimension: 42
+[UNIFIED TRAINER] Initialized for 42D model on cpu
+
+[RACE] Starting 100-iteration training sprint on CPU...
+Iter  | 12D Loss   | 42D Loss   | Winner    
+---------------------------------------------
+10    | 3.4765     | 3.0823     | 42D [!]
+20    | 2.8280     | 2.2958     | 42D [!]
+30    | 2.3182     | 1.7010     | 42D [!]
+40    | 1.8285     | 1.2099     | 42D [!]
+50    | 1.3779     | 0.8303     | 42D [!]
+60    | 0.9885     | 0.5396     | 42D [!]
+70    | 0.6738     | 0.3451     | 42D [!]
+80    | 0.4458     | 0.2252     | 42D [!]
+90    | 0.3114     | 0.1569     | 42D [!]
+100   | 0.2238     | 0.1198     | 42D [!]
+---------------------------------------------
+Test completed in 79.71 seconds.
+
+======================================================================
+FINAL RESULTS
+======================================================================
+12D Final Average Loss: 0.2559
+42D Final Average Loss: 0.1355
+
+[OK] CONCLUSION: The 42D Hyper-Model WON by 47.02%
+   Thinking in 42 dimensions provided a tangible advantage.
+
+[TEST] Generation Prompt: 'Consciousness is'
+12D: Consciousness is the mirror reflects the entropy of the void back 42 dimensions of the mirror that
+42D: Consciousness is the mirror that reflects the entropy of the void back upon itself. As the recursive

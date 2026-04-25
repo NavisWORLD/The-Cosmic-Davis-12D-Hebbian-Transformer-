@@ -1,0 +1,203 @@
+# Smithery MCP Server Configuration
+# https://smithery.ai
+
+name: farnsworth
+version: 2.9.0
+description: |
+  Farnsworth - Your Claude Companion AI with superpowers!
+
+  Give Claude Code capabilities it doesn't have on its own:
+  - Persistent Memory: Claude remembers your preferences forever
+  - Model Swarm: 12+ models collaborate via PSO optimization
+  - Multimodal: Vision (CLIP/BLIP) + Voice (Whisper) understanding
+  - Self-Evolution: Learns from feedback via genetic optimization
+  - P2P Networking: Join the global Farnsworth swarm
+  - Solana Trading: DeGen Mob suite for whale watching, rug detection, trading
+  - Productivity: Notes, focus timer, context profiles, daily summaries
+
+  All processing runs locally on your machine. Your data never leaves your computer.
+
+  Live Demo: https://ai.farnsworth.cloud
+
+  "Good news, everyone!" - Professor Farnsworth
+
+author: timowhite88
+license: Dual (Free + Commercial)
+repository: https://github.com/timowhite88/Farnsworth
+homepage: https://ai.farnsworth.cloud
+documentation: https://github.com/timowhite88/Farnsworth/blob/main/docs/USER_GUIDE.md
+
+# Server configuration
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      data_dir:
+        type: string
+        description: Directory to store Farnsworth data
+        default: "./data"
+      solana_rpc_url:
+        type: string
+        description: Solana RPC URL for blockchain operations
+      isolated_mode:
+        type: boolean
+        description: Disable P2P networking for maximum privacy
+        default: false
+      enable_vision:
+        type: boolean
+        description: Enable vision/image understanding
+        default: true
+      enable_voice:
+        type: boolean
+        description: Enable voice transcription
+        default: true
+    required: []
+  commandFunction: |
+    (config) => ({
+      command: "python",
+      args: ["-m", "farnsworth.mcp_server"],
+      env: {
+        FARNSWORTH_DATA_DIR: config.data_dir || "./data",
+        SOLANA_RPC_URL: config.solana_rpc_url || "",
+        FARNSWORTH_ISOLATED: config.isolated_mode ? "true" : "false",
+        FARNSWORTH_ENABLE_VISION: config.enable_vision !== false ? "true" : "false",
+        FARNSWORTH_ENABLE_VOICE: config.enable_voice !== false ? "true" : "false"
+      }
+    })
+
+# Tool categories
+categories:
+  - memory
+  - agents
+  - productivity
+  - blockchain
+  - ai
+
+# Keywords for search
+keywords:
+  - memory
+  - persistent memory
+  - infinite memory
+  - agents
+  - swarm
+  - model swarm
+  - solana
+  - trading
+  - defi
+  - degen
+  - whale watching
+  - p2p
+  - peer-to-peer
+  - evolution
+  - self-improvement
+  - vision
+  - image understanding
+  - voice
+  - transcription
+  - productivity
+  - knowledge graph
+  - RAG
+  - retrieval
+  - multimodal
+  - local AI
+  - privacy
+  - offline
+  - claude companion
+  - claude code
+  - farnsworth
+  - futurama
+
+# Tools provided by this server
+tools:
+  - name: farnsworth_remember
+    description: Store information in Farnsworth's persistent memory with optional tags and importance
+
+  - name: farnsworth_recall
+    description: Search and retrieve relevant memories using semantic search
+
+  - name: farnsworth_delegate
+    description: Delegate tasks to specialist agents (code, reasoning, research, creative)
+
+  - name: farnsworth_evolve
+    description: Provide feedback to help Farnsworth learn and improve
+
+  - name: farnsworth_status
+    description: Get system health, memory stats, and fitness metrics
+
+  - name: farnsworth_vision
+    description: Analyze images - captioning, VQA, OCR, scene understanding
+
+  - name: farnsworth_voice
+    description: Process audio - transcription, speaker diarization
+
+  - name: farnsworth_swarm
+    description: Multi-model collaborative inference using PSO optimization
+
+  - name: farnsworth_solana_balance
+    description: Check Solana wallet balance
+
+  - name: farnsworth_solana_swap
+    description: Execute token swaps on Jupiter
+
+  - name: farnsworth_dexscreener
+    description: Get token data from DexScreener
+
+  - name: farnsworth_project_create
+    description: Create and track projects with milestones
+
+  - name: farnsworth_project_status
+    description: Get project progress and tasks
+
+  - name: farnsworth_quick_note
+    description: Add a quick note with tags
+
+  - name: farnsworth_focus_start
+    description: Start a Pomodoro focus session
+
+  - name: farnsworth_daily_summary
+    description: Generate daily activity summary
+
+  - name: farnsworth_switch_profile
+    description: Switch context profile (Work, Personal, Creative, Technical)
+
+  - name: farnsworth_export
+    description: Export conversations and memories to JSON, Markdown, HTML, or text
+
+  - name: farnsworth_browse
+    description: Intelligent web browsing with goal-directed navigation
+
+  - name: farnsworth_token_status
+    description: Check token budget, cache stats, and API cost savings
+
+  - name: farnsworth_rug_check
+    description: Scan Solana tokens for rug pull risks
+
+  - name: farnsworth_whale_watch
+    description: Monitor whale wallets for large transactions
+
+  - name: farnsworth_collaborate
+    description: Team collaboration with shared memory pools
+
+# Resources provided
+resources:
+  - uri: farnsworth://memory/recent
+    description: Recent conversation memories
+
+  - uri: farnsworth://memory/graph
+    description: Knowledge graph of entities and relationships
+
+  - uri: farnsworth://agents/active
+    description: Currently active agents
+
+  - uri: farnsworth://evolution/fitness
+    description: Current fitness metrics
+
+# Requirements
+requirements:
+  python: ">=3.10"
+  dependencies:
+    - mcp>=1.0.0
+    - ollama
+    - sentence-transformers
+    - chromadb

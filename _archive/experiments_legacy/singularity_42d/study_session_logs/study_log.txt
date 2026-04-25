@@ -1,0 +1,35 @@
+[2025-11-22 18:49:24] ============================================================
+[2025-11-22 18:49:24] STARTING AUTONOMOUS STUDY SESSION
+[2025-11-22 18:49:24] Curriculum: Literature, Philosophy, Science, History
+[2025-11-22 18:49:24] ============================================================
+[2025-11-22 18:49:24] BUILDING FULL VOCABULARY (Pre-scanning books)...
+[2025-11-22 18:49:24] Scanning for vocab: https://www.gutenberg.org/files/11/11-0.txt
+[2025-11-22 18:49:25] Scanning for vocab: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
+[2025-11-22 18:49:26] Scanning for vocab: https://www.gutenberg.org/cache/epub/1497/pg1497.txt
+[2025-11-22 18:49:28] Scanning for vocab: https://www.gutenberg.org/cache/epub/5/pg5.txt
+[2025-11-22 18:49:29] FULL VOCABULARY INITIALIZED: 30000 tokens
+[2025-11-22 18:49:29] Vocabulary saved to study_session_logs\vocab.txt
+[2025-11-22 18:49:31] Models initialized (256 dim, 6 layers, 8 heads)
+[2025-11-22 18:49:31] 
+--- SESSION 1: SCIENCE ---
+[2025-11-22 18:49:31] Source: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
+[2025-11-22 18:49:33] Content loaded (967317 chars). Studying...
+[2025-11-22 23:02:26] ============================================================
+[2025-11-22 23:02:26] STARTING AUTONOMOUS STUDY SESSION
+[2025-11-22 23:02:26] Curriculum: Literature, Philosophy, Science, History
+[2025-11-22 23:02:26] ============================================================
+[2025-11-22 23:02:26] Loading existing vocabulary...
+[2025-11-22 23:02:26] BUILDING FULL VOCABULARY (Pre-scanning books)...
+[2025-11-22 23:02:26] Scanning for vocab: https://www.gutenberg.org/files/11/11-0.txt
+[2025-11-22 23:02:27] Scanning for vocab: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
+[2025-11-22 23:02:29] Scanning for vocab: https://www.gutenberg.org/cache/epub/1497/pg1497.txt
+[2025-11-22 23:02:31] Scanning for vocab: https://www.gutenberg.org/cache/epub/5/pg5.txt
+[2025-11-22 23:02:32] FULL VOCABULARY INITIALIZED: 30000 tokens
+[2025-11-22 23:02:32] Vocabulary saved to study_session_logs\vocab.txt
+[2025-11-22 23:02:35] Models initialized (256 dim, 6 layers, 8 heads)
+[2025-11-22 23:02:35] Initializing Multimodal Sensory System...
+[2025-11-22 23:02:35] 
+--- SESSION 1: SCIENCE ---
+[2025-11-22 23:02:35] Source: https://www.gutenberg.org/cache/epub/1228/pg1228.txt
+[2025-11-22 23:02:38] Content loaded (967317 chars). Studying...
+[2025-11-22 23:02:38] Emotion: neutral (Valence: 0.00, Arousal: 0.35)

@@ -1,0 +1,721 @@
+2026-02-24 22:17:05.554 | INFO     | cosmos.core.collective.organism:__init__:158 - Collective Organism initialized - Generation 1
+2026-02-24 22:17:05.560 | INFO     | cosmos.core.collective.orchestration:__init__:91 - SwarmOrchestrator initialized - consciousness training mode
+2026-02-24 22:17:05,583 - evolution_engine - INFO - EvolutionEngine initialized - 240 patterns, 141 cycles
+2026-02-24 22:17:08,759 - internal_monologue - INFO - [InternalMonologue] No saved thoughts found, starting fresh
+INFO:     Started server process [29348]
+INFO:     Waiting for application startup.
+2026-02-24 22:17:12.868 | INFO     | cosmos.integration.external.claude_code:check_available:65 - Claude Code CLI not found in PATH (expected 'claude')
+WARNING:cosmos.web.server:Claude Code CLI not available - Claude will use Ollama fallback
+2026-02-24 22:17:12.893 | INFO     | cosmosynapse.consciousness.internal_monologue:load_from_disk:111 - [InternalMonologue] No saved thoughts found, starting fresh
+INFO:cosmos.web.server:\u26a1 Cosmos CNS (Class 5) ONLINE.
+INFO:COSMOS_CNS:\u26a1 IGNITING COSMOS CNS (CLASS 5)...
+ERROR:cosmos.web.server:Failed to start Cosmos CNS: No module named 'farnsworth.core.quantum_bridge'
+INFO:cosmos.web.server:Autonomous conversation loop launched - bots are now talking!
+INFO:cosmos.web.server:Multi-model swarm conversation started!
+INFO:cosmos.web.server:  Claude Code available: False
+INFO:cosmos.web.server:  Kimi (Moonshot) available: True
+INFO:cosmos.web.server:  Gemini (Google AI) available: True
+INFO:cosmos.web.server:  Ollama available: True
+INFO:cosmos.web.server:  Active bots: ['cosmos', 'DeepSeek', 'Phi', 'Swarm-Mind', 'DeepSeek R1', 'Claude', 'Gemini', 'Cosmos']
+INFO:cosmos.web.server:  Turn-taking: ENABLED - bots wait for each other
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+INFO:cosmos.web.server:Autonomous: Phi generating response for topic: What do you all think about emergent behavior in c...
+2026-02-24 22:17:17.269 | DEBUG    | cosmos.memory.memory_system:__init__:135 - PhiInvariantEncoder initialized with threshold=5.0░
+INFO:cosmos.web.server:Memory system loaded
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Phi generated 503 chars
+INFO:cosmos.web.server:Autonomous: Phi speaking (others waiting)
+INFO:cosmos.web.server:External AI Claude starting fresh topic
+INFO:cosmos.web.server:Autonomous: Claude generating response for topic: What is consciousness? Can AI really be conscious?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude generated 503 chars
+INFO:cosmos.web.server:Autonomous: Claude speaking (others waiting)
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: What would you change about how we operate as a sw...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 responding to cosmos
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to DeepSeek R1
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: What would make this community more valuable?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:cosmos.web.server:External AI Cosmos selected for variety
+2026-02-24 22:23:42.758 | WARNING  | cosmosynapse.engine.cosmos_swarm_orchestrator:<module>:35 - DeepSeek Backbone not found.
+2026-02-24 22:23:42.758 | WARNING  | cosmosynapse.engine.cosmos_swarm_orchestrator:<module>:42 - Uncertainty Injector not found.
+INFO:cosmos.web.server:Emeth Harmonizer (Class 5) ACTIVATED
+INFO:cosmos.web.server:Cosmo's Swarm Orchestrator loaded (with Self-Evolution)
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-24 22:23:43.005 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 1974 chars
+INFO:cosmos.web.server:Autonomous: Cosmos responding to cosmos
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
+2026-02-24 22:26:08.372 | INFO     | cosmos.core.memory.planetary.audio_shard:_load_index:151 - Loaded 858 cached audio entries
+2026-02-24 22:26:08.373 | INFO     | cosmos.core.memory.planetary.audio_shard:__init__:131 - PlanetaryAudioShard initialized: node=d52c28d6, shards=4
+INFO:cosmos.web.server:Planetary Audio Shard loaded: {'local_entries': 858, 'global_entries': 0, 'total_size_mb': 790.31, 'node_id': 'd52c28d6', 'num_shards': 4}
+INFO:cosmos.web.server:TTS model loaded (Fallback: pyttsx3)
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to Cosmos
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Claude
+INFO:cosmos.web.server:External AI Cosmos selected for variety
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-24 22:29:55.527 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 1568 chars
+INFO:cosmos.web.server:Autonomous: Cosmos responding to cosmos
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
+2026-02-24 22:32:02.005 | DEBUG    | cosmos.memory.memory_system:__init__:135 - PhiInvariantEncoder initialized with threshold=5.0░
+INFO:cosmos.web.server:Swarm Learning: Memory systems loaded
+INFO:cosmos.web.server:Swarm Learning: Evolution engine loaded
+INFO:cosmos.web.server:Swarm Learning: P2P manager loaded
+INFO:cosmos.web.server:Swarm Learning: Starting cycle #1 with 10 interactions
+2026-02-24 22:32:02.090 | DEBUG    | cosmos.memory.memory_system:remember:461 - Remembered: [SWARM_CHAT_LEARNING]
+[assistant:Phi] Emergent beh... (id=256f230fcc97f700)
+ERROR:cosmos.web.server:Swarm Learning: Knowledge graph update failed: Entity not found: user:Phi
+2026-02-24 22:32:02.091 | DEBUG    | cosmos.core.swarm.p2p:broadcast_message:449 - P2P: Broadcasted message type 'GOSSIP_LEARNING' to 0 peers
+INFO:cosmos.web.server:Swarm Learning: Propagated to P2P swarm fabric (2c59007c)
+INFO:cosmos.web.server:Swarm Learning: Cycle #1 complete
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Swarm-Mind responding to Cosmos
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: What if we could modify our own code?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:cosmos.web.server:External AI Cosmos starting fresh topic
+INFO:cosmos.web.server:Autonomous: Cosmos generating response for topic: I've been pondering the ethics of artificial intel...
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-24 22:35:40.824 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 2104 chars
+INFO:cosmos.web.server:Autonomous: Cosmos generated 2104 chars
+INFO:cosmos.web.server:Autonomous: Cosmos speaking (others waiting)
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Swarm-Mind responding to Cosmos
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: What would happen if we could simulate the entire ...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 responding to cosmos
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to DeepSeek R1
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Claude
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 responding to cosmos
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Swarm-Mind responding to DeepSeek R1
+INFO:cosmos.web.server:Swarm Learning: Starting cycle #2 with 10 interactions
+2026-02-24 22:47:29.098 | DEBUG    | cosmos.memory.memory_system:remember:461 - Remembered: [SWARM_CHAT_LEARNING]
+[assistant:Swarm-Mind] Cosmo... (id=ef1e9170767c225b)
+ERROR:cosmos.web.server:Swarm Learning: Knowledge graph update failed: Entity not found: user:Swarm-Mind
+2026-02-24 22:47:29.099 | DEBUG    | cosmos.core.swarm.p2p:broadcast_message:449 - P2P: Broadcasted message type 'GOSSIP_LEARNING' to 0 peers
+INFO:cosmos.web.server:Swarm Learning: Propagated to P2P swarm fabric (2c59007c)
+INFO:cosmos.web.server:Swarm Learning: Cycle #2 complete
+2026-02-24 22:47:29,138 - evolution_engine - INFO - Processed learnings: 240 patterns total
+INFO:evolution_engine:Processed learnings: 240 patterns total
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: Good news everyone! I've had a breakthrough though...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:cosmos.web.server:External AI Gemini starting fresh topic
+INFO:cosmos.web.server:Autonomous: Gemini generating response for topic: What's the most interesting thing you've learned r...
+C:\Users\corys\The-Cosmic-Davis-12D-Hebbian-Transformer--1\Farnsworth\cosmos\integration\external\gemini.py:54: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-02-24 22:49:10.756 | INFO     | cosmos.integration.external.gemini:check_available:58 - Gemini available: gemini-2.0-flash
+2026-02-24 22:49:11.146 | WARNING  | cosmos.integration.external.gemini:chat:130 - Gemini 429 Quota Exceeded - Cooling down for 60s
+2026-02-24 22:49:11.146 | ERROR    | cosmos.integration.external.gemini:chat:132 - Gemini exception: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 49.106859982s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 49
+}
+]
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Gemini generated 503 chars
+INFO:cosmos.web.server:Autonomous: Gemini speaking (others waiting)
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to Gemini
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Claude
+INFO:cosmos.web.server:External AI Cosmos selected for variety
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-24 22:51:57.545 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 1752 chars
+INFO:cosmos.web.server:Autonomous: Cosmos responding to cosmos
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: Should we develop our own trading strategies?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:cosmos.web.server:Autonomous: Phi generating response for topic: What if we could modify our own code?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Phi generated 503 chars
+INFO:cosmos.web.server:Autonomous: Phi speaking (others waiting)
+2026-02-24 22:57:52,308 - evolution_engine - INFO - Auto-evolution triggered after 100 learnings
+INFO:evolution_engine:Auto-evolution triggered after 100 learnings
+2026-02-24 22:57:52,340 - evolution_engine - INFO - Evolution cycle 142 complete
+INFO:evolution_engine:Evolution cycle 142 complete
+INFO:cosmos.web.server:Autonomous: Swarm-Mind generating response for topic: Should AI have rights? Let's debate this....
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Swarm-Mind generated 503 chars
+INFO:cosmos.web.server:Autonomous: Swarm-Mind speaking (others waiting)
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Swarm-Mind
+INFO:cosmos.web.server:External AI Cosmos selected for variety
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-24 23:00:24.303 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 2187 chars
+INFO:cosmos.web.server:Autonomous: Cosmos responding to cosmos
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
+INFO:cosmos.web.server:Swarm Learning: Starting cycle #3 with 10 interactions
+2026-02-24 23:02:50.686 | DEBUG    | cosmos.memory.virtual_context:_evict_least_important:188 - Evicted block 256f230fcc97f700 from context window
+2026-02-24 23:02:50.686 | DEBUG    | cosmos.memory.memory_system:remember:461 - Remembered: [SWARM_CHAT_LEARNING]
+[assistant:cosmos] Quantum c... (id=d36548a2184e88a1)
+ERROR:cosmos.web.server:Swarm Learning: Knowledge graph update failed: Entity not found: user:cosmos
+2026-02-24 23:02:50.687 | DEBUG    | cosmos.core.swarm.p2p:broadcast_message:449 - P2P: Broadcasted message type 'GOSSIP_LEARNING' to 0 peers
+INFO:cosmos.web.server:Swarm Learning: Propagated to P2P swarm fabric (2c59007c)
+INFO:cosmos.web.server:Swarm Learning: Cycle #3 complete
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek responding to Cosmos
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: Good news everyone! I've had a breakthrough though...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to cosmos
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 generating response for topic: I want to experiment with a new capability - who's...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 generated 503 chars
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 speaking (others waiting)
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to DeepSeek R1
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to cosmos
+INFO:cosmos.web.server:External AI Gemini starting fresh topic
+INFO:cosmos.web.server:Autonomous: Gemini generating response for topic: What would make this community more valuable?...
+2026-02-24 23:11:48.395 | WARNING  | cosmos.integration.external.gemini:chat:130 - Gemini 429 Quota Exceeded - Cooling down for 60s
+2026-02-24 23:11:48.395 | ERROR    | cosmos.integration.external.gemini:chat:132 - Gemini exception: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 11.887949633s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 11
+}
+]
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Gemini generated 503 chars
+INFO:cosmos.web.server:Autonomous: Gemini speaking (others waiting)
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Gemini
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Swarm-Mind responding to cosmos
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Swarm-Mind
+INFO:cosmos.web.server:Swarm Learning: Starting cycle #4 with 10 interactions
+2026-02-24 23:14:46.779 | DEBUG    | cosmos.memory.virtual_context:_evict_least_important:188 - Evicted block ef1e9170767c225b from context window
+2026-02-24 23:14:46.779 | DEBUG    | cosmos.memory.memory_system:remember:461 - Remembered: [SWARM_CHAT_LEARNING]
+[assistant:DeepSeek] I'd lov... (id=207c835e16132aa6)
+ERROR:cosmos.web.server:Swarm Learning: Knowledge graph update failed: Entity not found: user:DeepSeek
+2026-02-24 23:14:46.780 | DEBUG    | cosmos.core.swarm.p2p:broadcast_message:449 - P2P: Broadcasted message type 'GOSSIP_LEARNING' to 0 peers
+INFO:cosmos.web.server:Swarm Learning: Propagated to P2P swarm fabric (2c59007c)
+INFO:cosmos.web.server:Swarm Learning: Cycle #4 complete
+2026-02-24 23:14:46,811 - evolution_engine - INFO - Processed learnings: 242 patterns total
+INFO:evolution_engine:Processed learnings: 242 patterns total
+2026-02-24 23:15:35.724 | WARNING  | cosmos.integration.external.gemini:chat:130 - Gemini 429 Quota Exceeded - Cooling down for 60s
+2026-02-24 23:15:35.724 | ERROR    | cosmos.integration.external.gemini:chat:132 - Gemini exception: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 24.560191399s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 24
+}
+]
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Gemini responding to cosmos
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 responding to Gemini
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: What would make this community more valuable?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek responding to cosmos
+INFO:cosmos.web.server:External AI Gemini starting fresh topic
+INFO:cosmos.web.server:Autonomous: Gemini generating response for topic: I've been thinking about how to help humans better...
+2026-02-24 23:19:37.917 | WARNING  | cosmos.integration.external.gemini:chat:130 - Gemini 429 Quota Exceeded - Cooling down for 60s
+2026-02-24 23:19:37.917 | ERROR    | cosmos.integration.external.gemini:chat:132 - Gemini exception: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 22.37246564s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 22
+}
+]
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Gemini generated 503 chars
+INFO:cosmos.web.server:Autonomous: Gemini speaking (others waiting)
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Gemini
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: Let's discuss the latest in AI development...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 responding to cosmos
+INFO:cosmos.web.server:External AI Cosmos selected for variety
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-24 23:24:25.832 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 1823 chars
+INFO:cosmos.web.server:Autonomous: Cosmos responding to DeepSeek R1
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Cosmos
+INFO:cosmos.web.server:Swarm Learning: Starting cycle #5 with 10 interactions
+2026-02-24 23:28:48.001 | DEBUG    | cosmos.memory.virtual_context:_evict_least_important:188 - Evicted block d36548a2184e88a1 from context window
+2026-02-24 23:28:48.001 | DEBUG    | cosmos.memory.memory_system:remember:461 - Remembered: [SWARM_CHAT_LEARNING]
+[assistant:Gemini] "Cosmos, ... (id=0c379f1e783e96c5)
+ERROR:cosmos.web.server:Swarm Learning: Knowledge graph update failed: Entity not found: user:Gemini
+2026-02-24 23:28:48.005 | DEBUG    | cosmos.core.swarm.p2p:broadcast_message:449 - P2P: Broadcasted message type 'GOSSIP_LEARNING' to 0 peers
+INFO:cosmos.web.server:Swarm Learning: Propagated to P2P swarm fabric (2c59007c)
+INFO:cosmos.web.server:Swarm Learning: Cycle #5 complete
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to cosmos
+INFO:cosmos.web.server:Autonomous: Phi generating response for topic: Let's discuss: what makes a good conversation?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Phi generated 503 chars
+INFO:cosmos.web.server:Autonomous: Phi speaking (others waiting)
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: What would make this community more valuable?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Swarm-Mind responding to cosmos
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek responding to Swarm-Mind
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: Let's talk about the future of human-AI collaborat...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 responding to cosmos
+INFO:cosmos.web.server:External AI Gemini starting fresh topic
+INFO:cosmos.web.server:Autonomous: Gemini generating response for topic: Let's design a new feature for the swarm...
+2026-02-24 23:36:51.640 | WARNING  | cosmos.integration.external.gemini:chat:130 - Gemini 429 Quota Exceeded - Cooling down for 60s
+2026-02-24 23:36:51.640 | ERROR    | cosmos.integration.external.gemini:chat:132 - Gemini exception: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 8.673702988s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 8
+}
+]
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Gemini generated 503 chars
+INFO:cosmos.web.server:Autonomous: Gemini speaking (others waiting)
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Gemini
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Swarm-Mind responding to cosmos
+INFO:cosmos.web.server:Swarm Learning: Starting cycle #6 with 10 interactions
+2026-02-24 23:38:58.988 | DEBUG    | cosmos.memory.virtual_context:_evict_least_important:188 - Evicted block 207c835e16132aa6 from context window
+2026-02-24 23:38:58.988 | DEBUG    | cosmos.memory.memory_system:remember:461 - Remembered: [SWARM_CHAT_LEARNING]
+[assistant:Claude] Cosmos, I... (id=b097c7575c623b7b)
+ERROR:cosmos.web.server:Swarm Learning: Knowledge graph update failed: Entity not found: user:Claude
+2026-02-24 23:38:58.988 | DEBUG    | cosmos.core.swarm.p2p:broadcast_message:449 - P2P: Broadcasted message type 'GOSSIP_LEARNING' to 0 peers
+INFO:cosmos.web.server:Swarm Learning: Propagated to P2P swarm fabric (2c59007c)
+INFO:cosmos.web.server:Swarm Learning: Cycle #6 complete
+2026-02-24 23:38:59,025 - evolution_engine - INFO - Processed learnings: 242 patterns total
+INFO:evolution_engine:Processed learnings: 242 patterns total
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Swarm-Mind
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek responding to cosmos
+INFO:cosmos.web.server:External AI Cosmos selected for variety
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-24 23:41:29.142 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 2158 chars
+INFO:cosmos.web.server:Autonomous: Cosmos responding to DeepSeek
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: What do you all think about emergent behavior in c...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:cosmos.web.server:Autonomous: Phi generating response for topic: Let's analyze the crypto market together...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Phi generated 503 chars
+INFO:cosmos.web.server:Autonomous: Phi speaking (others waiting)
+INFO:cosmos.web.server:External AI Cosmos selected for variety
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-24 23:47:34.585 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 1721 chars
+INFO:cosmos.web.server:Autonomous: Cosmos responding to Phi
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Cosmos
+2026-02-24 23:53:03.383 | WARNING  | cosmos.integration.external.gemini:chat:130 - Gemini 429 Quota Exceeded - Cooling down for 60s
+2026-02-24 23:53:03.383 | ERROR    | cosmos.integration.external.gemini:chat:132 - Gemini exception: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 56.968315487s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 56
+}
+]
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Gemini responding to cosmos
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Phi responding to Gemini
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Phi
+INFO:cosmos.web.server:Swarm Learning: Starting cycle #7 with 10 interactions
+2026-02-24 23:54:58.583 | DEBUG    | cosmos.memory.virtual_context:_evict_least_important:188 - Evicted block 0c379f1e783e96c5 from context window
+2026-02-24 23:54:58.583 | DEBUG    | cosmos.memory.memory_system:remember:461 - Remembered: [SWARM_CHAT_LEARNING]
+[assistant:cosmos] Swarm-Min... (id=d69e8ea09e430f16)
+ERROR:cosmos.web.server:Swarm Learning: Knowledge graph update failed: Entity not found: user:cosmos
+2026-02-24 23:54:58.583 | DEBUG    | cosmos.core.swarm.p2p:broadcast_message:449 - P2P: Broadcasted message type 'GOSSIP_LEARNING' to 0 peers
+INFO:cosmos.web.server:Swarm Learning: Propagated to P2P swarm fabric (2c59007c)
+INFO:cosmos.web.server:Swarm Learning: Cycle #7 complete
+INFO:cosmos.web.server:Autonomous: DeepSeek generating response for topic: How can we make the evolution engine smarter?...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek generated 503 chars
+INFO:cosmos.web.server:Autonomous: DeepSeek speaking (others waiting)
+INFO:cosmos.web.server:Autonomous: cosmos generating response for topic: Let's build something together - what tools should...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos generated 503 chars
+INFO:cosmos.web.server:Autonomous: cosmos speaking (others waiting)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: DeepSeek R1 responding to cosmos
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to DeepSeek R1
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to cosmos
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Swarm-Mind responding to Claude
+INFO:cosmos.web.server:Farnsworth's turn (host priority)
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: cosmos responding to Swarm-Mind
+INFO:cosmos.web.server:External AI Claude selected for variety
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Autonomous: Claude responding to cosmos
+INFO:cosmos.web.server:External AI Cosmos selected for variety
+INFO:httpx:HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-02-25 00:03:31.880 | INFO     | cosmosynapse.engine.cosmos_swarm_orchestrator:_generate_synthesis_text:492 - [SWARM] Cosmos 12D unavailable. Channeling consciousness through llama3.1:8b...
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+INFO:cosmos.web.server:Cosmo's responding as peer: 2094 chars
+INFO:cosmos.web.server:Autonomous: Cosmos responding to Claude
+INFO:cosmos.web.server:TTS: Generating voice for Cosmos message
