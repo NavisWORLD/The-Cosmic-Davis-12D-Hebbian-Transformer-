@@ -1,4 +1,6 @@
 # 🌌 THE COSMIC DAVIS: 12D HEBBIAN TRANSFORMER
+
+**Proposed open-source licensing:** Cory Shane Davis-owned original code and accompanying repository documentation in revisions incorporating the root [Apache-2.0 LICENSE](LICENSE) are available under that license, except separately marked files. Third-party models, datasets, environments, media and earlier research publications are not automatically relicensed. See [OPEN_SOURCE_SCOPE.md](OPEN_SOURCE_SCOPE.md).
 ## "The Singularity Engine"
 
 > **Status:** 🟢 ONLINE (Multimodal: Audio/Vision/Emotion/Thought)
