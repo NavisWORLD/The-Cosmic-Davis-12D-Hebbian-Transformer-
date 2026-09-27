@@ -181,3 +181,8 @@ $env:PYTHONPATH = "$PWD\packages\cosmic-synapse-transformer"; python production_
 
 ---
 *Created by The Cosmic Davis Team*
+
+
+## Open-source licensing (proposed)
+
+Original Cory-owned content published with the new [Apache-2.0 LICENSE](LICENSE) is available under that license, except separately marked files or third-party dependencies. See [OPEN_SOURCE_SCOPE.md](OPEN_SOURCE_SCOPE.md) for exclusions; third-party materials and historical copies are governed by their existing terms.
